@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { Component } from 'react' ;
+import React from 'react' ;
 import { BrowserRouter , Route, Router } from "react-router-dom";
 import Acceuil from "./Shared/Auth/Acceuil"
 import SignupPhone from "./Shared/Auth/SignupPhone";
