@@ -8,8 +8,7 @@ import Login from "./Shared/Auth/Login";
 import Contact from "./Shared/Auth/Contact";
 
 function App() :JSX.Element {
-  
-  
+
   return (
    <BrowserRouter>
    
