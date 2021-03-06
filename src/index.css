@@ -6,49 +6,39 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
 .navbar{
   overflow: hidden;
-  background: red;
-  color: black;
+  color: black; 
+  position:sticky;
+  top: 0;
+  width: 100%;
 }
-
 .container {
-  width: 80%;
-  margin: auto;
+  width: 70%;
+  margin: auto; 
 }
-
 .logo_Logistica{
   font-size: 25px;
   width: 30%;
   float: left;
   display: block;
   margin: 10px 0;
-  color: white;
+  color: #66CDAA;
 }
-
-
 ul{
   width: 70%;
   float: left;
-  padding: 0;
+  padding: 15px;
   text-align: right;
 }
-
-
 ul a {
   text-decoration: none;
   color: black;
-  margin: 0 15px;
+  margin: 0px 25px ;
+  font-size: 15px;
 }
 
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-.main-content{
-  text-align: center;
-  margin-top: 15% ;
-}
