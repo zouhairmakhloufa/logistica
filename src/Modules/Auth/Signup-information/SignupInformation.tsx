@@ -1,5 +1,6 @@
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button } from "antd";
 import { useHistory } from "react-router-dom";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 const layout = {
   labelCol: { span: 8 },
@@ -12,13 +13,12 @@ const tailLayout = {
 const SignupInformation = () => {
   const history = useHistory();
 
-
   const onFinish = (values: any) => {
-    console.log('Success:', values);
+    console.log("Success:", values);
   };
 
   const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
+    console.log("Failed:", errorInfo);
   };
 
   return (
@@ -34,33 +34,36 @@ const SignupInformation = () => {
         >
           <Form.Item
             name="username"
-            rules={[{ required: true, message: 'input your username !' }]}
+            rules={[{ required: true, message: "input your username !" }]}
           >
-            <Input
-              placeholder="UserName"
-              style={{ width: '200%' }} />
+            <Input placeholder="UserName" style={{ width: "200%" }} />
           </Form.Item>
           <Form.Item
             name="email"
             rules={[
               {
-                type: 'email',
-                message: 'The input is not valid E-mail!',
+                type: "email",
+                message: "The input is not valid E-mail!",
               },
               {
                 required: true,
-                message: 'input your E-mail !',
+                message: "input your E-mail !",
               },
-            ]}>
-            <Input
-              style={{ width: '200%' }}
-              placeholder="Email" />
+            ]}
+          >
+            <Input style={{ width: "200%" }} placeholder="Email" />
           </Form.Item>
 
           <Form.Item {...tailLayout}>
-            <Button className="button-signup-info" type="primary" htmlType="submit" 
-            style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-             onClick={() => history.push("/Auth/SignupCode")}>Next </Button>
+            <Button
+              className="button-signup-info"
+              type="primary"
+              htmlType="submit"
+              style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
+              onClick={() => history.push("/Auth/mapInformation")}
+            >
+              Next{" "}
+            </Button>
           </Form.Item>
         </Form>
       </div>
