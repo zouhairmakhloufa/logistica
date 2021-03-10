@@ -1,3 +1,20 @@
 .leaflet-container {
-    position: initial  !important;
-}
+  position: initial;
+  height: 150px;
+    width: 1000px;
+  }
+  .contentImage{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100vh;
+  }
+  .auth{
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+    padding-top: 15%;
+    padding-bottom: 15%;
+  }

@@ -1,4 +1,5 @@
 import { Form, Input, Button } from "antd";
+import { UserOutlined , MailOutlined } from '@ant-design/icons';
 import { useHistory } from "react-router-dom";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
@@ -33,17 +34,24 @@ const SignupInformation = () => {
           onFinishFailed={onFinishFailed}
         >
           <Form.Item
-            name="username"
-            rules={[{ required: true, message: "input your username !" }]}
+            name="firstName"
+            rules={[{ required: true, message: "Enter your firstName !" }]}
           >
-            <Input placeholder="UserName" style={{ width: "200%" }} />
+            <Input placeholder="Enter your firstName" style={{ width: "200%" }} prefix={<UserOutlined />} />
+
+          </Form.Item>
+           <Form.Item
+            name="lastName"
+            rules={[{ required: true, message: "Enter your lastName !" }]}
+          >
+            <Input placeholder="Enter your lastName" style={{ width: "200%" }} prefix={<UserOutlined />} />
           </Form.Item>
           <Form.Item
             name="email"
             rules={[
               {
                 type: "email",
-                message: "The input is not valid E-mail!",
+                message: "The input is not valid email!",
               },
               {
                 required: true,
@@ -51,7 +59,8 @@ const SignupInformation = () => {
               },
             ]}
           >
-            <Input style={{ width: "200%" }} placeholder="Email" />
+            <Input style={{ width: "200%" }} placeholder="Enter your Email" prefix={<MailOutlined /> } />
+           
           </Form.Item>
 
           <Form.Item {...tailLayout}>

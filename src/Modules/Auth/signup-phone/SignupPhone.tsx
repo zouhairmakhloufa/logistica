@@ -10,6 +10,7 @@ const { Option } = Select;
 const SignupPhone = () => {
   const [form] = Form.useForm();
   const history = useHistory();
+  
 
   const prefixSelector = (
     <Form.Item name="prefix" noStyle>
@@ -38,9 +39,9 @@ const SignupPhone = () => {
         <Form.Item
           name="phone"
           rules={[{ required: false, message: 'Please input your phone number!' }]} >
-          <PhoneOutlined className="icons-phone" />
-          <Input className="input"
-            placeholder="Phone number"
+         
+          <Input className="input" prefix={ <PhoneOutlined /> }
+            placeholder=" Phone number"
             style={{ width: '73%' }}
             addonBefore={prefixSelector} />
         </Form.Item>

@@ -22,14 +22,13 @@ const SignupCode = () => {
           rules={[{ required: true, message: 'Please input your Code !' }]} >
           <Input prefix={<LockOutlined />}
             type="password"
-            placeholder="enter the 4-digit code"
+            placeholder="  enter the 4-digit code"
             style={{ width: '74%' }}  />
         </Form.Item>
         <Form.Item >
           <Button className="button" type="primary" htmlType="submit" 
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
           onClick={() => history.push("/Auth/SignupInformation")}> Next </Button>
-
         </Form.Item>
 
       </div>
