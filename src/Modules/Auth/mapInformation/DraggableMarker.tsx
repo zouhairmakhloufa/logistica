@@ -1,10 +1,10 @@
-import { useState, useMemo, useCallback, useRef } from 'react';
-import { Marker, Popup } from 'react-leaflet';
+import { useState, useMemo, useRef } from 'react';
+import { Marker, useMapEvents } from 'react-leaflet';
 import L from "leaflet";
 
 const center = {
-    lat: 59.505,
-    lng: -0.09,
+    lat: 35.292556100000006,
+    lng: 10.7086373
   }
   const icon = L.icon({
     iconSize: [25, 41],
@@ -13,15 +13,16 @@ const center = {
     iconUrl: "https://unpkg.com/leaflet@1.7/dist/images/marker-icon.png",
     shadowUrl: "https://unpkg.com/leaflet@1.7/dist/images/marker-shadow.png"
   });
+
+
   
   function DraggableMarker() {
-    const [draggable, setDraggable] = useState(false)
     const [position, setPosition] = useState(center)
     const markerRef = useRef(null)
     const eventHandlers = useMemo(
       () => ({
         dragend() {
-          const marker = markerRef.current as any
+          const marker: any = markerRef.current
           if (marker != null) {
             setPosition(marker.getLatLng() )
           }
@@ -29,25 +30,19 @@ const center = {
       }),
       [],
     )
-    const toggleDraggable = useCallback(() => {
-      setDraggable((d) => !d)
-    }, [])
-  
+    useMapEvents({
+      click(e) {
+        setPosition(e.latlng)
+      },
+    })
     return (
 
    <Marker
-        draggable={draggable}
+        draggable={true}
         eventHandlers={eventHandlers}
         position={position}
         icon={icon}
         ref={markerRef}>
-        <Popup minWidth={90}>
-          <span onClick={toggleDraggable}>
-            {draggable
-              ? 'Marker is draggable'
-              : 'Click here to make marker draggable'}
-          </span>
-        </Popup>
       </Marker>
     )
   }

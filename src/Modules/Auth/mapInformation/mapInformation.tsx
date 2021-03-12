@@ -1,24 +1,30 @@
-import { MapContainer, TileLayer } from "react-leaflet";
+import { useState, useEffect } from 'react';
+
+import { MapContainer, TileLayer, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./mapInformation.scss";
 import { Button, } from 'antd';
 import DraggableMarker from "./DraggableMarker";
+import getCurrentPosition from '../../../hooks/detectCurrentLocation';
 
-function mapInformation() {
 
+
+function MapInformation() {
+  const position = getCurrentPosition()
+  
   return (
     <div className="contentImage">
-
       <MapContainer
-        center={[50.5, 30.5]}
-        zoom={13}
+        center={position}
+        zoom={4}
         style={{ height: "100vh" }}
       >
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+          
         <DraggableMarker />
+
       </MapContainer>
       <div className="auth">
         <h1>Pick me up From </h1>
@@ -28,4 +34,4 @@ function mapInformation() {
     </div>
   );
 }
-export default mapInformation;
+export default MapInformation;
