@@ -1,13 +1,9 @@
-import { useState, useEffect } from 'react';
-
-import { MapContainer, TileLayer, useMap } from "react-leaflet";
+import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./mapInformation.scss";
-import { Button, } from 'antd';
+import { Button } from 'antd';
 import DraggableMarker from "./DraggableMarker";
 import getCurrentPosition from '../../../hooks/detectCurrentLocation';
-
-
 
 function MapInformation() {
   const position = getCurrentPosition()
@@ -28,6 +24,7 @@ function MapInformation() {
       </MapContainer>
       <div className="auth">
         <h1>Pick me up From </h1>
+        <input placeholder="Search Places " style={{ width: "80%" }}  />
         <Button className="button" type="primary" htmlType="submit"
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}> set-pickup </Button>
       </div>

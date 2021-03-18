@@ -28,7 +28,7 @@ const SignupCode = () => {
         <Form.Item >
           <Button className="button" type="primary" htmlType="submit" 
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-          onClick={() => history.push("/Auth/SignupInformation")}> Next </Button>
+          onClick={() => history.push("/Auth/UserOrDriver")}> Next </Button>
         </Form.Item>
 
       </div>

@@ -1,7 +1,6 @@
 import { Form, Input, Button } from "antd";
-import { UserOutlined , MailOutlined } from '@ant-design/icons';
+import { UserOutlined , FileImageTwoTone ,MailOutlined} from '@ant-design/icons';
 import { useHistory } from "react-router-dom";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 const layout = {
   labelCol: { span: 8 },
@@ -11,7 +10,7 @@ const tailLayout = {
   wrapperCol: { offset: 8, span: 16 },
 };
 
-const SignupInformation = () => {
+const SignupDriver = () => {
   const history = useHistory();
 
   const onFinish = (values: any) => {
@@ -37,14 +36,14 @@ const SignupInformation = () => {
             name="firstName"
             rules={[{ required: true, message: "Enter your firstName !" }]}
           >
-            <Input placeholder="Enter your firstName" style={{ width: "200%" }} prefix={<UserOutlined />} />
+            <Input placeholder="FirstName" style={{ width: "200%" }} prefix={<UserOutlined />} />
 
           </Form.Item>
            <Form.Item
             name="lastName"
             rules={[{ required: true, message: "Enter your lastName !" }]}
           >
-            <Input placeholder="Enter your lastName" style={{ width: "200%" }} prefix={<UserOutlined />} />
+            <Input placeholder="LastName" style={{ width: "200%" }} prefix={<UserOutlined />} />
           </Form.Item>
           <Form.Item
             name="email"
@@ -59,9 +58,25 @@ const SignupInformation = () => {
               },
             ]}
           >
-            <Input style={{ width: "200%" }} placeholder="Enter your Email" prefix={<MailOutlined /> } />
-           
+            <Input style={{ width: "200%" }} placeholder="Email                                                 optionel" 
+            prefix={<MailOutlined /> } />
           </Form.Item>
+
+          <h2>Car Info</h2>
+          <Form.Item
+            name="CarInfo"
+            rules={[{ required: true, message: "Enter your CarInfo !" }]}
+          >
+            <Input placeholder="Type Of Car" style={{ width: "200%" }} />
+          </Form.Item>
+
+          <h2>Car Photos</h2>
+          <FileImageTwoTone />
+          <h2>Id</h2>
+          <FileImageTwoTone />
+          <h2>Driving License</h2>
+          <FileImageTwoTone />
+
 
           <Form.Item {...tailLayout}>
             <Button
@@ -69,9 +84,7 @@ const SignupInformation = () => {
               type="primary"
               htmlType="submit"
               style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-              onClick={() => history.push("/Auth/mapInformation")}
-            >
-              Next{" "}
+              onClick={() => history.push("/Auth/homeDriver")} > Add{" "}
             </Button>
           </Form.Item>
         </Form>
@@ -79,4 +92,4 @@ const SignupInformation = () => {
     </div>
   );
 };
-export default SignupInformation;
+export default SignupDriver;

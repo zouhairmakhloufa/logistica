@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 
 const center = {
@@ -16,8 +15,6 @@ useEffect(() => {
     })
   });
 }, [])
-
 return position;
 }
-
 export default GetCurrentPosition;
