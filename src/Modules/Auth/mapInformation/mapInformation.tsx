@@ -5,6 +5,10 @@ import { Button } from 'antd';
 import DraggableMarker from "./DraggableMarker";
 import { useState, useEffect } from 'react';
 
+const center = {
+  lat: 35.5030347,
+  lng: 11.055748099999999
+}
 function MapInformation() {
   const [position, setPosition] = useState({lat: 0, lng: 0});
   useEffect(() => {
@@ -20,8 +24,8 @@ function MapInformation() {
   return (
     <div className="contentImage">
       <MapContainer
-        center={position}
-        zoom={3}
+        center={center}
+        zoom={9}
         style={{ height: "100vh" }} >
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
