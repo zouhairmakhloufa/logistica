@@ -3,16 +3,26 @@ import "leaflet/dist/leaflet.css";
 import "./mapInformation.scss";
 import { Button } from 'antd';
 import DraggableMarker from "./DraggableMarker";
-import getCurrentPosition from '../../../hooks/detectCurrentLocation';
+import { useState, useEffect } from 'react';
+
 
 function MapInformation() {
-  const position = getCurrentPosition()
+  const [position, setPosition] = useState({lat: 35.5030347, lng: 11.055748099999999});
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      debugger
+      setPosition({ 
+        lat:  position.coords.latitude,
+        lng: position.coords.longitude
+      })
+    });
+  }, [])
   
   return (
     <div className="contentImage">
       <MapContainer
         center={position}
-        zoom={4}
+        zoom={5}
         style={{ height: "100vh" }}
       >
         <TileLayer
