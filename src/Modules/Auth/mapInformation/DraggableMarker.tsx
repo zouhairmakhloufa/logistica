@@ -10,7 +10,7 @@ const icon = L.icon({
   shadowUrl: "https://unpkg.com/leaflet@1.7/dist/images/marker-shadow.png"
 });
 function DraggableMarker(props: any) {
-  const [position, setPosition] = useState(props.position)
+  const [position, setPosition] = useState(props.position)  
   const markerRef = useRef(null)
   const eventHandlers = useMemo(
     () => ({
