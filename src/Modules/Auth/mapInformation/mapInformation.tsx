@@ -6,31 +6,11 @@ import { useState } from "react";
 import { Popconfirm, Button } from "antd";
 
 function MapInformation() {
-  const [source, setSource] = useState({
-    lat: 35.5030347,
-    lng: 11.055748099999999,
-    showMarker: false,
-  });
-  const [destination, setDestination] = useState({
-    lat: 35.5030347,
-    lng: 10.055748099999999,
-    showMarker: false,
-  });
-
-  const confirm = () => {
-    setSource({
-      ...source,
-      showMarker: true,
-    });
-  };
-
-  const chooseAdressDestination = () => {
-    setDestination({
-      lat: 35.5030347,
-      lng: 10.055748099999999,
-      showMarker: true,
-    });
-  };
+  const [source, setSource] = useState({ lat: 35.5030347, lng: 11.055748099999999, showMarker: false, });
+  const [destination, setDestination] = useState({ lat: 35.5030347, lng: 10.055748099999999, showMarker: false, });
+  
+  const chooseAdressSource = () => { setSource({ ...source, showMarker: true, }); };
+  const chooseAdressDestination = () => { setDestination({ lat: 35.5030347, lng: 10.055748099999999, showMarker: true, }); };
 
   let buttonAdressSource;
   if (source.showMarker) {
@@ -54,38 +34,40 @@ function MapInformation() {
       <div className="auth">
         <h1>Pick me up From </h1>
 
-        <Popconfirm
-          placement="top"
-          title={"choose your adress Source"}
-          onConfirm={confirm}
-        >
-          <Button
+        <Popconfirm  title={"Choose your source address by clicking on the map"} onConfirm={chooseAdressSource} >
+          <Button 
+          className="button"
             type="primary"
             style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
           >
             {" "}
-            choose your adress Source{" "}
+            Choose Your Adress Source {" "}
           </Button>
         </Popconfirm>
-
         <br></br>
         <br></br>
-        <br></br>
-        <Popconfirm
-          placement="top"
-          title={"choose your adress destination"}
-          onConfirm={chooseAdressDestination}
-        >
+        <Popconfirm title={"Choose your destination address by clicking on the map "} onConfirm={chooseAdressDestination} >
           <Button
+          className="button"
             type="primary"
             style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
           >
             {" "}
-            choose your adress Source{" "}
+            Choose Your Adress Destination{" "}
           </Button>
         </Popconfirm>
-
         <br></br>
+        <br></br>
+        <Button
+          className="buttonNext"
+          type="primary"
+          htmlType="submit"
+          style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
+        >
+          {" "}
+          Add{" "}
+        </Button>
+
       </div>
     </div>
   );
