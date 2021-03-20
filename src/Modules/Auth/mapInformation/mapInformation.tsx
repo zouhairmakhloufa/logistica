@@ -1,12 +1,11 @@
 import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./mapInformation.scss";
-import { Button } from "antd";
 import DraggableMarker from "./DraggableMarker";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { Popconfirm, Button } from "antd";
 
 function MapInformation() {
-  const position: { lat: number; lng: number } = { lat: 0, lng: 0 };
   const [source, setSource] = useState({
     lat: 35.5030347,
     lng: 11.055748099999999,
@@ -18,15 +17,20 @@ function MapInformation() {
     showMarker: false,
   });
 
-  useEffect(() => {
-    const geo = navigator.geolocation;
-    geo.getCurrentPosition((pos) => {
-      if (pos.coords.altitude && pos.coords.longitude) {
-        position.lat = pos.coords.altitude;
-        position.lng = pos.coords.longitude;
-      }
+  const confirm = () => {
+    setSource({
+      ...source,
+      showMarker: true,
     });
-  }, [position]);
+  };
+
+  const chooseAdressDestination = () => {
+    setDestination({
+      lat: 35.5030347,
+      lng: 10.055748099999999,
+      showMarker: true,
+    });
+  };
 
   let buttonAdressSource;
   if (source.showMarker) {
@@ -50,61 +54,38 @@ function MapInformation() {
       <div className="auth">
         <h1>Pick me up From </h1>
 
-        <Button
-          className="button"
-          type="primary"
-          htmlType="submit"
-          style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-          onClick={(e) =>
-            setSource({
-              lat: 35.5030347,
-              lng: 11.055748099999999,
-              showMarker: true,
-            })
-          }
+        <Popconfirm
+          placement="top"
+          title={"choose your adress Source"}
+          onConfirm={confirm}
         >
-          {" "}
-          choose your adress Source{" "}
-        </Button>
-
-        <br></br>
-
-        <Button
-          className="button"
-          type="primary"
-          htmlType="submit"
-          style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-          onClick={(e) =>
-            setDestination({
-              lat: 35.5030347,
-              lng: 10.055748099999999,
-              showMarker: true,
-            })
-          }
-        >
-          {" "}
-          choose your adress destination{" "}
-        </Button>
+          <Button
+            type="primary"
+            style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
+          >
+            {" "}
+            choose your adress Source{" "}
+          </Button>
+        </Popconfirm>
 
         <br></br>
         <br></br>
-
-        <Button
-          className="buttonNext"
-          type="primary"
-          htmlType="submit"
-          style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-          onClick={(e) =>
-            setDestination({
-              lat: 35.5030347,
-              lng: 10.055748099999999,
-              showMarker: true,
-            })
-          }
+        <br></br>
+        <Popconfirm
+          placement="top"
+          title={"choose your adress destination"}
+          onConfirm={chooseAdressDestination}
         >
-          {" "}
-          Add{" "}
-        </Button>
+          <Button
+            type="primary"
+            style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
+          >
+            {" "}
+            choose your adress Source{" "}
+          </Button>
+        </Popconfirm>
+
+        <br></br>
       </div>
     </div>
   );
