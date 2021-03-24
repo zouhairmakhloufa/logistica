@@ -1,18 +1,16 @@
 import { Button } from 'antd';
 import { useHistory } from "react-router-dom";
-
+import { LeftSquareOutlined } from "@ant-design/icons"
 
 const UserOrDriver = () => {
-
     const history = useHistory();
-
-
+    
     return (
         <div className="contentImage">
-
-            <img src="/imageMain/imageMain2.jpg" className="imageAuth" />
+            <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
 
             <div className="auth">
+            <LeftSquareOutlined  onClick={() => history.push("/Auth/SignupVeifCode")} className="ClickRetour"/>
                 <h1> 
                 Do you want to Subscribe as
                 </h1>

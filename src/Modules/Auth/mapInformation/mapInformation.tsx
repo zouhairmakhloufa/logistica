@@ -4,8 +4,12 @@ import "./mapInformation.scss";
 import DraggableMarker from "./DraggableMarker";
 import { useState } from "react";
 import { Popconfirm, Button } from "antd";
+import { useHistory } from "react-router-dom";
+import { LeftSquareOutlined } from "@ant-design/icons"
+
 
 function MapInformation() {
+  const history = useHistory();
   const [source, setSource] = useState({ lat: 35.5030347, lng: 11.055748099999999, showMarker: false, });
   const [destination, setDestination] = useState({ lat: 35.5030347, lng: 10.055748099999999, showMarker: false, });
   
@@ -32,6 +36,8 @@ function MapInformation() {
       </MapContainer>
 
       <div className="auth">
+      <LeftSquareOutlined  onClick={() => history.push("/Auth/SignupUser")} className="ClickRetour"/>
+
         <h1>Pick me up From </h1>
 
         <Popconfirm  title={"Choose your source address by clicking on the map"} onConfirm={chooseAdressSource} >
@@ -63,6 +69,7 @@ function MapInformation() {
           type="primary"
           htmlType="submit"
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
+          onClick={() => history.push("/Auth/PoidsAndTaille")}
         >
           {" "}
           Add{" "}
