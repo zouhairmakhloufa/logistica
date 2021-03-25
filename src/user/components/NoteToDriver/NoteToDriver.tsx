@@ -1,0 +1,33 @@
+import { Input, Button } from "antd";
+import { LeftSquareOutlined } from "@ant-design/icons"
+import { useHistory } from "react-router-dom";
+
+const NoteToDriver = () => {
+  const history = useHistory();
+  return (
+    <div className="contentImage">
+      <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
+      <div className="Service">
+     
+        <LeftSquareOutlined onClick={() => history.push("/Service")} className="ClickRetour" />  <br></br>
+      
+        <br></br>
+        <br></br>
+        <h2> Add note to driver</h2>
+        <br></br>
+        <Input placeholder="E.g I am located on the right side of" />
+        <br></br>
+        <br></br>
+
+        <Button className="button-Done-Successful" type="primary" htmlType="submit"
+          style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
+          onClick={() => history.push("/RetourRequest")}
+   
+        > Add{" "}
+        </Button>
+
+      </div>
+    </div>
+  );
+};
+export default NoteToDriver;

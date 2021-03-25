@@ -9,20 +9,25 @@ const Service = () => {
        <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
       <div className="Service">
 
-        <LeftSquareOutlined onClick={() => history.push("/Auth/TypeOfCars")}  className="ClickRetour"/> <br></br>
-        <h2> Service</h2>
-        <Checkbox defaultChecked disabled> Delivery</Checkbox> <br></br>
-        <Checkbox defaultChecked disabled> Boarding</Checkbox> <br></br>
-        <Checkbox >Shipping</Checkbox>
+        <LeftSquareOutlined onClick={() => history.push("/TypeOfCars")}  className="ClickRetour"/> 
         <br></br>
         <br></br>
-        <h2> Packaging</h2>
-        <Radio >Cartoon</Radio> <br></br>
-        <Radio >Plastic</Radio><br></br>
+      
+        <h3> Service</h3>        
+        <Checkbox defaultChecked disabled> Delivery</Checkbox>   <h4 className="prixservice">5 dt</h4>
+        <Checkbox defaultChecked disabled> Boarding</Checkbox> <h4 className="prixservice">3 dt</h4> 
+        <Checkbox >Shipping</Checkbox>   <h4 className="prixservice">5 dt</h4>  
+        <br></br>
+
+        <h3> Packaging</h3>        
+        <Radio >Cartoon</Radio> <h4 className="prixservice">3 dt</h4> 
+        <br></br>
+
+        <h3> Total Amount</h3>          <h4 className="prixservice">8 dt</h4>
 
         <Button className="button-Next-poids" type="primary" htmlType="submit"
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-          onClick={() => history.push("/Auth/Service")}
+          onClick={() => history.push("/BookingSuccessful")}
         >
           Continue{" "}
         </Button>

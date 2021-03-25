@@ -10,8 +10,8 @@ const Navbar = () => {
         <a href="/" className="logo_Logistica" > Logistica  </a>
         <ul>
           <a href="/">Main</a>
-          <a href="/Auth/SignupEmail">Sign Up </a>
-          <a href="/Auth/SignupEmail">Login   </a>
+          <a href="/Auth/SignupEmail">Sign-in </a>
+          <a href="/MyProfile">My Profile   </a>
           <SearchOutlined />
         </ul>
       </div>

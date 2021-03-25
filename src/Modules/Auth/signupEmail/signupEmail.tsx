@@ -1,6 +1,6 @@
 import { Form, Input, Button, } from 'antd';
 import { useHistory } from "react-router-dom";
-import { LeftSquareOutlined } from "@ant-design/icons"
+import { LeftSquareOutlined,MailOutlined } from "@ant-design/icons"
 //  map filter forEach reduce 
 const SignupEmail = () => { 
    const history = useHistory();
@@ -10,12 +10,12 @@ const SignupEmail = () => {
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
       <div className="auth">
 
-        <LeftSquareOutlined onClick={() => history.push("/dashbord")} className="ClickRetour" />
+        <LeftSquareOutlined onClick={() => history.push("/")} className="ClickRetour" />
         <h1>Sign-in </h1>
         <h4>Welcome back! </h4>
         <Form.Item
           name="email"
-          label="E-mail"
+          label="Email Address"
           rules={[
             {
               type: 'email',
@@ -27,14 +27,13 @@ const SignupEmail = () => {
             },
           ]}
         >
-          <Input style={{ width: '50%' }} />
+          <Input style={{ width: '70%' }} prefix={<MailOutlined />} />
         </Form.Item>
         <Form.Item >
           <Button className="button" type="primary" htmlType="submit"
             style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-            onClick={() => history.push("/Auth/SignupVeifCode")}> Next </Button>
+            onClick={() => history.push("/Auth/SignupVeifCode")}> Continue </Button>
         </Form.Item>
-
       </div>
     </div>
   )

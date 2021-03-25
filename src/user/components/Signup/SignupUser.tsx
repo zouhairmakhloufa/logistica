@@ -2,13 +2,6 @@ import { Form, Input, Button } from "antd";
 import { UserOutlined , MailOutlined } from '@ant-design/icons';
 import { useHistory } from "react-router-dom";
 import { LeftSquareOutlined } from "@ant-design/icons"
-const layout = {
-  labelCol: { span: 8 },
-  wrapperCol: { span: 16 },
-};
-const tailLayout = {
-  wrapperCol: { offset: 8, span: 16 },
-};
 
 const SignupUser = () => {
   const history = useHistory();
@@ -28,7 +21,6 @@ const SignupUser = () => {
       <LeftSquareOutlined  onClick={() => history.push("/Auth/UserOrDriver")} className="ClickRetour"/>
 
         <Form
-          {...layout}
           name="basic"
           initialValues={{ remember: true }}
           onFinish={onFinish}
@@ -38,14 +30,14 @@ const SignupUser = () => {
             name="firstName"
             rules={[{ required: true, message: "Enter your firstName !" }]}
           >
-            <Input placeholder="Enter your firstName" style={{ width: "120%" }} prefix={<UserOutlined />} />
+            <Input placeholder="Enter your firstName" style={{ width: "70%" }} prefix={<UserOutlined />} />
 
           </Form.Item>
            <Form.Item
             name="lastName"
             rules={[{ required: true, message: "Enter your lastName !" }]}
           >
-            <Input placeholder="Enter your lastName" style={{ width: "120%" }} prefix={<UserOutlined />} />
+            <Input placeholder="Enter your lastName" style={{ width: "70%" }} prefix={<UserOutlined />} />
           </Form.Item>
           <Form.Item
             name="email"
@@ -60,18 +52,18 @@ const SignupUser = () => {
               },
             ]}
           >
-            <Input style={{ width: "120%" }} placeholder="Enter your Email" prefix={<MailOutlined /> } />
+            <Input style={{ width: "70%" }} placeholder="Enter your Email" prefix={<MailOutlined /> } />
           </Form.Item>
 
-          <Form.Item {...tailLayout}>
+          <Form.Item >
             <Button
               className="button-signup-info"
               type="primary"
               htmlType="submit"
               style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-              onClick={() => history.push("/Auth/mapInformation")}
+              onClick={() => history.push("/mapInformation")}
             >
-              Next{" "}
+              Continue{" "}
             </Button>
           </Form.Item>
         </Form>

@@ -25,12 +25,12 @@ const SignupVeifCode = () => {
           ]}
           hasFeedback
         >
-          <Input.Password style={{ width: '50%' }} />
+          <Input.Password style={{ width: '70%' }} />
         </Form.Item>
         <Form.Item >
           <Button className="button" type="primary" htmlType="submit"
             style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-            onClick={() => history.push("/Auth/UserOrDriver")}> Next </Button>
+            onClick={() => history.push("/Auth/UserOrDriver")}> Continue </Button>
         </Form.Item>
       </div>
     </div>

@@ -7,7 +7,6 @@ import { Popconfirm, Button } from "antd";
 import { useHistory } from "react-router-dom";
 import { LeftSquareOutlined } from "@ant-design/icons"
 
-
 function MapInformation() {
   const history = useHistory();
   const [source, setSource] = useState({ lat: 35.5030347, lng: 11.055748099999999, showMarker: false, });
@@ -26,7 +25,7 @@ function MapInformation() {
   }
   return (
     <div className="contentImage">
-      <MapContainer center={source} zoom={5} style={{ height: "100vh" }}>
+      <MapContainer center={source} zoom={5} style={{ height: "100vh" }} className="imageAuth">
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -35,14 +34,13 @@ function MapInformation() {
         {buttonAdressDestination}
       </MapContainer>
 
-      <div className="auth">
+      <div className="auth-signup-info">
       <LeftSquareOutlined  onClick={() => history.push("/Auth/SignupUser")} className="ClickRetour"/>
 
         <h1>Pick me up From </h1>
-
         <Popconfirm  title={"Choose your source address by clicking on the map"} onConfirm={chooseAdressSource} >
           <Button 
-          className="button"
+          className="buttonMap"
             type="primary"
             style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
           >
@@ -54,7 +52,7 @@ function MapInformation() {
         <br></br>
         <Popconfirm title={"Choose your destination address by clicking on the map "} onConfirm={chooseAdressDestination} >
           <Button
-          className="button"
+          className="buttonMap"
             type="primary"
             style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
           >
@@ -69,10 +67,9 @@ function MapInformation() {
           type="primary"
           htmlType="submit"
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-          onClick={() => history.push("/Auth/PoidsAndTaille")}
+          onClick={() => history.push("/PoidsAndTaille")}
         >
-          {" "}
-          Add{" "}
+          {" "} Route{" "}
         </Button>
 
       </div>

@@ -8,7 +8,7 @@ const PoidsAndTaille = () => {
     <div className="contentImage">
       <img src="/imageDimention/dimention bagage.jpg" className="imageAuth" />
       <div className="auth-signup-info">
-      <LeftSquareOutlined  onClick={() => history.push("/Auth/mapInformation")} className="ClickRetour"/>
+      <LeftSquareOutlined  onClick={() => history.push("/mapInformation")} className="ClickRetour"/>
 
         <h3> Enter this information about your bag </h3>
         <br></br>
@@ -33,12 +33,10 @@ const PoidsAndTaille = () => {
 
         <Button className="button-Next-poids" type="primary" htmlType="submit"
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-          onClick={() => history.push("/Auth/TypeOfCars")}
+          onClick={() => history.push("/TypeOfCars")}
 
-        >
-          Next{" "}
+        > Next{" "}
         </Button>
-
       </div>
     </div>
   );
