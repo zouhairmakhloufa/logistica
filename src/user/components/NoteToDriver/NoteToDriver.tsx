@@ -10,7 +10,7 @@ const NoteToDriver = () => {
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
       <div className="NoteToDriver">
      
-        <LeftSquareOutlined onClick={() => history.push("/BookingSuccessful")} className="ClickRetour" />  <br></br>
+        <LeftSquareOutlined onClick={() => history.push("/PaymentMethode")} className="ClickRetour" />  <br></br>
       
         <br></br>
         <br></br>
@@ -22,7 +22,7 @@ const NoteToDriver = () => {
 
         <Button className="button-NoteDriver" type="primary" htmlType="submit"
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-          onClick={() => history.push("/RetourRequest")}
+          onClick={() => history.push("/Info")}
    
         > Add{" "}
         </Button>

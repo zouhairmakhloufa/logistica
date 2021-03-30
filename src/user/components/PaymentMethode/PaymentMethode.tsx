@@ -15,18 +15,18 @@ const PaymentMethode = () => {
     <div className="contentImage">
       <img src="/imagePaymentUser/PaymentUser.jpg" className="imageAuth" />
       <div className="auth-signup-info">
-        <LeftSquareOutlined onClick={() => history.push("/TypeOfCars")} className="ClickRetour" /> <br></br> <br></br>
+        <LeftSquareOutlined onClick={() => history.push("/Service")} className="ClickRetour" /> <br></br> <br></br>
         <h3>  Payment Methode </h3>
         <br></br> <br></br>
         <Radio.Group onChange={onChange} value={value}>
           <Radio value={1}>Cache</Radio>
           <br></br>  <br></br>
-          <Radio value={2}>Master Card /visa</Radio>
+          <Radio value={2}>Card </Radio>
         </Radio.Group>
         <br></br>
         <Button className="button-TypeOfCars" type="primary" htmlType="submit"
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-          onClick={() => history.push("/AddPaymentMethod")}
+          onClick={() => history.push("/NoteToDriver")}
         >
           Next{" "}
         </Button>

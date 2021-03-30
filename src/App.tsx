@@ -14,6 +14,7 @@ import BookingSuccessful from "./user/components/BookingSuccessful";
 import NoteToDriver from "./user/components/NoteToDriver";
 import RetourRequest from "./user/components/RetourRequest";
 import Menu from "./user/components/Menu";
+import Info from "./user/components/Info";
 import Orders from "./user/components/Orders";   
 import Notification from "./user/components/Notification";
 import Setting from "./user/components/Setting";
@@ -26,7 +27,8 @@ function App(): JSX.Element {
     <BrowserRouter>  
       <div className="app">
         <Route path="/" exact component={dashbord} />
-        <Route path="/Menu" exact component={Menu} /> 
+        <Route path="/Menu" exact component={Menu} />
+        <Route path="/Info" exact component={Info} /> 
         <Route path="/Orders" exact component={Orders} /> 
         <Route path="/PaymentUser" exact component={PaymentUser} /> 
         <Route path="/PaymentMethode" exact component={PaymentMethode} />  

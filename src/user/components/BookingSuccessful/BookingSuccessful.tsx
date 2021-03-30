@@ -11,7 +11,7 @@ const BookingSuccessful = () => {
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
       <div className="auth-signup-info">
 
-        <LeftSquareOutlined onClick={() => history.push("/PaymentMethode")} className="ClickRetour" />
+        <LeftSquareOutlined onClick={() => history.push("/Info")} className="ClickRetour" />
         <br></br>
         <br></br>
 
@@ -21,7 +21,7 @@ const BookingSuccessful = () => {
         />
         <Button className="button-Done-Successful" type="primary" htmlType="submit"
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-          onClick={() => history.push("/NoteToDriver")}
+          onClick={() => history.push("")}
         > Done{" "}
         </Button>
 

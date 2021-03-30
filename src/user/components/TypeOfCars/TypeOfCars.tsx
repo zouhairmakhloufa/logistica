@@ -40,7 +40,7 @@ const TypeOfCars = () => {
                 <List.Item.Meta
                   avatar={<Avatar src="/imageTypeOfCars/CarsPNG.jpg" />}
                   title={<a>{item.title}</a>}
-                  description=" 1-500 Kg"
+                  description=" 1-1000 Kg"
                 />
               </List.Item>
             )}
@@ -53,7 +53,7 @@ const TypeOfCars = () => {
                 <List.Item.Meta
                   avatar={<Avatar src="/imageTypeOfCars/Cars2PNG.jpg" />}
                   title={<a>{item.title2}</a>}
-                  description=" 1-1000 Kg"
+                  description=" 1-2000 Kg"
                 />
               </List.Item>
             )}
@@ -62,7 +62,7 @@ const TypeOfCars = () => {
 
         <Button className="button-TypeOfCars" type="primary" htmlType="submit"
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-          onClick={() => history.push("/PaymentMethode")}
+          onClick={() => history.push("/Service")}
         >
           Next{" "}
         </Button>

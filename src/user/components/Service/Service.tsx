@@ -10,7 +10,7 @@ const Service = () => {
        <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
       <div className="Service">
 
-        <LeftSquareOutlined onClick={() => history.push("/AddPaymentMethod")}  className="ClickRetour"/> 
+        <LeftSquareOutlined onClick={() => history.push("/TypeOfCars")}  className="ClickRetour"/> 
         <br></br>
         <br></br>
       
@@ -22,13 +22,15 @@ const Service = () => {
 
         <h3> Packaging</h3>        
         <Radio >Cartoon</Radio> <h4 className="prixservice">3 dt</h4> 
+        <Radio >Plastic Roll</Radio> <h4 className="prixservice">3 dt</h4> 
+
         <br></br>
 
         <h3> Total Amount</h3>          <h4 className="prixservice">8 dt</h4>
 
         <Button className="button-Service" type="primary" htmlType="submit"
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-          onClick={() => history.push("/BookingSuccessful")}
+          onClick={() => history.push("/PaymentMethode")}
         >
           Continue{" "}
         </Button>

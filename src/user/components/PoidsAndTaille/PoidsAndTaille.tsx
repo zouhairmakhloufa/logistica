@@ -17,19 +17,19 @@ const PoidsAndTaille = () => {
         <br></br>
         <div className="DimensionAndPois">
           <Form.Item label="Poids (en Kg)      :">
-            <InputNumber min={1} max={1000} placeholder="max 1000" style={{ width: "40%" }} />
+            <InputNumber min={1} max={2000} placeholder="max 2000" style={{ width: "40%" }} />
           </Form.Item>
 
           <Form.Item label=" Hauteur (cm):">
-            <InputNumber min={1} max={1000} placeholder="max 1000" style={{ width: "40%" }} />
+            <InputNumber min={1} max={2000} placeholder="max 2000" style={{ width: "40%" }} />
           </Form.Item>
 
           <Form.Item label=" Largeur (cm):">
-            <InputNumber min={1} max={1000} placeholder="max 1000" style={{ width: "40%" }} />
+            <InputNumber min={1} max={2000} placeholder="max 2000" style={{ width: "40%" }} />
           </Form.Item>
 
           <Form.Item label=" Profondeur (cm):" className="inputProfondeur" >
-            <InputNumber min={1} max={1000} placeholder="max 1000" style={{ width: "49%" }} />
+            <InputNumber min={1} max={2000} placeholder="max 2000" style={{ width: "49%" }} />
           </Form.Item>
         </div>
 
