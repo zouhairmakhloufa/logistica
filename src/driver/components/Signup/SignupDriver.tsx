@@ -1,6 +1,8 @@
 import { Form, Input, Button } from "antd";
-import { UserOutlined , FileImageTwoTone ,MailOutlined} from '@ant-design/icons';
+import { UserOutlined, FileImageTwoTone, MailOutlined } from '@ant-design/icons';
 import { useHistory } from "react-router-dom";
+import { LeftSquareOutlined } from "@ant-design/icons"
+import "./SignupDriver.scss";
 
 const layout = {
   labelCol: { span: 8 },
@@ -23,8 +25,10 @@ const SignupDriver = () => {
 
   return (
     <div className="contentImage">
-      <img src="/imageMain/imageMain2.jpg" className="imageAuth" />
-      <div className="auth-signup-info">
+      <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
+      <div className="signup-info-driver">
+        <LeftSquareOutlined onClick={() => history.push("/Auth/SignupVeifCode")} className="ClickRetour" /> <h2>Add Your</h2>
+
         <Form
           {...layout}
           name="basic"
@@ -36,17 +40,14 @@ const SignupDriver = () => {
             name="firstName"
             rules={[{ required: true, message: "Enter your firstName !" }]}
           >
-            <Input placeholder="FirstName" style={{ width: "200%" }} prefix={<UserOutlined />} />
+            <Input placeholder="FirstName" style={{ width: "100%" }} prefix={<UserOutlined />} />
 
           </Form.Item>
-           <Form.Item
-            name="lastName"
-            rules={[{ required: true, message: "Enter your lastName !" }]}
-          >
-            <Input placeholder="LastName" style={{ width: "200%" }} prefix={<UserOutlined />} />
+          <Form.Item name="lastName" rules={[{ required: true, message: "Enter your lastName !" }]} >
+            <Input placeholder="LastName" style={{ width: "100%" }} prefix={<UserOutlined />} />
           </Form.Item>
-          <Form.Item
-            name="email"
+
+          <Form.Item name="email"
             rules={[
               {
                 type: "email",
@@ -58,25 +59,25 @@ const SignupDriver = () => {
               },
             ]}
           >
-            <Input style={{ width: "200%" }} placeholder="Email                                                 optionel" 
-            prefix={<MailOutlined /> } />
+            <Input style={{ width: "100%" }} placeholder="Email                                                 optionel"
+              prefix={<MailOutlined />} />
           </Form.Item>
+          <div className="carsInfo">
+            <h3>Car Info</h3>
+            <Form.Item
+              name="CarInfo"
+              rules={[{ required: true, message: "Enter your CarInfo !" }]}
+            >
+              <Input placeholder="Type Of Car" style={{ width: "100%" }} />
+            </Form.Item>
 
-          <h2>Car Info</h2>
-          <Form.Item
-            name="CarInfo"
-            rules={[{ required: true, message: "Enter your CarInfo !" }]}
-          >
-            <Input placeholder="Type Of Car" style={{ width: "200%" }} />
-          </Form.Item>
-
-          <h2>Car Photos</h2>
-          <FileImageTwoTone />
-          <h2>Id</h2>
-          <FileImageTwoTone />
-          <h2>Driving License</h2>
-          <FileImageTwoTone />
-
+            <h3>Car Photos</h3>
+            <Button type="dashed" className="coloricon">+</Button>
+            <h3>Id</h3>
+            <Button type="dashed" className="coloricon">+</Button>
+            <h3>Driving License</h3>
+            <Button type="dashed" className="coloricon">+</Button>
+          </div>
 
           <Form.Item {...tailLayout}>
             <Button

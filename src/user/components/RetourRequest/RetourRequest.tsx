@@ -1,7 +1,7 @@
 import { Button,Timeline, List, Avatar } from "antd";
 import { LeftSquareOutlined } from "@ant-design/icons"
 import { useHistory } from "react-router-dom";
-
+import "./RetourRequest.scss"
 const data1 = [
   {
     title: 'Distance : ',
@@ -25,7 +25,7 @@ const RetourRequest = () => {
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
       <div className="RetourRequest">
         <br></br>    <br></br>    <br></br>    <br></br>
-        <LeftSquareOutlined onClick={() => history.push("/Service")} className="ClickRetour" />
+        <LeftSquareOutlined onClick={() => history.push("/NoteToDriver")} className="ClickRetour" />
         <br></br>    <br></br>    <br></br>    
 
         <Timeline>
@@ -75,7 +75,7 @@ const RetourRequest = () => {
           style={{ background: "#f70d1a", borderColor: "#f70d1a" }}
         >
           Cancel Request{" "}
-        </Button> <Button className="button-Next-poids" type="primary" htmlType="submit"
+        </Button> <Button className="button-RetourRequest" type="primary" htmlType="submit"
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
         >
           Accept Request{" "}

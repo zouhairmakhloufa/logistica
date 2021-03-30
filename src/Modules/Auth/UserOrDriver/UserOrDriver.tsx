@@ -1,6 +1,7 @@
 import { Button } from 'antd';
 import { useHistory } from "react-router-dom";
 import { LeftSquareOutlined } from "@ant-design/icons"
+import "./UserOrDriver.scss"
 
 const UserOrDriver = () => {
     const history = useHistory();
@@ -9,7 +10,7 @@ const UserOrDriver = () => {
         <div className="contentImage">
             <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
 
-            <div className="auth">
+            <div className="auth-signup-info">
             <LeftSquareOutlined  onClick={() => history.push("/Auth/SignupVeifCode")} className="ClickRetour"/>
                 <h1> 
                 Do you want to Subscribe as

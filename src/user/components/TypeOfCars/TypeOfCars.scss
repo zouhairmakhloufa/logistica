@@ -8,16 +8,26 @@
     justify-content: center;
     height: 100vh;
   }
-    
-.auth{
+  .auth-signup-info{
     width: 40%;
     justify-content: center;
     align-items: center;
-    text-align: center;
     flex-direction: row;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    padding-top: 10%;
+    padding-bottom: 20%;
+    padding-left: 7%;
+    padding-right: 4%;
+  }
+.button-TypeOfCars{
+    width: 50%;
+    height: 40px;
+    border-radius: 9px;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-right: 70px;
 }
+
 
 
 

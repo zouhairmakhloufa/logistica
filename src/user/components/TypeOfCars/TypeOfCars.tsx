@@ -2,6 +2,7 @@ import { Button } from "antd";
 import { LeftSquareOutlined } from "@ant-design/icons"
 import { useHistory } from "react-router-dom";
 import { List, Avatar } from 'antd';
+import "./TypeOfCars.scss"
 
 const data = [
   {
@@ -59,9 +60,9 @@ const TypeOfCars = () => {
           />
         </div>
 
-        <Button className="button-Next-poids" type="primary" htmlType="submit"
+        <Button className="button-TypeOfCars" type="primary" htmlType="submit"
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-          onClick={() => history.push("/Service")}
+          onClick={() => history.push("/PaymentMethode")}
         >
           Next{" "}
         </Button>

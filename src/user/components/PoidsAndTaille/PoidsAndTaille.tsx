@@ -1,6 +1,8 @@
 import { Button, InputNumber, Form } from "antd";
 import { useHistory } from "react-router-dom";
 import { LeftSquareOutlined } from "@ant-design/icons"
+import "./PoidsAndTaille.scss";
+
 
 const PoidsAndTaille = () => {
   const history = useHistory();

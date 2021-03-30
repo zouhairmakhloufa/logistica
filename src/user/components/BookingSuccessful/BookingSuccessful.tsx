@@ -1,15 +1,17 @@
 import { Result, Button } from "antd";
 import { LeftSquareOutlined } from "@ant-design/icons"
 import { useHistory } from "react-router-dom";
+import "./BookingSuccessful.scss"
+
 
 const BookingSuccessful = () => {
   const history = useHistory();
   return (
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
-      <div className="Service">
+      <div className="auth-signup-info">
 
-        <LeftSquareOutlined onClick={() => history.push("/Service")} className="ClickRetour" />
+        <LeftSquareOutlined onClick={() => history.push("/PaymentMethode")} className="ClickRetour" />
         <br></br>
         <br></br>
 

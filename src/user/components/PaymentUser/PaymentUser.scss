@@ -8,30 +8,39 @@
     justify-content: center;
     height: 100vh;
   }
+  .ButtonMenu{
+    width: 45%;
+    height: 40px;
+    border-radius: 9px;
+    font-size: 16px;
+    margin-top: 10px;
+    background: white;
+    border-color: white;
+    color: black;
+    margin-left: 20px;
+  }
     
-.Service{
+  .auth-signup-info{
     width: 40%;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    padding-top: 5%;
+    padding-top: 4%;
     padding-bottom: 20%;
     padding-left: 7%;
     padding-right: 4%;
+    text-align: center;
   }
-  .button-Service{
-    width: 50%;
+  .ButtonPaymentUser{
+    width: 45%;
     height: 40px;
     border-radius: 9px;
     text-align: center;
     font-size: 16px;
     margin-top: 10px;
-    margin-right: 70px;
+    margin-right: -2px;
   }
-  .TitleService{
-    text-align: center;
-  }
-
+ 
 
 
 

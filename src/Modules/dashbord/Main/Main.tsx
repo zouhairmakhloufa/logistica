@@ -1,5 +1,6 @@
 import { Button, } from 'antd';
 import { useHistory } from "react-router-dom";
+import "./Main.scss"
 
 const Main = () => {
     const history = useHistory();

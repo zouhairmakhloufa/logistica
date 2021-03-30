@@ -2,21 +2,45 @@
     text-align: center;
     padding-right: 20%;
     }
-    
     .contentImage{
         display: flex;
         flex-direction: row;
         justify-content: center;
         height: 100vh;
       }
-    
-      .auth{
+      .signup-info-driver{
         width: 40%;
         justify-content: center;
         align-items: center;
         flex-direction: row;
-        padding-top: 7%;
         padding-bottom: 20%;
-        padding-left: 7%;
-        padding-right: 14%;
+        padding-left: 5%;
+        padding-right: 4%;
+        padding-top: 2%;
       }
+      .carsInfo{
+        text-align: left;     
+       }
+     
+       .button-signup-info{
+        width: 80%;
+        height: 40px;
+        border-radius: 9px;
+        text-align: center;
+        font-size: 16px;
+        margin-top: 0px;
+        margin-left: -40px;
+        margin-top: 10px;
+      }
+      .importImageCar{
+        font-size: 40px;
+      }
+    .ClickRetour{
+      margin-right: 35px;
+    }
+    .coloricon{
+       color: red;
+       font-size: 20px;
+       text-align: center;
+       padding-bottom: 20px;
+    }

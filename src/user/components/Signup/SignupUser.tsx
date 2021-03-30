@@ -2,6 +2,8 @@ import { Form, Input, Button } from "antd";
 import { UserOutlined , MailOutlined } from '@ant-design/icons';
 import { useHistory } from "react-router-dom";
 import { LeftSquareOutlined } from "@ant-design/icons"
+import "./SignupUser.scss";
+
 
 const SignupUser = () => {
   const history = useHistory();
@@ -57,7 +59,7 @@ const SignupUser = () => {
 
           <Form.Item >
             <Button
-              className="button-signup-info"
+              className="button-signup-User"
               type="primary"
               htmlType="submit"
               style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
