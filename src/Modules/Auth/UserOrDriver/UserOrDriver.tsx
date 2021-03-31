@@ -11,7 +11,7 @@ const UserOrDriver = () => {
             <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
 
             <div className="auth-signup-info">
-            <LeftSquareOutlined  onClick={() => history.push("/Auth/SignupVeifCode")} className="ClickRetour"/>
+            <LeftSquareOutlined  onClick={() => history.push("/")} className="ClickRetour"/>
                 <h1> 
                 Do you want to Subscribe as
                 </h1>

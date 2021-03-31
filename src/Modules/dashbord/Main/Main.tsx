@@ -11,7 +11,7 @@ const Main = () => {
             <h4>logistica is a dynamic website that connects customers who have luggage to transmit with carriers</h4>
             <Button className="button" type="primary" htmlType="submit"
                 style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-                onClick={() => history.push("/Auth/signupEmail")}> Start Now </Button>
+                onClick={() => history.push("/Auth/SignupEmail")}> Start Now </Button>
         </div>
     );
 }

@@ -21,7 +21,7 @@ const Info = () => {
         <Timeline>
           <Timeline.Item color="green">6731 Al Ulaya, Al Wurud</Timeline.Item>
           <Timeline.Item color="green">King Khalid International Airport </Timeline.Item>
-        </Timeline>  
+        </Timeline>
         <br></br> <br></br> <br></br> <br></br><br></br>
         <h2 > Type of Cars</h2>
         <List
@@ -50,7 +50,7 @@ const Info = () => {
         <h4> Shipping Service</h4> 5dt
         <h4> Cortoon Service</h4> 5dt
         <h3 className="totale">  Total Amount</h3> 20dt
-        <Button className="button-NoteDriver" type="primary" htmlType="submit"
+        <Button className="button-Info" type="primary" htmlType="submit"
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
           onClick={() => history.push("/BookingSuccessful")}
 

@@ -26,7 +26,7 @@ const Service = () => {
 
         <br></br>
 
-        <h3> Total Amount</h3>          <h4 className="prixservice">8 dt</h4>
+        <h3> Total Amount</h3>          <h4 className="prixservice">20 dt</h4>
 
         <Button className="button-Service" type="primary" htmlType="submit"
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
