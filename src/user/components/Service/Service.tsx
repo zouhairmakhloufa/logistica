@@ -20,19 +20,21 @@ const Service = () => {
           onClick={() => history.push("/TypeOfCars")}
           className="ClickRetour"
         />
-        <br></br>
-        <br></br>
         <h2 className="TitleService"> Service</h2>
-        <Checkbox defaultChecked disabled>
-          {" "}
-          Delivery
-        </Checkbox>{" "}
-        <h4 className="prixservice">5 dt</h4>
-        <Checkbox defaultChecked disabled>
-          {" "}
-          Boarding
-        </Checkbox>{" "}
-        <h4 className="prixservice">3 dt</h4>
+        <div style={{ display: "grid" }}>
+          <Checkbox defaultChecked disabled>
+            <div style={{ display: "flex" }}>
+              <p style={{ marginRight: "50px" }}>Delivery</p>
+              <h4 className="prixservice">5 dt</h4>
+            </div>
+          </Checkbox>
+          <Checkbox defaultChecked disabled>
+            <div style={{ display: "flex" }}>
+              <p style={{ marginRight: "50px" }}> Boarding</p>
+              <h4 className="prixservice">3 dt</h4>
+            </div>
+          </Checkbox>
+        </div>
         <Checkbox>Shipping</Checkbox> <h4 className="prixservice">5 dt</h4>
         <br></br>
         <h3> Packaging</h3>
