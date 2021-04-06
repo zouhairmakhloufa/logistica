@@ -6,25 +6,25 @@ import "./PaymentMethode.scss";
 
 const PaymentMethode = () => {
   const history = useHistory();
-  const [value, setValue] = useState(1);
+  const [value, setValue] = useState("Cache");
 
-  const onChange = () => {
-    setValue(value);
+  const onChange = (e: any) => {
+    setValue(e.target.value);
   };
   return (
     <div className="contentImage">
       <img src="/imagePaymentUser/PaymentUser.jpg" className="imageAuth" />
       <div className="auth-signup-info">
-        <LeftSquareOutlined onClick={() => history.push("/Service")} className="ClickRetour" /> <br></br> <br></br>
-        <h3>  Payment Methode </h3>
-        <br></br> <br></br>
+        <LeftSquareOutlined onClick={() => history.push("/Service")} className="ClickRetourPaymentMethode" /> 
+        <h2 className="text">  Payment Methode </h2>
+        <div className="MethodePayment">
         <Radio.Group onChange={onChange} value={value}>
-          <Radio value={1}>Cache</Radio>
-          <br></br>  <br></br>
-          <Radio value={2}>Card </Radio>
+          <Radio value="Cache" className="Cartoon">Cache</Radio>{" "}  <br></br>
+          <Radio value="Card">Card</Radio>{" "}   
         </Radio.Group>
-        <br></br>
-        <Button className="button-TypeOfCars" type="primary" htmlType="submit"
+        </div>
+   
+        <Button className="buttonPaymentMethode" type="primary" htmlType="submit"
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
           onClick={() => history.push("/NoteToDriver")}
         >

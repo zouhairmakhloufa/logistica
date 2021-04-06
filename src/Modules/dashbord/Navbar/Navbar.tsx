@@ -11,7 +11,7 @@ const Navbar = () => {
         <ul>
           <a href="/">Main</a>
           <a href="/Auth/SignupEmail">Sign-in </a>
-          <a href="/Menu"> Menu </a>
+          <a href="Auth/UserOrDriverMenu"> Menu </a>
           <SearchOutlined />
         </ul>
       </div>

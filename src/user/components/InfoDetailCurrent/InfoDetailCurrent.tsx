@@ -3,20 +3,20 @@ import { LeftSquareOutlined } from "@ant-design/icons"
 import { useHistory } from "react-router-dom";
 import { List, Avatar } from 'antd';
 import { DollarOutlined } from "@ant-design/icons"
-import "./Info.scss"
+import "./InfoDetailCurrent.scss"
 
 const data = [
   {
     title: 'Logistica cars',
   },
 ];
-const Info = () => {
+const InfoDetailCurrent = () => {
   const history = useHistory();
   return (
     <div className="contentImage">
-      <img src="/imageAuth/imageAuth.jpg" className="imageAuthInfoUser" />
+      <img src="/imageAuth/imageAuth.jpg" className="imageAuthInfo" />
       <div className="InfoBooking">
-        <LeftSquareOutlined onClick={() => history.push("/NoteToDriver")} className="ClickRetour" />
+        <LeftSquareOutlined onClick={() => history.push("/OrdersUser")} className="ClickRetour" />
 
         <div>
           <h2> Booking details</h2>
@@ -46,7 +46,7 @@ const Info = () => {
         <div className="paymentMethode">
           <h2 className="TextPaymentMethode"> Payment Methode</h2>
           <DollarOutlined style={{ fontSize: '22px', color: '#08c' }} /> <Button className="ButtonCach" type="primary" htmlType="submit"
-            > Cach{" "}
+          > Cach{" "}
           </Button>
         </div>
 
@@ -72,19 +72,14 @@ const Info = () => {
           <h4 className="pricingequipe"> Cortoon Service</h4>
           <h4>5 dt</h4>
         </div>
-
+        <br></br>
         <div style={{ display: "flex" }} className="totalText">
           <h2 className="texttottalamount">Total Amount</h2>
           <h4 className="TotalAmount20">20 dt</h4>
         </div>
 
-        <Button className="button-Info" type="primary" htmlType="submit"
-          style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-          onClick={() => history.push("/BookingSuccessful")}> Book Now{" "}
-        </Button>
-
       </div>
     </div>
   );
 };
-export default Info;
+export default InfoDetailCurrent;

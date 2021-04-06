@@ -2,16 +2,16 @@ import { useHistory } from "react-router-dom";
 import { LeftSquareOutlined } from "@ant-design/icons"
 import { Avatar, Button } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
-import "./Setting.scss";
+import "./SettingUser.scss";
 
 
-const Orders = () => {
+const SettingUser = () => {
   const history = useHistory();
   return (
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
       <div className="auth-signup-info">
-        <LeftSquareOutlined onClick={() => history.push("/Menu")} className="ClickRetour" />
+        <LeftSquareOutlined onClick={() => history.push("/MenuUser")} className="ClickRetour" />
         <br></br> 
         <h2>Setting </h2>
         <br></br> <br></br>
@@ -29,4 +29,4 @@ const Orders = () => {
     </div>
   );
 };
-export default Orders;
+export default SettingUser;

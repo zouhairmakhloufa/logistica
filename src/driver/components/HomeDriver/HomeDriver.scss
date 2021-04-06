@@ -1,0 +1,37 @@
+.Form{
+    text-align: center;
+    padding-right: 20%;
+}
+.contentImage{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100vh;
+  }
+  .auth-signup-info{
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 5%;
+    padding-bottom: 20%;
+    padding-left: 3%;
+    padding-right: 4%;
+  }
+  .tabs{
+    background-color: #d6d6d6 ;
+    border-color: #d6d6d6;
+    width: 300px;
+  }  
+  .buttonList{
+      width: 350px;
+  }
+  .ant-result{
+    padding: 5px 32px;
+
+}
+
+
+
+      
+      

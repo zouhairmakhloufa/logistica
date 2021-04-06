@@ -33,8 +33,8 @@ const SignupUser = () => {
             rules={[{ required: true, message: "Enter your firstName !" }]}
           >
             <Input placeholder="Enter your firstName" style={{ width: "70%" }} prefix={<UserOutlined />} />
-
           </Form.Item>
+          
            <Form.Item
             name="lastName"
             rules={[{ required: true, message: "Enter your lastName !" }]}

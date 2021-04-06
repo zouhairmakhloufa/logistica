@@ -19,8 +19,12 @@
     border-color: white;
     color: black;
   }
-    
-  .auth-signup-info{
+.tabs{
+  background-color: #d6d6d6 ;
+  border-color: #d6d6d6;
+  width: 300px;
+}  
+.auth-signup-info{
     width: 40%;
     justify-content: center;
     align-items: center;
@@ -42,6 +46,10 @@
   }
   .inputProfondeur{
     padding-right : 7%;
+  }
+  .divAdem{
+    display: flex;
+    margin-right: 120px;
   }
 
 

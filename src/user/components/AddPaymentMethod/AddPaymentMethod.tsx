@@ -1,6 +1,6 @@
 import { useHistory } from "react-router-dom";
 import { LeftSquareOutlined } from "@ant-design/icons"
-import { Button, InputNumber } from 'antd';
+import { Button, InputNumber, Input } from 'antd';
 import { useState } from "react";
 import { CreditCardOutlined } from "@ant-design/icons"
 import "./AddPaymentMethod.scss";
@@ -8,7 +8,6 @@ import "./AddPaymentMethod.scss";
 const AddPaymentMethod = () => {
   const history = useHistory();
   const [value, setValue] = useState(1);
-
   const onChange = () => {
     setValue(value);
   };
@@ -20,12 +19,11 @@ const AddPaymentMethod = () => {
         <h2>Add a payment method </h2>
         <CreditCardOutlined style={{ fontSize: '20px', color: '#08c' }} />
         <InputNumber min={1} max={16} defaultValue={3} onChange={onChange} className="inputNumberCardVisa" />
-        <br></br> <br></br>
+        <Input placeholder="MM/YY" />   <Input placeholder="CVV" />
+
         <Button className="button-TypeOfCars" type="primary" htmlType="submit"
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-          onClick={() => history.push("/Service")}
-        >
-          Add Card{" "}
+          onClick={() => history.push("/Service")} > Save{" "}
         </Button>
       </div>
     </div>
