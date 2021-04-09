@@ -1,8 +1,13 @@
 import { Form, Input, Button } from "antd";
-import { UserOutlined, FileImageTwoTone, MailOutlined } from '@ant-design/icons';
+import {
+  UserOutlined,
+  FileImageTwoTone,
+  MailOutlined,
+} from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
-import { LeftSquareOutlined } from "@ant-design/icons"
+import { LeftSquareOutlined } from "@ant-design/icons";
 import "./SignupDriver.scss";
+import DropZone from "./DropZone";
 
 const layout = {
   labelCol: { span: 8 },
@@ -27,8 +32,11 @@ const SignupDriver = () => {
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
       <div className="signup-info-driver">
-        <LeftSquareOutlined onClick={() => history.push("/Auth/UserOrDriver")} className="ClickRetour" /> <h2>Add Your</h2>
-
+        <LeftSquareOutlined
+          onClick={() => history.push("/Auth/UserOrDriver")}
+          className="ClickRetour"
+        />{" "}
+        <h2>Add Your</h2>
         <Form
           {...layout}
           name="basic"
@@ -40,14 +48,25 @@ const SignupDriver = () => {
             name="firstName"
             rules={[{ required: true, message: "Enter your firstName !" }]}
           >
-            <Input placeholder="FirstName" style={{ width: "100%" }} prefix={<UserOutlined />} />
-
+            <Input
+              placeholder="FirstName"
+              style={{ width: "100%" }}
+              prefix={<UserOutlined />}
+            />
           </Form.Item>
-          <Form.Item name="lastName" rules={[{ required: true, message: "Enter your lastName !" }]} >
-            <Input placeholder="LastName" style={{ width: "100%" }} prefix={<UserOutlined />} />
+          <Form.Item
+            name="lastName"
+            rules={[{ required: true, message: "Enter your lastName !" }]}
+          >
+            <Input
+              placeholder="LastName"
+              style={{ width: "100%" }}
+              prefix={<UserOutlined />}
+            />
           </Form.Item>
 
-          <Form.Item name="email"
+          <Form.Item
+            name="email"
             rules={[
               {
                 type: "email",
@@ -59,8 +78,11 @@ const SignupDriver = () => {
               },
             ]}
           >
-            <Input style={{ width: "100%" }} placeholder="Email                                                 optionel"
-              prefix={<MailOutlined />} />
+            <Input
+              style={{ width: "100%" }}
+              placeholder="Email                                                 optionel"
+              prefix={<MailOutlined />}
+            />
           </Form.Item>
           <div className="carsInfo">
             <h3>Car Info</h3>
@@ -72,11 +94,12 @@ const SignupDriver = () => {
             </Form.Item>
 
             <h3>Car Photos</h3>
-            <Button type="dashed" className="coloricon">+</Button>
+
+            <DropZone />
             <h3>Id</h3>
-            <Button type="dashed" className="coloricon">+</Button>
+            <DropZone />
             <h3>Driving License</h3>
-            <Button type="dashed" className="coloricon">+</Button>
+            <DropZone />
           </div>
 
           <Form.Item {...tailLayout}>
@@ -85,7 +108,10 @@ const SignupDriver = () => {
               type="primary"
               htmlType="submit"
               style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-              onClick={() => history.push("/HomeDriver")} > Add{" "}
+              onClick={() => history.push("/HomeDriver")}
+            >
+              {" "}
+              Add{" "}
             </Button>
           </Form.Item>
         </Form>
