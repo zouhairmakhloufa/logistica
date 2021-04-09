@@ -47,7 +47,7 @@ function MapInformation() {
     <div className="contentImage">
       <MapContainer
         center={source}
-        zoom={5}
+        zoom={7}
         style={{ height: "100vh" }}
         className="imageAuth"
       >
