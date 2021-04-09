@@ -28,7 +28,7 @@ const SignupVeifCode = () => {
             console.log("code", code);
             setLoading(true);
           }}
-        />{" "}
+        />
         <Form.Item>
           <Button
             className="buttonVerifCode"
@@ -41,6 +41,15 @@ const SignupVeifCode = () => {
             Continue{" "}
           </Button>
         </Form.Item>
+        <InputCode
+          length={4}
+          label="Code Label"
+          loading={loading}
+          onComplete={(code: string) => {
+            console.log("code", code);
+            setLoading(true);
+          }}
+        />{" "}
       </div>
     </div>
   );
