@@ -26,10 +26,6 @@ const MenuDriver = () => {
           onClick={() => history.push("/OrdersDriver")}> Mytrip{" "}
         </Button> <br></br> <br></br>
 
-        <CreditCardOutlined /> <Button className="ButtonMenu" type="primary" htmlType="submit"
-          onClick={() => history.push("/PaymentDriver")}> Payment{" "}
-        </Button> <br></br> <br></br>
-
         <SettingOutlined /><Button className="ButtonMenu" type="primary" htmlType="submit"
           onClick={() => history.push("/SettingDriver")}> Setting{" "}
         </Button>

@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import "./OrdersUser.scss";
+import "./OrdersDriver.scss";
 import { LeftSquareOutlined } from "@ant-design/icons";
 import { Button, Tabs, Timeline } from "antd";
 
@@ -8,7 +8,7 @@ function callback(key: any) {
   console.log(key);
 }
 
-const OrdersUser = () => {
+const OrdersDriver = () => {
   const history = useHistory();
   return (
     <div className="contentImage">
@@ -16,7 +16,7 @@ const OrdersUser = () => {
 
       <div className="auth-Menu">
         <LeftSquareOutlined
-          onClick={() => history.push("/MenuUser")}
+          onClick={() => history.push("/MenuDriver")}
           className="ClickRetourMenu"
         />
         <h2> Orders </h2>
@@ -59,4 +59,4 @@ const OrdersUser = () => {
     </div>
   );
 };
-export default OrdersUser;
+export default OrdersDriver;

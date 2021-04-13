@@ -26,6 +26,8 @@ import InfoDetailCurrent from "./user/components/InfoDetailCurrent";
 import MenuDriver from "./driver/components/MenuDriver";
 import HomeDriver from "./driver/components/HomeDriver";
 import SettingDriver from "./driver/components/SettingDriver";
+import Detaille from "./driver/components/Detaile";
+import OrdersDriver from "./driver/components/OrdersDriver";
 
 function App(): JSX.Element {
   return (
@@ -33,7 +35,8 @@ function App(): JSX.Element {
       <div className="app">
         <Route path="/" exact component={dashbord} />
         <Route path="/MenuUser" exact component={MenuUser} />
-        <Route path="/MenuDriver" exact component={MenuDriver} />
+        <Route path="/MenuDriver" exact component={MenuDriver} />          
+        <Route path="/OrdersDriver" exact component={OrdersDriver} />       
         <Route path="/Info" exact component={Info} />     
         <Route path="/InfoDetailCurrent" exact component={InfoDetailCurrent} />      
         <Route path="/OrdersUser" exact component={OrdersUser} />
@@ -55,6 +58,7 @@ function App(): JSX.Element {
         <Route path="/Service" exact component={Service} />
         <Route path="/BookingSuccessful" exact component={BookingSuccessful} />
         <Route path="/HomeDriver" exact component={HomeDriver} />
+        <Route path="/Detaille" exact component={Detaille} />
         <Route path="/NoteToDriver" exact component={NoteToDriver} />
         <Route path="/RetourRequest" exact component={RetourRequest} />
       </div>

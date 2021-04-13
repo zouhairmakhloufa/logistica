@@ -6,18 +6,18 @@ import "./TypeOfCars.scss"
 
 const data = [
   {
-    title: 'Logistica cars 1',
+    title: 'Golf',
   },
   {
-    title: 'Logistica cars 2',
+    title: 'Bmw',
   },
 ];
 const data2 = [
   {
-    title2: 'Loggistica Van 1',
+    title2: 'iveco camion',
   },
   {
-    title2: 'Loggistica Van 2',
+    title2: 'isuzu camion',
   }, 
  
 ];

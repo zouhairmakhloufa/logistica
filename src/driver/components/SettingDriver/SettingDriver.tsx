@@ -1,5 +1,5 @@
-import { Form, Input, Button } from "antd";
-import { UserOutlined, MailOutlined } from '@ant-design/icons';
+import { Form, Input, Button, Upload } from "antd";
+import { UserOutlined, MailOutlined, UploadOutlined } from '@ant-design/icons';
 import { useHistory } from "react-router-dom";
 import { LeftSquareOutlined } from "@ant-design/icons"
 import "./SettingDriver.scss";
@@ -25,7 +25,7 @@ const SettingDriver = () => {
 
   return (
     <div className="contentImage">
-      <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
+      <img src="/imageAuth/imageAuth.jpg" className="imageAuthSettingDriver" />
       <div className="signup-info-driver">
         <LeftSquareOutlined onClick={() => history.push("/MenuDriver")} className="ClickRetour" /> <h2>Profile</h2>
 
@@ -63,38 +63,36 @@ const SettingDriver = () => {
               prefix={<MailOutlined />} />
           </Form.Item>
           <div className="carsInfo">
-            <h3>Attatchment</h3>
-
-            <h3>Id photo</h3>
-            <Button type="dashed" className="coloricon">+</Button>
-            <h3>Car Photos</h3>
-            <Button type="dashed" className="coloricon">+</Button>
-            <h3>Driving License</h3>
-            <Button type="dashed" className="coloricon">+</Button>
+            <h3>Car Photo</h3>
+            <Upload>
+              <Button icon={<UploadOutlined />}>Upload</Button>
+            </Upload>
+            <h3 className="h3Text">Id</h3>
+            <Upload>
+              <Button icon={<UploadOutlined />}>Upload</Button>
+            </Upload>
+            <h3 className="h3Text">Driving License</h3>
+            <Upload>
+              <Button icon={<UploadOutlined />}>Upload</Button>
+            </Upload>
           </div>
 
           <div style={{ display: "flex" }} >
-            <h2 style={{ marginRight: "50px" }}>Account balance</h2>
+            <h2 style={{ marginRight: "50px" }} className="TextAccountBalence">Account balance</h2>
             <h4 className="TotalAmount">350 R. S.</h4>
           </div>
 
           <div style={{ display: "flex" }} >
             <h2 style={{ marginRight: "50px" }}>Payment</h2>
           </div>
-
-          <div style={{ display: "flex" }} >
-            <h2 style={{ marginRight: "50px" }}> Reviews</h2>
-          </div>
-         <div style={{ display: "flex" }} >
-            <h2 style={{ marginRight: "50px" }}>   Log out</h2>
-          </div>
+          <a href="/" className="logOut"> Log out</a>
           <Form.Item {...tailLayout}>
             <Button
-              className="button-signup-info"
+              className="button-SettingDriver"
               type="primary"
               htmlType="submit"
               style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-              onClick={() => history.push("/HomeDriver")} > Add{" "}
+              onClick={() => history.push("/HomeDriver")}> Add{" "}
             </Button>
           </Form.Item>
         </Form>
