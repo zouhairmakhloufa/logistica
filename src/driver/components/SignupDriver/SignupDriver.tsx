@@ -1,5 +1,5 @@
 import { Form, Input, Button, Upload } from "antd";
-import { UserOutlined, MailOutlined, LeftSquareOutlined, UploadOutlined } from "@ant-design/icons";
+import { UserOutlined, MailOutlined, LeftSquareOutlined, UploadOutlined,LockOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
 import "./SignupDriver.scss";
 
@@ -77,6 +77,42 @@ const SignupDriver = () => {
               placeholder="Email"
               prefix={<MailOutlined />}
             />
+          </Form.Item>
+          <Form.Item
+            name="password"
+
+            rules={[
+              {
+                required: true,
+                message: 'Please input your password!',
+              },
+            ]}
+            hasFeedback
+          >
+            <Input.Password placeholder="Enter your Password" style={{ width: "100%" }} prefix={<LockOutlined /> }/>
+          </Form.Item>
+
+          <Form.Item
+            name="confirm"
+
+            dependencies={['password']}
+            hasFeedback
+            rules={[
+              {
+                required: true,
+                message: 'Please confirm your password!',
+              },
+              ({ getFieldValue }) => ({
+                validator(_, value) {
+                  if (!value || getFieldValue('password') === value) {
+                    return Promise.resolve();
+                  }
+                  return Promise.reject(new Error('The two passwords that you entered do not match!'));
+                },
+              }),
+            ]}
+          >
+            <Input.Password placeholder="Please confirm your password!" style={{ width: "100%" }}  prefix={<LockOutlined /> }/>
           </Form.Item>
           <div className="carsInfo">
             <h3>Car Info</h3>

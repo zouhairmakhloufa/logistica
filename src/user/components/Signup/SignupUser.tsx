@@ -1,9 +1,8 @@
 import { Form, Input, Button } from "antd";
-import { UserOutlined , MailOutlined } from '@ant-design/icons';
+import { UserOutlined, MailOutlined,LockOutlined } from '@ant-design/icons';
 import { useHistory } from "react-router-dom";
 import { LeftSquareOutlined } from "@ant-design/icons"
 import "./SignupUser.scss";
-
 
 const SignupUser = () => {
   const history = useHistory();
@@ -18,10 +17,10 @@ const SignupUser = () => {
 
   return (
     <div className="contentImage">
-       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
-      <div className="auth-signup-info">
-      <LeftSquareOutlined  onClick={() => history.push("/Auth/UserOrDriver")} className="ClickRetour"/>
-
+      <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
+      <div className="signup-info-User">
+        <LeftSquareOutlined onClick={() => history.push("/Auth/UserOrDriver")} className="ClickRetour" />
+        <h2>Add Your</h2>
         <Form
           name="basic"
           initialValues={{ remember: true }}
@@ -34,8 +33,8 @@ const SignupUser = () => {
           >
             <Input placeholder="Enter your firstName" style={{ width: "70%" }} prefix={<UserOutlined />} />
           </Form.Item>
-          
-           <Form.Item
+
+          <Form.Item
             name="lastName"
             rules={[{ required: true, message: "Enter your lastName !" }]}
           >
@@ -43,18 +42,56 @@ const SignupUser = () => {
           </Form.Item>
           <Form.Item
             name="email"
+    
             rules={[
               {
-                type: "email",
-                message: "The input is not valid email!",
+                type: 'email',
+                message: 'The input is not valid E-mail!',
               },
               {
                 required: true,
-                message: "input your E-mail !",
+                message: 'Please input your E-mail!',
               },
             ]}
           >
-            <Input style={{ width: "70%" }} placeholder="Enter your Email" prefix={<MailOutlined /> } />
+            <Input placeholder="Enter your Email" style={{ width: "70%" }} prefix={<MailOutlined /> }/>
+          </Form.Item>
+
+          <Form.Item
+            name="password"
+
+            rules={[
+              {
+                required: true,
+                message: 'Please input your password!',
+              },
+            ]}
+            hasFeedback
+          >
+            <Input.Password placeholder="Enter your Password" style={{ width: "70%" }} prefix={<LockOutlined /> }/>
+          </Form.Item>
+
+          <Form.Item
+            name="confirm"
+
+            dependencies={['password']}
+            hasFeedback
+            rules={[
+              {
+                required: true,
+                message: 'Please confirm your password!',
+              },
+              ({ getFieldValue }) => ({
+                validator(_, value) {
+                  if (!value || getFieldValue('password') === value) {
+                    return Promise.resolve();
+                  }
+                  return Promise.reject(new Error('The two passwords that you entered do not match!'));
+                },
+              }),
+            ]}
+          >
+            <Input.Password placeholder="Please confirm your password!" style={{ width: "70%" }}  prefix={<LockOutlined /> }/>
           </Form.Item>
 
           <Form.Item >

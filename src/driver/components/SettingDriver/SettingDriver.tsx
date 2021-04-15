@@ -27,7 +27,11 @@ const SettingDriver = () => {
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuthSettingDriver" />
       <div className="signup-info-driver">
-        <LeftSquareOutlined onClick={() => history.push("/MenuDriver")} className="ClickRetour" /> <h2>Profile</h2>
+        <LeftSquareOutlined onClick={() => history.push("/MenuDriver")} className="ClickRetour" /> 
+         <div style={{ display: "flex" }} >
+            <h2 style={{ marginRight: "50px" }} className="TextAccountBalence">Profile</h2>
+            <h4 className="Edit">Edit</h4>
+          </div>
 
         <Form
           {...layout}
@@ -59,8 +63,7 @@ const SettingDriver = () => {
               },
             ]}
           >
-            <Input style={{ width: "100%" }} placeholder="Email"
-              prefix={<MailOutlined />} />
+            <Input style={{ width: "100%" }} placeholder="Email" prefix={<MailOutlined />} />
           </Form.Item>
           <div className="carsInfo">
             <h3>Car Photo</h3>
@@ -92,7 +95,7 @@ const SettingDriver = () => {
               type="primary"
               htmlType="submit"
               style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-              onClick={() => history.push("/HomeDriver")}> Add{" "}
+              onClick={() => history.push("/")}> Save{" "}
             </Button>
           </Form.Item>
         </Form>

@@ -15,10 +15,7 @@ const SignupVeifCode = () => {
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
       <div className="auth-signup-info">
-        <LeftSquareOutlined
-          onClick={() => history.push("/Auth/signupEmail")}
-          className="ClickRetour"
-        />
+        <LeftSquareOutlined onClick={() => history.push("/Auth/Signin")} className="ClickRetour" />
         <h1>Verif code </h1>
         <InputCode
           length={4}

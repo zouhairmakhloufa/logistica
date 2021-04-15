@@ -1,7 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Route } from "react-router-dom";
 import dashbord from "./Modules/dashbord";
-import signupEmail from "./Modules/Auth/signupEmail";
 import SignupVeifCode from "./Modules/Auth/SignupVeifCode";
 import SignupDriver from "./driver/components/SignupDriver";
 import SignupUser from "./user/components/Signup";
@@ -28,6 +27,7 @@ import HomeDriver from "./driver/components/HomeDriver";
 import SettingDriver from "./driver/components/SettingDriver";
 import Detaille from "./driver/components/Detaile";
 import OrdersDriver from "./driver/components/OrdersDriver";
+import Signin from "./Modules/Auth/Signin";
 
 function App(): JSX.Element {
   return (
@@ -46,7 +46,7 @@ function App(): JSX.Element {
         <Route path="/NotificationUser" exact component={NotificationUser} />
         <Route path="/SettingUser" exact component={SettingUser} />
         <Route path="/SettingDriver" exact component={SettingDriver} /> 
-        <Route path="/Auth/signupEmail" exact component={signupEmail} />
+        <Route path="/Auth/Signin" exact component={Signin} />
         <Route path="/Auth/SignupVeifCode" exact component={SignupVeifCode} />
         <Route path="/Auth/UserOrDriver" exact component={UserOrDriver} />
         <Route path="/Auth/UserOrDriverMenu" exact component={UserOrDriverMenu} />

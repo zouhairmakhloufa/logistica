@@ -7,7 +7,7 @@ import "./InfoDetailCurrent.scss"
 
 const data = [
   {
-    title: 'Logistica cars',
+    title: 'golf',
   },
 ];
 const InfoDetailCurrent = () => {
@@ -16,7 +16,7 @@ const InfoDetailCurrent = () => {
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuthInfo" />
       <div className="InfoBooking">
-        <LeftSquareOutlined onClick={() => history.push("/OrdersUser")} className="ClickRetour" />
+        <LeftSquareOutlined onClick={() => history.push("/OrdersDriver")} className="ClickRetour" />
 
         <div>
           <h2> Booking details</h2>
