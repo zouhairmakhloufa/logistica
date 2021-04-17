@@ -19,7 +19,7 @@ const SignupUser = () => {
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
       <div className="signup-info-User">
-        <LeftSquareOutlined onClick={() => history.push("/Auth/UserOrDriver")} className="ClickRetour" />
+        <LeftSquareOutlined onClick={() => history.push("/Auth/SignUpUserOrDriver")} className="ClickRetour" />
         <h2>Add Your</h2>
         <Form
           name="basic"

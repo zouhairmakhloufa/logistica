@@ -1,7 +1,6 @@
 import { Form, Input, Button } from 'antd';
 import { useHistory } from "react-router-dom";
 import { LeftSquareOutlined,MailOutlined,LockOutlined } from "@ant-design/icons"
-
 import "./Signin.scss"
 //  map filter forEach reduce 
 const Signin = () => {
@@ -42,7 +41,7 @@ const Signin = () => {
               },
             ]}
           >
-            <Input placeholder="Enter your Email" style={{ width: "70%" }} prefix={<MailOutlined /> }/>
+            <Input placeholder="Enter your Email" style={{ width: "80%" }} prefix={<MailOutlined /> }/>
           </Form.Item>
 
           <Form.Item
@@ -56,17 +55,17 @@ const Signin = () => {
             ]}
             hasFeedback
           >
-            <Input.Password placeholder="Enter your Password" style={{ width: "70%" }} prefix={<LockOutlined /> }/>
+            <Input.Password placeholder="Enter your Password" style={{ width: "80%" }} prefix={<LockOutlined /> }/>
           </Form.Item>
 
           <div style={{ display: "flex" }} >
             <h5 style={{ marginRight: "50px" }} className="NotYetRegister">Not yet register ?</h5>
-            <a href="/Auth/UserOrDriver" className="Signup"> Sign up</a>
+            <a href="/Auth/SignUpUserOrDriver" className="Signup"> Sign up</a>
           </div>
           <Form.Item >
             <Button className="button " type="primary" htmlType="submit"
               style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-              onClick={() => history.push("/Auth/SignupVeifCode")}> Sign in </Button>
+              onClick={() => history.push("/Auth/LoginAsUserOrDriver")}> Sign in </Button>
           </Form.Item>
         </Form>
       </div>

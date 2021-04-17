@@ -4,7 +4,6 @@ import dashbord from "./Modules/dashbord";
 import SignupVeifCode from "./Modules/Auth/SignupVeifCode";
 import SignupDriver from "./driver/components/SignupDriver";
 import SignupUser from "./user/components/Signup";
-import UserOrDriver from "./Modules/Auth/UserOrDriver";
 import MapInformation from "./Modules/Auth/mapInformation";
 import PoidsAndTaille from "./user/components/PoidsAndTaille";
 import TypeOfCars from "./user/components/TypeOfCars";
@@ -20,7 +19,6 @@ import SettingUser from "./user/components/SettingUser";
 import PaymentUser from "./user/components/PaymentUser";
 import PaymentMethode from "./user/components/PaymentMethode";
 import AddPaymentMethod from "./user/components/AddPaymentMethod";
-import UserOrDriverMenu from "./Modules/Auth/UserOrDriverMenu";
 import InfoDetailCurrent from "./user/components/InfoDetailCurrent";
 import MenuDriver from "./driver/components/MenuDriver";
 import HomeDriver from "./driver/components/HomeDriver";
@@ -28,6 +26,8 @@ import SettingDriver from "./driver/components/SettingDriver";
 import Detaille from "./driver/components/Detaile";
 import OrdersDriver from "./driver/components/OrdersDriver";
 import Signin from "./Modules/Auth/Signin";
+import LoginAsUserOrDriver from "./Modules/Auth/LoginAsUserOrDriver";
+import SignUpUserOrDriver from "./Modules/Auth/SignUpUserOrDriver";
 
 function App(): JSX.Element {
   return (
@@ -48,8 +48,8 @@ function App(): JSX.Element {
         <Route path="/SettingDriver" exact component={SettingDriver} /> 
         <Route path="/Auth/Signin" exact component={Signin} />
         <Route path="/Auth/SignupVeifCode" exact component={SignupVeifCode} />
-        <Route path="/Auth/UserOrDriver" exact component={UserOrDriver} />
-        <Route path="/Auth/UserOrDriverMenu" exact component={UserOrDriverMenu} />
+        <Route path="/Auth/LoginAsUserOrDriver" exact component={LoginAsUserOrDriver} />
+        <Route path="/Auth/SignUpUserOrDriver" exact component={SignUpUserOrDriver} />
         <Route path="/Auth/SignupUser" exact component={SignupUser} />
         <Route path="/Auth/SignupDriver" exact component={SignupDriver} />
         <Route path="/mapInformation" exact component={MapInformation} />

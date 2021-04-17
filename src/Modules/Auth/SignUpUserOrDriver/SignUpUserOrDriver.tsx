@@ -1,9 +1,9 @@
 import { Button } from 'antd';
 import { useHistory } from "react-router-dom";
 import { LeftSquareOutlined } from "@ant-design/icons"
-import "./UserOrDriverMenu.scss"
+import "./SignUpUserOrDriver.scss"
 
-const UserOrDriverMenu = () => {
+const SignUpUserOrDriver = () => {
     const history = useHistory();
 
     return (
@@ -19,13 +19,13 @@ const UserOrDriverMenu = () => {
 
                 <Button className="button" type="primary" htmlType="submit"
                     style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-                    onClick={() => history.push("/MenuUser")}>
+                    onClick={() => history.push("/Auth/SignupUser")}>
                     User
                 </Button>
                 <br></br>
                 <Button className="button" type="primary" htmlType="submit"
                     style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-                    onClick={() => history.push("/MenuDriver")}>
+                    onClick={() => history.push("/Auth/SignupDriver")}>
                     Driver
                 </Button>
 
@@ -33,4 +33,4 @@ const UserOrDriverMenu = () => {
         </div>
     )
 }
-export default UserOrDriverMenu;
+export default SignUpUserOrDriver;

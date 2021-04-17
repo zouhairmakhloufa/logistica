@@ -66,7 +66,7 @@ function MapInformation() {
 
       <div className="auth-signup-info">
         <LeftSquareOutlined
-          onClick={() => history.push("/Auth/SignupUser")}
+          onClick={() => history.push("/Auth/LoginAsUserOrDriver")}
           className="ClickRetour"
         />
 

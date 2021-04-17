@@ -52,7 +52,26 @@ const OrdersDriver = () => {
           </TabPane>
           <TabPane tab="Canceled" key="3" className="tabs">
             <br></br>
-            <h3> Adem Ragheb</h3>
+            <div>
+              <Button
+                onClick={() => history.push("/InfoDetailCurrent")}
+                style={{ background: "#d6d6d6", borderColor: "#d6d6d6" }}
+              >
+                <Timeline>
+                  <Timeline.Item color="green">
+                    6731 Al Ulaya, Al Wurud
+                  </Timeline.Item>
+                  <Timeline.Item color="green">
+                    King Khalid International Airport{" "}
+                  </Timeline.Item>
+                </Timeline>{" "}
+              </Button>
+            </div>
+            <br></br> <br></br>
+            <div style={{ display: "flex" }}>
+              <h3 style={{ marginRight: "120px" }}> 8dt</h3>
+              <h3>Mohamed Ali</h3>
+            </div>
           </TabPane>
         </Tabs>
       </div>

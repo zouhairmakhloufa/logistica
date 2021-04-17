@@ -9,9 +9,9 @@ const Navbar = () => {
       <div className="container">
         <a href="/" className="logo_Logistica" > Logistica  </a>
         <ul>
-          <a href="/">Main</a>
           <a href="/Auth/Signin">Sign-in </a>
-          <a href="Auth/UserOrDriverMenu"> Menu </a>
+          <a href="/Auth/SignUpUserOrDriver">Sign-up </a>
+          <a href=""> Contact </a>
         </ul>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import { useHistory } from "react-router-dom";
 import "./HomeDriver.scss";
-import { LeftSquareOutlined } from "@ant-design/icons";
+import { LeftSquareOutlined,MenuOutlined } from "@ant-design/icons";
 import { Timeline, Space, Card } from "antd";
 
 const HomeDriver = () => {
@@ -11,7 +11,8 @@ const HomeDriver = () => {
 
       <div className="auth-Menu">
         <LeftSquareOutlined
-          onClick={() => history.push("/MenuDriver")} className="ClickRetourMenu" />
+          onClick={() => history.push("/Auth/LoginAsUserOrDriver")} className="ClickRetourMenu" />
+        <MenuOutlined  onClick={() => history.push("/MenuDriver")} className="ClickRetourMenu"/>
         <h2> Home</h2>
 
         <div >
