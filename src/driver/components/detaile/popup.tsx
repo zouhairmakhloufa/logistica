@@ -1,7 +1,7 @@
 import { Form, Input, Button, Upload } from "antd";
 import { UserOutlined, MailOutlined, LeftSquareOutlined, UploadOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
-import "./SignupDriver.scss";
+import "./Detaille.scss";
 
 const layout = {
   labelCol: { span: 8 },

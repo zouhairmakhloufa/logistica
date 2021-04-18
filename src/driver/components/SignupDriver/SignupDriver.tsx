@@ -26,7 +26,8 @@ const SignupDriver = () => {
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuthSignupDriver" />
       <div className="signup-info-driver">
-        <LeftSquareOutlined onClick={() => history.push("/Auth/SignUpUserOrDriver")}  className="ClickRetour" />{" "}
+        <LeftSquareOutlined onClick={() => history.push("/Auth/SignUpUserOrDriver")}  
+        className="ClickRetourSignupDriver" />{" "}
         <h2>Add Your</h2>
         <Form
           {...layout}

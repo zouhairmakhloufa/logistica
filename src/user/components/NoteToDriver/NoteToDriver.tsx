@@ -8,25 +8,16 @@ const NoteToDriver = () => {
   return (
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
-      <div className="NoteToDriver">
-     
-        <LeftSquareOutlined onClick={() => history.push("/PaymentMethode")} className="ClickRetour" />  <br></br>
-      
-        <br></br>
-        <br></br>
-        <h2> Add note to driver</h2>
-        <br></br>
-        <Input placeholder="E.g I am located on the right side of" />
-        <br></br>
-        <br></br>
+      <div className="NoteToDriverAuth">
 
+        <LeftSquareOutlined onClick={() => history.push("/PaymentMethode")} className="ClickRetourNoteToDriver" />
+        <h2> Add note to driver</h2>
+
+        <Input placeholder="E.g I am located on the right side of" className="inputnotetodriver" />
         <Button className="button-NoteDriver" type="primary" htmlType="submit"
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-          onClick={() => history.push("/Info")}
-   
-        > Add{" "}
+          onClick={() => history.push("/Info")} > Add{" "}
         </Button>
-
       </div>
     </div>
   );

@@ -27,7 +27,7 @@ const TypeOfCars = () => {
   return (
     <div className="contentImage">
      <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
-      <div className="auth-signup-info">  
+      <div className="TypeOfCars">  
 
         <LeftSquareOutlined onClick={() => history.push("/PoidsAndTaille")} className="ClickRetour" />
         <h2> Type Of Cars</h2>

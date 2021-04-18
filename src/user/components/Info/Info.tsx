@@ -16,7 +16,7 @@ const Info = () => {
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuthInfoUser" />
       <div className="InfoBooking">
-        <LeftSquareOutlined onClick={() => history.push("/NoteToDriver")} className="ClickRetour" />
+        <LeftSquareOutlined onClick={() => history.push("/NoteToDriver")} className="ClickRetourInfo" />
 
         <div>
           <h2> Booking details</h2>
@@ -70,12 +70,12 @@ const Info = () => {
         </div>
         <div style={{ display: "flex" }} className="Pricing" >
           <h4 className="pricingequipe"> Cortoon Service</h4>
-          <h4>5 dt</h4>
+          <h4>3 dt</h4>
         </div>
 
         <div style={{ display: "flex" }} className="totalText">
           <h2 className="texttottalamount">Total Amount</h2>
-          <h4 className="TotalAmount20">20 dt</h4>
+          <h4 className="TotalAmount20">18 dt</h4>
         </div>
 
         <Button className="button-Info" type="primary" htmlType="submit"

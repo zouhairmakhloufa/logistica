@@ -9,7 +9,7 @@ const PoidsAndTaille = () => {
   return (
     <div className="contentImage">
       <img src="/imageDimention/dimention bagage.jpg" className="imageAuth" />
-      <div className="auth-signup-info">
+      <div className="PoidsAndTaille">
       <LeftSquareOutlined  onClick={() => history.push("/mapInformation")} className="ClickRetour"/>
 
         <h3> Enter this information about your bag </h3>

@@ -14,7 +14,7 @@ const PaymentMethode = () => {
   return (
     <div className="contentImage">
       <img src="/imagePaymentUser/PaymentUser.jpg" className="imageAuth" />
-      <div className="auth-signup-info">
+      <div className="PaymentMethode">
         <LeftSquareOutlined onClick={() => history.push("/Service")} className="ClickRetourPaymentMethode" /> 
         <h2 className="text">  Payment Methode </h2>
         <div className="MethodePayment">

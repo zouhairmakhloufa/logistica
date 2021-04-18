@@ -1,4 +1,4 @@
-import { Button, Timeline } from "antd";
+import { Button, Timeline , Popconfirm } from "antd";
 import { LeftSquareOutlined } from "@ant-design/icons"
 import { useHistory } from "react-router-dom";
 import { DollarOutlined } from "@ant-design/icons"
@@ -15,7 +15,7 @@ const Detaille = () => {
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuthInfo" />
       <div className="InfoBooking">
-        <LeftSquareOutlined onClick={() => history.push("/HomeDriver")} className="ClickRetour" />
+        <LeftSquareOutlined onClick={() => history.push("/HomeDriver")} className="ClickRetourDetaille" />
 
         <div>
           <h2>Details</h2>

@@ -18,7 +18,7 @@ const Signin = () => {
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
       <div className="auth-signup-info">
 
-        <LeftSquareOutlined onClick={() => history.push("/")} className="ClickRetour" />
+        <LeftSquareOutlined onClick={() => history.push("/")} className="ClickRetourSignin" />
         <h1>Sign-in </h1>
         <h4>Welcome back! </h4>
         <Form

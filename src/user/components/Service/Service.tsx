@@ -65,11 +65,11 @@ const Service = () => {
             <Radio value="Plastic Roll">Plastic Roll 3 dt</Radio>
           </Radio.Group>
         </div>
-
-        <div style={{ display: "flex" }}>
-          <h2 style={{ marginRight: "50px" }}>Total Amount</h2>
-          <h4 className="TotalAmount">20 dt</h4>
+        <div style={{ display: "flex" }} className="totalText">
+          <h2 className="texttottalamountService">Total Amount</h2>
+          <h4 className="TotalAmountService">18 dt</h4>
         </div>
+
         <Button
           className="button-Service"
           type="primary"

@@ -14,7 +14,7 @@ const MenuUser = () => {
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
 
       <div className="auth-Menu">
-        <LeftSquareOutlined onClick={() => history.push("/Auth/UserOrDriverMenu")} className="ClickRetourMenu" />
+        <LeftSquareOutlined onClick={() => history.push("/mapInformation")} className="ClickRetourMenu" />
         <Avatar size={90} icon={<UserOutlined />} className="iconsImageProfile" />
         <h2> Zouhair Makhloufa </h2>
         <br></br>

@@ -12,19 +12,13 @@ const BookingSuccessful = () => {
       <div className="auth-signup-info">
 
         <LeftSquareOutlined onClick={() => history.push("/Info")} className="ClickRetour" />
-        <br></br>
-        <br></br>
+        <Result status="success" title="Booking Successfull" />
 
-       <Result
-          status="success"
-          title="Booking Successfull"
-        />
         <Button className="button-Done-Successful" type="primary" htmlType="submit"
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
           onClick={() => history.push("")}
         > Done{" "}
         </Button>
-
       </div>
     </div>
   );
