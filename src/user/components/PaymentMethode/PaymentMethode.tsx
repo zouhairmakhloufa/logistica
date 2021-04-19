@@ -20,7 +20,7 @@ const PaymentMethode = () => {
         <div className="MethodePayment">
         <Radio.Group onChange={onChange} value={value}>
           <Radio value="Cache" className="Cartoon">Cache</Radio>{" "}  <br></br>
-          <Radio value="Card">Card</Radio>{" "}   
+          <Radio value="Card" defaultChecked disabled>Card</Radio>{" "}   
         </Radio.Group>
         </div>
    

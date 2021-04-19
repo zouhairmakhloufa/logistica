@@ -48,16 +48,8 @@ function Routers(): JSX.Element {
         <Route path="/SettingDriver" exact component={SettingDriver} />
         <Route path="/Auth/Signin" exact component={Signin} />
         <Route path="/Auth/SignupVeifCode" exact component={SignupVeifCode} />
-        <Route
-          path="/Auth/LoginAsUserOrDriver"
-          exact
-          component={LoginAsUserOrDriver}
-        />
-        <Route
-          path="/Auth/SignUpUserOrDriver"
-          exact
-          component={SignUpUserOrDriver}
-        />
+        <Route path="/Auth/LoginAsUserOrDriver" exact  component={LoginAsUserOrDriver} />
+        <Route path="/Auth/SignUpUserOrDriver"  exact  component={SignUpUserOrDriver} />
         <Route path="/Auth/SignupUser" exact component={SignupUser} />
         <Route path="/Auth/SignupDriver" exact component={SignupDriver} />
         <Route path="/mapInformation" exact component={MapInformation} />

@@ -67,7 +67,7 @@ function MapInformation() {
           onConfirm={chooseAdressSource}
         >
           <Button
-            className="buttonMap"
+            className="buttonMapInfo"
             type="primary"
             style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
           >
@@ -81,7 +81,7 @@ function MapInformation() {
           title={"Choose your destination address by clicking on the map "}
           onConfirm={chooseAdressDestination}
         >
-          <Button className="buttonMap" type="primary"
+          <Button className="buttonMapInfo" type="primary"
             style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
           > {" "} Choose Your Adress Destination{" "}
           </Button>

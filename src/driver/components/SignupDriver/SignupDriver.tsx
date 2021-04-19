@@ -113,30 +113,15 @@ const SignupDriver = () => {
             <Input.Password placeholder="Please confirm your password!" style={{ width: "100%" }}  prefix={<LockOutlined /> }/>
           </Form.Item>
           <div className="carsInfo">
-            <h3>Car Info</h3>
+            <h3>Type Of Car</h3>
             <Form.Item
               name="CarInfo"
               rules={[{ required: true, message: "Enter your CarInfo !" }]}
             >
-              <Input placeholder="Type Of Car" style={{ width: "100%" }} />
+              <Input placeholder="exemple Golf" style={{ width: "100%" }} />
             </Form.Item>
-
-            <h3>Car Photo</h3>
-            <Upload>
-              <Button icon={<UploadOutlined />}>Upload</Button>
-            </Upload>
-
-            <h3 className="h3Text">Id</h3>
-            <Upload>
-              <Button icon={<UploadOutlined />}>Upload</Button>
-            </Upload>
-
-            <h3 className="h3Text">Driving License</h3>
-            <Upload>
-              <Button icon={<UploadOutlined />}>Upload</Button>
-            </Upload>
-
           </div>
+          
           <Form.Item {...tailLayout}>
             <Button
               className="button-signup-info"

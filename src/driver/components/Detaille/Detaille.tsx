@@ -79,10 +79,10 @@ const Detaille = () => {
             Accept offer
           </Button>
         </Popconfirm>
+
         <Popconfirm
           title={"are you sure ?"}
-          onConfirm={() => history.push("/HomeDriver")}
-        >
+          onConfirm={() => history.push("/HomeDriver")}>
           <Button
             className="buttonMap"
             type="primary"
@@ -91,26 +91,6 @@ const Detaille = () => {
             Cancel offer
           </Button>
         </Popconfirm>
-        {/* <Button
-          className="button-Accept-Offer"
-          type="primary"
-          htmlType="submit"
-          style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-          onClick={() => history.push("/HomeDriver")}
-        >
-          {" "}
-          Accept offer
-        </Button>
-        <Button
-          className="button-cancel-Offer"
-          type="primary"
-          htmlType="submit"
-          style={{ background: "red", borderColor: "red" }}
-          onClick={() => history.push("/HomeDriver")}
-        >
-          {" "}
-          Cancel offer{" "}
-        </Button> */}
       </div>
     </div>
   );
