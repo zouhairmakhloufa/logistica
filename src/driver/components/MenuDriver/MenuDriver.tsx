@@ -3,7 +3,7 @@ import { Button } from "antd";
 import { useHistory } from "react-router-dom";
 import { Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
-import { CarOutlined, NotificationOutlined, CreditCardOutlined, SettingOutlined } from "@ant-design/icons"
+import { CarOutlined, SettingOutlined } from "@ant-design/icons"
 import "./MenuDriver.scss";
 
 const MenuDriver = () => {

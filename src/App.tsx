@@ -23,7 +23,7 @@ import InfoDetailCurrent from "./user/components/InfoDetailCurrent";
 import MenuDriver from "./driver/components/MenuDriver";
 import HomeDriver from "./driver/components/HomeDriver";
 import SettingDriver from "./driver/components/SettingDriver";
-import Detaille from "./driver/components/Detaile";
+import Detaille from "./driver/components/Detaille";
 import OrdersDriver from "./driver/components/OrdersDriver";
 import Signin from "./Modules/Auth/Signin";
 import LoginAsUserOrDriver from "./Modules/Auth/LoginAsUserOrDriver";
