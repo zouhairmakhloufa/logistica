@@ -1,22 +1,20 @@
 import { useHistory } from "react-router-dom";
-import { SearchOutlined } from "@ant-design/icons"
+import { HomeOutlined,MailOutlined } from "@ant-design/icons"
+import "./Navbar2.scss"
 
-
-const Navbar = () => {
+const Navbar2 = () => {
   const history = useHistory();
   return (
     <div className="navbar">
       <div className="container">
         <a href="/" className="logo_Logistica" > Logistica  </a>
         <ul>
-          <a href="/">Home </a>
-          <a href="/Auth/Signin">Sign-in </a>
-          <a href="/Auth/SignUpUserOrDriver">Sign-up </a>
-          <a href="/Contact"> Contact </a>
+          <a href="/"> <HomeOutlined />  </a>
+          <a href="/Contact"><MailOutlined /> </a>
         </ul>
       </div>
     </div>
   )
 }
-export default Navbar;
+export default Navbar2;
 

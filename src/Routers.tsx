@@ -1,9 +1,8 @@
 import "./App.css";
 import { BrowserRouter, Route } from "react-router-dom";
 import dashbord from "./Modules/dashbord";
-import SignupVeifCode from "./Modules/Auth/SignupVeifCode";
 import SignupDriver from "./driver/components/SignupDriver";
-import SignupUser from "./user/components/Signup";
+import SignupUser from "./user/components/SignupUser";
 import MapInformation from "./Modules/Auth/mapInformation";
 import PoidsAndTaille from "./user/components/PoidsAndTaille";
 import TypeOfCars from "./user/components/TypeOfCars";
@@ -47,7 +46,6 @@ function Routers(): JSX.Element {
         <Route path="/SettingUser" exact component={SettingUser} />
         <Route path="/SettingDriver" exact component={SettingDriver} />
         <Route path="/Auth/Signin" exact component={Signin} />
-        <Route path="/Auth/SignupVeifCode" exact component={SignupVeifCode} />
         <Route path="/Auth/LoginAsUserOrDriver" exact  component={LoginAsUserOrDriver} />
         <Route path="/Auth/SignUpUserOrDriver"  exact  component={SignUpUserOrDriver} />
         <Route path="/Auth/SignupUser" exact component={SignupUser} />

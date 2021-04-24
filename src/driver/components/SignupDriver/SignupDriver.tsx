@@ -121,7 +121,10 @@ const SignupDriver = () => {
               <Input placeholder="exemple Golf" style={{ width: "100%" }} />
             </Form.Item>
           </div>
-          
+          <div style={{ display: "flex" }} >
+            <h5 style={{ marginRight: "50px" }} className="Already-have-an-account-Login">Already have an account ?</h5>
+            <a href="/Auth/Signin" className="Signup"> Sign-in here</a>
+          </div>
           <Form.Item {...tailLayout}>
             <Button
               className="button-signup-info"

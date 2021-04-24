@@ -93,7 +93,10 @@ const SignupUser = () => {
           >
             <Input.Password placeholder="Please confirm your password!" style={{ width: "70%" }}  prefix={<LockOutlined /> }/>
           </Form.Item>
-
+          <div style={{ display: "flex" }} >
+            <h5 style={{ marginRight: "50px" }} className="Already-have-an-account-Login">Already have an account ?</h5>
+            <a href="/Auth/Signin" className="Signup"> Sign-in here</a>
+          </div>
           <Form.Item >
             <Button
               className="button-signup-User"
