@@ -1,6 +1,6 @@
 .leaflet-container {
   position: initial;
-  height: 150px;
+  height: 105px;
     width: 1000px;
   }
   .contentImage{
@@ -9,15 +9,20 @@
     justify-content: center;
     height: 100vh;
   }
-  .auth-signup-info{
+  .Auth-Signup-Info{
     width: 40%;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    padding-top: 6%;
+    padding-top: 2%;
     padding-bottom: 20%;
-    padding-left: 7%;
+    padding-left: 1%;
     padding-right: 4%;
+  }
+  .select{
+    background-color:#6CC417;
+    color: white;
+    border-radius: 9px;
   }
   .buttonMapInfo{
     width: 80%;

@@ -3,9 +3,12 @@ import "leaflet/dist/leaflet.css";
 import "./mapInformation.scss";
 import DraggableMarker from "./DraggableMarker";
 import { useState } from "react";
-import { Popconfirm, Button } from "antd";
+import { Popconfirm, Button , Input} from "antd";
 import { useHistory } from "react-router-dom";
-import { LeftSquareOutlined,MenuOutlined } from "@ant-design/icons";
+import { LeftSquareOutlined, MenuOutlined } from "@ant-design/icons";
+import { Select } from 'antd';
+
+const { Option } = Select;
 
 function MapInformation() {
   const history = useHistory();
@@ -46,7 +49,7 @@ function MapInformation() {
 
   return (
     <div className="contentImage">
-      <MapContainer center={source} zoom={7} style={{ height: "100vh" }} className="imageAuth" >
+      <MapContainer center={source} zoom={7} style={{ height: "105vh" }} className="imageAuth" >
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
@@ -57,8 +60,8 @@ function MapInformation() {
 
       </MapContainer>
 
-      <div className="auth-signup-info">
-      <LeftSquareOutlined
+      <div className="Auth-Signup-Info">
+        <LeftSquareOutlined
           onClick={() => history.push("/Auth/LoginAsUserOrDriver")} className="ClickRetourMenu" />
         <MenuOutlined onClick={() => history.push("/MenuUser")} className="troisLigneMenuMap" />
         <h1>Pick me up From </h1>
@@ -69,24 +72,87 @@ function MapInformation() {
           <Button
             className="buttonMapInfo"
             type="primary"
-            style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
+            style={{ background: "#79BAEC", borderColor: "#79BAEC	" }}
           >
             {" "}
             Choose Your Adress Source{" "}
           </Button>
         </Popconfirm>
+
+        <h3> Choose Your Governorate  </h3>
+        <Select defaultValue="Monastir" style={{ width: 120 }} bordered={false} className="select">
+          <Option value="Tunis">Tunis</Option>
+          <Option value="Ariana">	Ariana</Option>
+          <Option value="Béja">Béja</Option>
+          <Option value="Ben Arous">Ben Arous</Option>
+          <Option value="Bizerte">Bizerte</Option>
+          <Option value="Gabès">Gabès</Option>
+          <Option value="Gafsa">	Gafsa</Option>
+          <Option value="Jendouba">Jendouba</Option>
+          <Option value="Kairouan">Kairouan</Option>
+          <Option value="Kasserine">	Kasserine</Option>
+          <Option value="Kébili">Kébili</Option>
+          <Option value="Kef">Kef</Option>
+          <Option value="Mahdia">Mahdia</Option>
+          <Option value="Manouba">Manouba</Option>
+          <Option value="Médenine">Médenine</Option>
+          <Option value="Monastir">Monastir</Option>
+          <Option value="Nabeul">Nabeul</Option>
+          <Option value="Sfax">Sfax</Option>
+          <Option value="Sidi Bouzid">Sidi Bouzid</Option>
+          <Option value="Siliana">Siliana</Option>
+          <Option value="Sousse">Sousse</Option>
+          <Option value="Tataouine">Tataouine</Option>
+          <Option value="Tozeur">Tozeur</Option>
+          <Option value="Zaghouan">Zaghouan</Option>
+        </Select>
         <br></br>
         <br></br>
+        <h3> Enter Your Accreditation and Adress  </h3>
+        <Input placeholder="Rue de la Corniche, Hammamet" />
+
         <Popconfirm
           title={"Choose your destination address by clicking on the map "}
           onConfirm={chooseAdressDestination}
         >
           <Button className="buttonMapInfo" type="primary"
-            style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
+            style={{ background: "#79BAEC", borderColor: "#79BAEC" }}
           > {" "} Choose Your Adress Destination{" "}
           </Button>
         </Popconfirm>
+
         <br></br> <br></br>
+        <h3> Choose Your Governorate  </h3>
+        <Select defaultValue="Monastir" style={{ width: 120 }} bordered={false} className="select">
+          <Option value="Tunis">Tunis</Option>
+          <Option value="Ariana">	Ariana</Option>
+          <Option value="Béja">Béja</Option>
+          <Option value="Ben Arous">Ben Arous</Option>
+          <Option value="Bizerte">Bizerte</Option>
+          <Option value="Gabès">Gabès</Option>
+          <Option value="Gafsa">	Gafsa</Option>
+          <Option value="Jendouba">Jendouba</Option>
+          <Option value="Kairouan">Kairouan</Option>
+          <Option value="Kasserine">	Kasserine</Option>
+          <Option value="Kébili">Kébili</Option>
+          <Option value="Kef">Kef</Option>
+          <Option value="Mahdia">Mahdia</Option>
+          <Option value="Manouba">Manouba</Option>
+          <Option value="Médenine">Médenine</Option>
+          <Option value="Monastir">Monastir</Option>
+          <Option value="Nabeul">Nabeul</Option>
+          <Option value="Sfax">Sfax</Option>
+          <Option value="Sidi Bouzid">Sidi Bouzid</Option>
+          <Option value="Siliana">Siliana</Option>
+          <Option value="Sousse">Sousse</Option>
+          <Option value="Tataouine">Tataouine</Option>
+          <Option value="Tozeur">Tozeur</Option>
+          <Option value="Zaghouan">Zaghouan</Option>
+        </Select>
+        <br></br>
+        <br></br>
+        <h3> Enter Your Accreditation and Adress  </h3>
+        <Input placeholder="Rue de la Corniche, Hammamet" />
         <Button
           className="buttonRoute"
           type="primary"
