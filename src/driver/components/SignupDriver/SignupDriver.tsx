@@ -22,14 +22,12 @@ const SignupDriver = () => {
   const [ConfirmPassword, setConfirmPassword] = useState("");
   const [TypeOfCars, setTypeOfCars] = useState("");
 
-
   const onSubmit = async (event: any) => {
     event.preventDefault();
     const registered = { FirstName, LastName, Email, Password, ConfirmPassword };
     const user = await axios.post(
-      "http://localhost:5000/User/Ajouter",
-      registered
-    );
+      "http://localhost:5000/User/ajouter", registered);
+
     setFirstName("");
     setLastName("");
     setEmail("");
@@ -68,8 +66,7 @@ const SignupDriver = () => {
               value={FirstName}
             />
           </Form.Item>
-          <Form.Item
-            name="lastName"
+          <Form.Item name="lastName"
             rules={[{ required: true, message: "Enter your lastName !" }]}
           >
             <Input

@@ -18,7 +18,7 @@ const SignupUser = () => {
     event.preventDefault();
     const registered = { FirstName, LastName, Email, Password, ConfirmPassword };
     const user = await axios.post(
-      "http://localhost:5000/User/Ajouter",
+      "http://localhost:5000/User/ajouter",
       registered
     );
     setFirstName("");
