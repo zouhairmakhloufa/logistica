@@ -8,15 +8,15 @@ import "./SignupUser.scss";
 
 const SignupUser = () => {
   const history = useHistory();
-  const [FirstName, setFirstName] = useState("");
-  const [LastName, setLastName] = useState("");
-  const [Email, setEmail] = useState("");
-  const [Password, setPassword] = useState("");
-  const [ConfirmPassword, setConfirmPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const onSubmit = async (event: any) => {
     event.preventDefault();
-    const registered = { FirstName, LastName, Email, Password, ConfirmPassword };
+    const registered = { firstName, lastName, email, password, confirmPassword };
     const user = await axios.post(
       "http://localhost:5000/User/ajouter",
       registered
@@ -50,7 +50,7 @@ const SignupUser = () => {
              style={{ width: "70%" }} 
              prefix={<UserOutlined />} 
              onChange={(event) => setFirstName(event.target.value)}
-             value={FirstName}
+             value={firstName}
              />
           </Form.Item>
 
@@ -60,7 +60,7 @@ const SignupUser = () => {
             style={{ width: "70%" }} 
             prefix={<UserOutlined />} 
             onChange={(event) => setLastName(event.target.value)}
-            value={LastName}
+            value={lastName}
             />
           </Form.Item>
           <Form.Item
@@ -73,7 +73,7 @@ const SignupUser = () => {
             style={{ width: "70%" }} 
             prefix={<MailOutlined /> }
             onChange={(event) => setEmail(event.target.value)}
-            value={Email}
+            value={email}
             />
           </Form.Item>
 
@@ -87,7 +87,7 @@ const SignupUser = () => {
             style={{ width: "70%" }} 
             prefix={<LockOutlined /> }
             onChange={(event) => setPassword(event.target.value)}
-            value={Password}
+            value={password}
             />
           </Form.Item>
 
@@ -108,7 +108,7 @@ const SignupUser = () => {
             style={{ width: "70%" }}  
             prefix={<LockOutlined /> }
             onChange={(event) => setConfirmPassword(event.target.value)}
-            value={ConfirmPassword}
+            value={confirmPassword}
             />
           </Form.Item>
           <div style={{ display: "flex" }} >
