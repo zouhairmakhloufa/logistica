@@ -1,39 +1,42 @@
-import { Form, Input, Button } from "antd";
-import { UserOutlined, MailOutlined, LeftSquareOutlined, LockOutlined } from "@ant-design/icons";
-import { useHistory } from "react-router-dom";
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { Form, Input, Button } from "antd";
+import { UserOutlined, MailOutlined, LockOutlined } from "@ant-design/icons";
+import { LeftSquareOutlined } from "@ant-design/icons";
 import axios from "axios";
 import "./SignupDriver.scss";
 
-const layout = {
-  labelCol: { span: 8 },
-  wrapperCol: { span: 16 },
-};
-const tailLayout = {
-  wrapperCol: { offset: 8, span: 16 },
-};
-
 const SignupDriver = () => {
   const history = useHistory();
-  const [FirstName, setFirstName] = useState("");
-  const [LastName, setLastName] = useState("");
-  const [Email, setEmail] = useState("");
-  const [Password, setPassword] = useState("");
-  const [ConfirmPassword, setConfirmPassword] = useState("");
+  
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [TypeOfCars, setTypeOfCars] = useState("");
 
-  const onSubmit = async (event: any) => {
-    event.preventDefault();
-    const registered = { FirstName, LastName, Email, Password, ConfirmPassword };
-    const user = await axios.post(
-      "http://localhost:5000/User/ajouter", registered);
 
+  const onSubmit = async (event: any) => {
+    const registered = {
+      firstName,
+      lastName,
+      email,
+      password,
+      confirmPassword,
+      TypeOfCars
+    };
+    const user = await axios.post(
+      "http://localhost:5000/User/ajouter",
+      registered
+    );
     setFirstName("");
     setLastName("");
     setEmail("");
     setPassword("");
     setConfirmPassword("");
     setTypeOfCars("");
+    history.push("/mapInformation");
   };
 
   const onFinishFailed = (errorInfo: any) => {
@@ -42,13 +45,14 @@ const SignupDriver = () => {
 
   return (
     <div className="contentImage">
-      <img src="/imageAuth/imageAuth.jpg" className="imageAuthSignupDriver" />
-      <div className="signup-info-driver">
-        <LeftSquareOutlined onClick={() => history.push("/Auth/SignUpUserOrDriver")}
-          className="ClickRetourSignupDriver" />{" "}
+      <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
+      <div className="signup-info-User">
+        <LeftSquareOutlined
+          onClick={() => history.push("/Auth/SignupDriverOrDriver")}
+          className="ClickRetour"
+        />
         <h2>Add Your</h2>
         <Form
-          {...layout}
           name="basic"
           initialValues={{ remember: true }}
           onFinish={onSubmit}
@@ -59,94 +63,83 @@ const SignupDriver = () => {
             rules={[{ required: true, message: "Enter your firstName !" }]}
           >
             <Input
-              placeholder="FirstName"
-              style={{ width: "100%" }}
+              placeholder="Enter your firstName"
+              style={{ width: "70%" }}
               prefix={<UserOutlined />}
               onChange={(event) => setFirstName(event.target.value)}
-              value={FirstName}
+              value={firstName}
             />
           </Form.Item>
-          <Form.Item name="lastName"
+
+          <Form.Item
+            name="lastName"
             rules={[{ required: true, message: "Enter your lastName !" }]}
           >
             <Input
-              placeholder="LastName"
-              style={{ width: "100%" }}
+              placeholder="Enter your lastName"
+              style={{ width: "70%" }}
               prefix={<UserOutlined />}
               onChange={(event) => setLastName(event.target.value)}
-              value={LastName}
+              value={lastName}
             />
           </Form.Item>
-
           <Form.Item
             name="email"
             rules={[
-              {
-                type: "email",
-                message: "The input is not valid email!",
-              },
-              {
-                required: true,
-                message: "input your E-mail !",
-              },
+              { type: "email", message: "The input is not valid E-mail!" },
+              { required: true, message: "Please input your E-mail!" },
             ]}
           >
             <Input
-              style={{ width: "100%" }}
-              placeholder="Email"
+              placeholder="Enter your Email"
+              style={{ width: "70%" }}
               prefix={<MailOutlined />}
               onChange={(event) => setEmail(event.target.value)}
-              value={Email}
+              value={email}
             />
           </Form.Item>
+
           <Form.Item
             name="password"
-
-            rules={[
-              {
-                required: true,
-                message: 'Please input your password!',
-              },
-            ]}
+            rules={[{ required: true, message: "Please input your password!" }]}
             hasFeedback
           >
             <Input.Password
               placeholder="Enter your Password"
-              style={{ width: "100%" }}
+              style={{ width: "70%" }}
               prefix={<LockOutlined />}
               onChange={(event) => setPassword(event.target.value)}
-              value={Password}
+              value={password}
             />
           </Form.Item>
 
           <Form.Item
             name="confirm"
-
-            dependencies={['password']}
+            dependencies={["password"]}
             hasFeedback
             rules={[
-              {
-                required: true,
-                message: 'Please confirm your password!',
-              },
+              { required: true, message: "Please confirm your password!" },
               ({ getFieldValue }) => ({
                 validator(_, value) {
-                  if (!value || getFieldValue('password') === value) {
+                  if (!value || getFieldValue("password") === value) {
                     return Promise.resolve();
                   }
-                  return Promise.reject(new Error('The two passwords that you entered do not match!'));
+                  return Promise.reject(
+                    new Error(
+                      "The two passwords that you entered do not match!"
+                    )
+                  );
                 },
               }),
             ]}
           >
             <Input.Password
               placeholder="Please confirm your password!"
-              style={{ width: "100%" }}
+              style={{ width: "70%" }}
               prefix={<LockOutlined />}
               onChange={(event) => setConfirmPassword(event.target.value)}
-              value={ConfirmPassword}
+              value={confirmPassword}
             />
-
           </Form.Item>
           <div className="carsInfo">
             <h3>Type Of Car</h3>
@@ -162,20 +155,27 @@ const SignupDriver = () => {
 
             </Form.Item>
           </div>
-          <div style={{ display: "flex" }} >
-            <h5 style={{ marginRight: "50px" }} className="Already-have-an-account-Login">Already have an account ?</h5>
-            <a href="/Auth/Signin" className="Signup"> Sign-in here</a>
+          <div style={{ display: "flex" }}>
+            <h5
+              style={{ marginRight: "50px" }}
+              className="Already-have-an-account-Login"
+            >
+              Already have an account ?
+            </h5>
+            <a href="/Auth/Signin" className="Signup">
+              {" "}
+              Sign-in here
+            </a>
           </div>
-          <Form.Item {...tailLayout}>
+          <Form.Item>
             <Button
-              className="button-signup-info"
+              className="button-signup-User"
               type="primary"
               htmlType="submit"
               style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-              onClick={() => history.push("/HomeDriver")}
-              value="Submit" >
-              {" "}
-              Add{" "}
+              value="Submit"
+            >
+              Add
             </Button>
           </Form.Item>
         </Form>
