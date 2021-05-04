@@ -18,6 +18,7 @@
     "mini-create-react-context": "^0.4.1",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
+    "react-alert": "^7.0.2",
     "react-dom": "^17.0.1",
     "react-dropzone": "^11.3.2",
     "react-leaflet": "^3.1.0",
