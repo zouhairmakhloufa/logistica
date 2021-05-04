@@ -1,6 +1,10 @@
 import { Form, Input, Button } from "antd";
 import { useHistory } from "react-router-dom";
-import { LeftSquareOutlined, MailOutlined, LockOutlined, } from "@ant-design/icons";
+import {
+  LeftSquareOutlined,
+  MailOutlined,
+  LockOutlined,
+} from "@ant-design/icons";
 import axios from "axios";
 import "./Signin.scss";
 
@@ -8,12 +12,21 @@ const Signin = () => {
   const history = useHistory();
 
   const onFinish = async (values: any) => {
-    const user = await axios.post("http://localhost:5000/User/login", {
+    const result = await axios.post("http://localhost:5000/User/login", {
       email: values.email,
       password: values.password,
     });
-    console.log("user", user);
-    history.push("/Auth/LoginAsUserOrDriver");
+    console.log("user", result);
+    localStorage.setItem("token", result.data.token);
+    localStorage.setItem("token", result.data.user.role);
+    if (result.data.user.role === "driver") {
+      // url driver
+      window.location.replace("/HomeDriver");
+    } else {
+      // url user
+
+      window.location.replace("/mapInformation");
+    }
   };
 
   const onFinishFailed = (errorInfo: any) => {
@@ -38,10 +51,11 @@ const Signin = () => {
         >
           <Form.Item
             name="email"
-            rules={[{ type: "email", message: "The input is not valid E-mail!",  },
-            { required: true, message: "Please input your E-mail!",  }, ]}   >
-
-
+            rules={[
+              { type: "email", message: "The input is not valid E-mail!" },
+              { required: true, message: "Please input your E-mail!" },
+            ]}
+          >
             <Input
               placeholder="Enter your Email"
               style={{ width: "80%" }}
@@ -51,15 +65,15 @@ const Signin = () => {
 
           <Form.Item
             name="password"
-            rules={[ { required: true,  message: "Please input your password!",  }, ]} hasFeedback >
-
+            rules={[{ required: true, message: "Please input your password!" }]}
+            hasFeedback
+          >
             <Input.Password
               placeholder="Enter your Password"
               style={{ width: "80%" }}
               prefix={<LockOutlined />}
             />
           </Form.Item>
-
 
           <div style={{ display: "flex" }}>
             <h5 style={{ marginRight: "50px" }} className="NotYetRegister">
@@ -76,7 +90,10 @@ const Signin = () => {
               type="primary"
               htmlType="submit"
               style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-              value="Submit" >  Sign in
+              value="Submit"
+            >
+              {" "}
+              Sign in
             </Button>
           </Form.Item>
         </Form>

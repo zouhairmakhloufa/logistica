@@ -2,16 +2,18 @@ import { MapContainer, TileLayer, Polyline } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./mapInformation.scss";
 import DraggableMarker from "./DraggableMarker";
-import { useState } from "react";
-import { Popconfirm, Button , Input} from "antd";
+import { useState, useContext } from "react";
+import { Popconfirm, Button, Input } from "antd";
 import { useHistory } from "react-router-dom";
 import { LeftSquareOutlined, MenuOutlined } from "@ant-design/icons";
-import { Select } from 'antd';
-
+import { Select } from "antd";
+import BookinContext from "../../../context/booking";
 const { Option } = Select;
 
 function MapInformation() {
   const history = useHistory();
+  const { setVille, setAddres, ville }: any = useContext(BookinContext);
+  console.log("ville", ville);
 
   const [isClicked, setIsClicked] = useState(false);
   const [source, setSource] = useState({
@@ -30,7 +32,8 @@ function MapInformation() {
   };
   const chooseAdressDestination = () => {
     setDestination({
-      ...destination, showMarker: true,
+      ...destination,
+      showMarker: true,
     });
   };
 
@@ -49,21 +52,33 @@ function MapInformation() {
 
   return (
     <div className="contentImage">
-      <MapContainer center={source} zoom={7} style={{ height: "105vh" }} className="imageAuth" >
+      <MapContainer
+        center={source}
+        zoom={7}
+        style={{ height: "105vh" }}
+        className="imageAuth"
+      >
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
 
-        {isClicked && (<Polyline positions={[source, destination]} color={"red"} />)}
+        {isClicked && (
+          <Polyline positions={[source, destination]} color={"red"} />
+        )}
         {buttonAdressSource}
         {buttonAdressDestination}
-
       </MapContainer>
 
       <div className="Auth-Signup-Info">
         <LeftSquareOutlined
-          onClick={() => history.push("/Auth/LoginAsUserOrDriver")} className="ClickRetourMenu" />
-        <MenuOutlined onClick={() => history.push("/MenuUser")} className="troisLigneMenuMap" />
+          onClick={() => history.push("/Auth/LoginAsUserOrDriver")}
+          className="ClickRetourMenu"
+        />
+        <MenuOutlined
+          onClick={() => history.push("/MenuUser")}
+          className="troisLigneMenuMap"
+        />
         <h1>Pick me up From </h1>
         <Popconfirm
           title={"Choose your source address by clicking on the map"}
@@ -78,19 +93,24 @@ function MapInformation() {
             Choose Your Adress Source{" "}
           </Button>
         </Popconfirm>
-
-        <h3> Choose Your Governorate  </h3>
-        <Select defaultValue="Monastir" style={{ width: 120 }} bordered={false} className="select">
+        <h3> Choose Your Governorate </h3>
+        <Select
+          defaultValue="Monastir"
+          style={{ width: 120 }}
+          bordered={false}
+          className="select"
+          onChange={setVille}
+        >
           <Option value="Tunis">Tunis</Option>
-          <Option value="Ariana">	Ariana</Option>
+          <Option value="Ariana"> Ariana</Option>
           <Option value="Béja">Béja</Option>
           <Option value="Ben Arous">Ben Arous</Option>
           <Option value="Bizerte">Bizerte</Option>
           <Option value="Gabès">Gabès</Option>
-          <Option value="Gafsa">	Gafsa</Option>
+          <Option value="Gafsa"> Gafsa</Option>
           <Option value="Jendouba">Jendouba</Option>
           <Option value="Kairouan">Kairouan</Option>
-          <Option value="Kasserine">	Kasserine</Option>
+          <Option value="Kasserine"> Kasserine</Option>
           <Option value="Kébili">Kébili</Option>
           <Option value="Kef">Kef</Option>
           <Option value="Mahdia">Mahdia</Option>
@@ -108,32 +128,39 @@ function MapInformation() {
         </Select>
         <br></br>
         <br></br>
-        <h3> Enter Your Accreditation and Adress  </h3>
+        <h3> Enter Your Accreditation and Adress </h3>
         <Input placeholder="Rue de la Corniche, Hammamet" />
-
         <Popconfirm
           title={"Choose your destination address by clicking on the map "}
           onConfirm={chooseAdressDestination}
         >
-          <Button className="buttonMapInfo" type="primary"
+          <Button
+            className="buttonMapInfo"
+            type="primary"
             style={{ background: "#79BAEC", borderColor: "#79BAEC" }}
-          > {" "} Choose Your Adress Destination{" "}
+          >
+            {" "}
+            Choose Your Adress Destination{" "}
           </Button>
         </Popconfirm>
-
         <br></br> <br></br>
-        <h3> Choose Your Governorate  </h3>
-        <Select defaultValue="Monastir" style={{ width: 120 }} bordered={false} className="select">
+        <h3> Choose Your Governorate </h3>
+        <Select
+          defaultValue="Monastir"
+          style={{ width: 120 }}
+          bordered={false}
+          className="select"
+        >
           <Option value="Tunis">Tunis</Option>
-          <Option value="Ariana">	Ariana</Option>
+          <Option value="Ariana"> Ariana</Option>
           <Option value="Béja">Béja</Option>
           <Option value="Ben Arous">Ben Arous</Option>
           <Option value="Bizerte">Bizerte</Option>
           <Option value="Gabès">Gabès</Option>
-          <Option value="Gafsa">	Gafsa</Option>
+          <Option value="Gafsa"> Gafsa</Option>
           <Option value="Jendouba">Jendouba</Option>
           <Option value="Kairouan">Kairouan</Option>
-          <Option value="Kasserine">	Kasserine</Option>
+          <Option value="Kasserine"> Kasserine</Option>
           <Option value="Kébili">Kébili</Option>
           <Option value="Kef">Kef</Option>
           <Option value="Mahdia">Mahdia</Option>
@@ -151,7 +178,7 @@ function MapInformation() {
         </Select>
         <br></br>
         <br></br>
-        <h3> Enter Your Accreditation and Adress  </h3>
+        <h3> Enter Your Accreditation and Adress </h3>
         <Input placeholder="Rue de la Corniche, Hammamet" />
         <Button
           className="buttonRoute"
@@ -160,7 +187,10 @@ function MapInformation() {
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
           onClick={() => {
             setIsClicked(true);
-          }} > Route
+          }}
+        >
+          {" "}
+          Route
         </Button>
         <br></br>
         <Button
@@ -168,10 +198,11 @@ function MapInformation() {
           type="primary"
           htmlType="submit"
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-          onClick={() => history.push("/PoidsAndTaille")}> Next  {" "}
+          onClick={() => history.push("/PoidsAndTaille")}
+        >
+          {" "}
+          Next{" "}
         </Button>
-
-
       </div>
     </div>
   );
