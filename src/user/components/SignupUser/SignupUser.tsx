@@ -1,37 +1,29 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button, Alert } from "antd";
 import { UserOutlined, MailOutlined, LockOutlined } from "@ant-design/icons";
 import { LeftSquareOutlined } from "@ant-design/icons";
 import axios from "axios";
 import "./SignupUser.scss";
 
 const SignupUser = () => {
-  const [firstName, setFirstName] = useState("");
   const history = useHistory();
+  const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const onSubmit = async (event: any) => {
-    const registered = {
-      firstName,
-      lastName,
-      email,
-      password,
-      confirmPassword,
-    };
-    const user = await axios.post(
-      "http://localhost:5000/User/ajouter",
-      registered
-    );
+    const registered = { firstName, lastName, email, password, confirmPassword, };
+    const user = await axios.post("http://localhost:5000/User/ajouter", registered);
     setFirstName("");
     setLastName("");
     setEmail("");
     setPassword("");
     setConfirmPassword("");
     history.push("/mapInformation");
+    <Alert message="Success Tips" type="success" showIcon />
   };
 
   const onFinishFailed = (errorInfo: any) => {
