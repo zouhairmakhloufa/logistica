@@ -16,7 +16,8 @@ const SignupUser = () => {
 
   const onSubmit = async (event: any) => {
     const registered = { firstName, lastName, email, password, confirmPassword, };
-    const user = await axios.post("http://localhost:5000/User/ajouter", registered);
+    const user = await axios.post(
+      "http://localhost:5000/User/ajouter", registered);
     setFirstName("");
     setLastName("");
     setEmail("");

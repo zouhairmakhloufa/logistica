@@ -8,7 +8,6 @@ import "./SignupDriver.scss";
 
 const SignupDriver = () => {
   const history = useHistory();
-  
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -16,20 +15,9 @@ const SignupDriver = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [TypeOfCars, setTypeOfCars] = useState("");
 
-
   const onSubmit = async (event: any) => {
-    const registered = {
-      firstName,
-      lastName,
-      email,
-      password,
-      confirmPassword,
-      TypeOfCars
-    };
-    const user = await axios.post(
-      "http://localhost:5000/User/ajouter",
-      registered
-    );
+    const registered = { firstName, lastName, email, password,  confirmPassword, TypeOfCars };
+    const user = await axios.post( "http://localhost:5000/User/ajouter", registered );
     setFirstName("");
     setLastName("");
     setEmail("");
@@ -63,7 +51,7 @@ const SignupDriver = () => {
             rules={[{ required: true, message: "Enter your firstName !" }]}
           >
             <Input
-              placeholder="Enter your firstName"
+              placeholder="Enter your FirstName"
               style={{ width: "70%" }}
               prefix={<UserOutlined />}
               onChange={(event) => setFirstName(event.target.value)}
@@ -73,10 +61,10 @@ const SignupDriver = () => {
 
           <Form.Item
             name="lastName"
-            rules={[{ required: true, message: "Enter your lastName !" }]}
+            rules={[{ required: true, message: "Enter Your lastName !" }]}
           >
             <Input
-              placeholder="Enter your lastName"
+              placeholder="Enter Your lastName"
               style={{ width: "70%" }}
               prefix={<UserOutlined />}
               onChange={(event) => setLastName(event.target.value)}
@@ -91,7 +79,7 @@ const SignupDriver = () => {
             ]}
           >
             <Input
-              placeholder="Enter your Email"
+              placeholder="Enter Your Email"
               style={{ width: "70%" }}
               prefix={<MailOutlined />}
               onChange={(event) => setEmail(event.target.value)}
@@ -105,7 +93,7 @@ const SignupDriver = () => {
             hasFeedback
           >
             <Input.Password
-              placeholder="Enter your Password"
+              placeholder="Enter Your Password"
               style={{ width: "70%" }}
               prefix={<LockOutlined />}
               onChange={(event) => setPassword(event.target.value)}
@@ -118,7 +106,7 @@ const SignupDriver = () => {
             dependencies={["password"]}
             hasFeedback
             rules={[
-              { required: true, message: "Please confirm your password!" },
+              { required: true, message: "Please Confirm Your Password!" },
               ({ getFieldValue }) => ({
                 validator(_, value) {
                   if (!value || getFieldValue("password") === value) {
