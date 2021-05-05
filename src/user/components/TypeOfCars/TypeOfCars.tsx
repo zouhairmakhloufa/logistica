@@ -1,28 +1,25 @@
 import { Button } from "antd";
 import { LeftSquareOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
+import { useContext } from "react";
 import { List, Avatar } from "antd";
+import BookinContext from "../../../context/booking";
 import "./TypeOfCars.scss";
 
 const data = [
-  {
-    title: "Golf",
-  },
-  {
-    title: "Bmw",
-  },
+  { title1: "Golf", },
+  { title1: "Bmw", },
 ];
 const data2 = [
-  {
-    title2: "iveco camion",
-  },
-  {
-    title2: "isuzu camion",
-  },
+  { title2: "iveco camion", },
+  { title2: "isuzu camion", },
 ];
 
 const TypeOfCars = () => {
   const history = useHistory();
+  const { setTypeOfCar, TypeOfCars, }: any = useContext(BookinContext);
+  console.log("Type Of Cars : ", TypeOfCars);
+
   return (
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
@@ -33,6 +30,7 @@ const TypeOfCars = () => {
         />
         <h2> Type Of Cars</h2>
         <div className="ListCars">
+
           <List
             itemLayout="horizontal"
             dataSource={data}
@@ -40,12 +38,14 @@ const TypeOfCars = () => {
               <List.Item>
                 <List.Item.Meta
                   avatar={<Avatar src="/imageTypeOfCars/CarsPNG.jpg" />}
-                  title={<a>{item.title}</a>}
+                  title={<a onClick={() => { setTypeOfCar(item.title1) }} > {item.title1} </a>}
                   description=" 1-1000 Kg"
+
                 />
               </List.Item>
             )}
           />
+
           <List
             itemLayout="horizontal"
             dataSource={data2}
@@ -53,15 +53,7 @@ const TypeOfCars = () => {
               <List.Item>
                 <List.Item.Meta
                   avatar={<Avatar src="/imageTypeOfCars/Cars2PNG.jpg" />}
-                  title={
-                    <a
-                      onClick={() => {
-                        // setTypeOfCar(item.title2)
-                      }}
-                    >
-                      {item.title2}
-                    </a>
-                  }
+                  title={<a onClick={() => { setTypeOfCar(item.title2) }}> {item.title2} </a>}
                   description=" 1-2000 Kg"
                 />
               </List.Item>

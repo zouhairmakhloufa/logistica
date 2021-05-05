@@ -3,17 +3,29 @@ import "leaflet/dist/leaflet.css";
 import "./mapInformation.scss";
 import DraggableMarker from "./DraggableMarker";
 import { useState, useContext } from "react";
-import { Popconfirm, Button, Input } from "antd";
+import { Popconfirm, Button, Input,Select } from "antd";
 import { useHistory } from "react-router-dom";
 import { LeftSquareOutlined, MenuOutlined } from "@ant-design/icons";
-import { Select } from "antd";
 import BookinContext from "../../../context/booking";
 const { Option } = Select;
 
 function MapInformation() {
   const history = useHistory();
-  const { setVille, setAddres, ville }: any = useContext(BookinContext);
-  console.log("ville", ville);
+  const {
+    setGovernorateAddressSource,
+    setAddresSource,
+    setGovernorateAddressDestination,
+    setAddressDestination,
+
+    governorateAddressSource,
+    addresSource,
+    governorateAddressDestination,
+    addressDestination
+}: any = useContext(BookinContext);
+  console.log("governorate Address Source :", governorateAddressSource);
+  console.log("addres Source : ", addresSource);
+  console.log("governorate Address destinataire : ", governorateAddressDestination);
+  console.log("addres destinataire : ", addressDestination);
 
   const [isClicked, setIsClicked] = useState(false);
   const [source, setSource] = useState({
@@ -96,10 +108,11 @@ function MapInformation() {
         <h3> Choose Your Governorate </h3>
         <Select
           defaultValue="Monastir"
+        
           style={{ width: 120 }}
           bordered={false}
           className="select"
-          onChange={setVille}
+          onChange={setGovernorateAddressSource}
         >
           <Option value="Tunis">Tunis</Option>
           <Option value="Ariana"> Ariana</Option>
@@ -129,7 +142,8 @@ function MapInformation() {
         <br></br>
         <br></br>
         <h3> Enter Your Accreditation and Adress </h3>
-        <Input placeholder="Rue de la Corniche, Hammamet" />
+        <Input placeholder="Rue de la Corniche, Hammamet" 
+         onChange={event => setAddresSource(event.target.value)}/>
         <Popconfirm
           title={"Choose your destination address by clicking on the map "}
           onConfirm={chooseAdressDestination}
@@ -150,6 +164,7 @@ function MapInformation() {
           style={{ width: 120 }}
           bordered={false}
           className="select"
+          onChange={setGovernorateAddressDestination}
         >
           <Option value="Tunis">Tunis</Option>
           <Option value="Ariana"> Ariana</Option>
@@ -179,7 +194,8 @@ function MapInformation() {
         <br></br>
         <br></br>
         <h3> Enter Your Accreditation and Adress </h3>
-        <Input placeholder="Rue de la Corniche, Hammamet" />
+        <Input placeholder="Rue de la Corniche, Hammamet" 
+          onChange={event => setAddressDestination(event.target.value)}/>
         <Button
           className="buttonRoute"
           type="primary"

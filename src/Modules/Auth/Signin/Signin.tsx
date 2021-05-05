@@ -19,14 +19,8 @@ const Signin = () => {
     console.log("user", result);
     localStorage.setItem("token", result.data.token);
     localStorage.setItem("token", result.data.user.role);
-    if (result.data.user.role === "driver") {
-      // url driver
-      window.location.replace("/HomeDriver");
-    } else {
-      // url user
-
-      window.location.replace("/mapInformation");
-    }
+    if (result.data.user.role === "driver") { window.location.replace("/HomeDriver");}
+     else { window.location.replace("/mapInformation"); }
   };
 
   const onFinishFailed = (errorInfo: any) => {

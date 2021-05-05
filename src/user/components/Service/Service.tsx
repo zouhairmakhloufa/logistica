@@ -1,70 +1,51 @@
-import { useState } from "react";
-import { Button, Checkbox, Radio } from "antd";
+import { useContext } from "react";
+import { Button,Select } from "antd";
 import { LeftSquareOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
+import BookinContext from "../../../context/booking";
 import "./Service.scss";
+const { Option } = Select;
 
 const Service = () => {
   const history = useHistory();
-  const [value, setValue] = useState("Cartoon");
-
-  const onChange = (e: any) => {
-    setValue(e.target.value);
-  };
+  const { setService, setPackaging, service, packaging}: any = useContext(BookinContext);
+  console.log("service  :", service);
+  console.log("packaging :", packaging);
 
   return (
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
       <div className="Service">
-        <LeftSquareOutlined
-          onClick={() => history.push("/TypeOfCars")}
-          className="ClickRetour"
-        />
+        <LeftSquareOutlined onClick={() => history.push("/TypeOfCars")} className="CickRetourService" />
 
         <h2 className="TitleService"> Service</h2>
-
-        <div style={{ display: "flex" }} className="Delivery">
-          <Checkbox defaultChecked disabled>
-            <div style={{ display: "flex" }}>
-              <p style={{ marginRight: "50px" }} className="aaa">
-                Delivery
-              </p>
-              <h4 className="aaa">5 dt</h4>
-            </div>
-          </Checkbox>
-
-          <Checkbox defaultChecked disabled>
-            <div style={{ display: "flex" }}>
-              <p style={{ marginRight: "50px" }} className="aaa">
-                Boarding
-              </p>
-              <h4 className="aaa">5 dt</h4>
-            </div>
-          </Checkbox>
-        </div>
-
-        <Checkbox>
-          <div style={{ display: "flex" }}>
-            <p style={{ marginRight: "50px" }} className="aaa">
-              Shipping
-            </p>
-            <h4 className="bbb">5 dt</h4>
-          </div>
-        </Checkbox>
-
-        <h2> Packaging</h2>
         <div>
-          <Radio.Group
-            style={{ display: "grid" }}
-            onChange={onChange}
-            value={value}
+          <Select
+            defaultValue="Shipping "
+            style={{ width: 140 , height: 35 }}
+            bordered={false}
+            className="SelectPaymentMethode"
+            onChange={setService}
           >
-            <Radio value="Cartoon" className="Cartoon">
-              Cartoon 3 dt
-            </Radio>
-            <Radio value="Plastic Roll">Plastic Roll 3 dt</Radio>
-          </Radio.Group>
-        </div>
+            <Option value="Shipping 5 dt" > Shipping 5 dt</Option>
+            <Option value="Delivery 5 dt" disabled > Delivery 5 dt</Option>
+            <Option value="Boarding 5 dt" disabled > Boarding 5 dt</Option>
+          </Select>
+          </div>
+        <h2 className="TitleService"> Packaging</h2>
+        <div>
+          <Select
+            defaultValue="Cartoon"
+            style={{ width: 140 , height: 35 }}
+            bordered={false}
+            className="SelectPaymentMethode"
+            onChange={setPackaging}
+          >
+            <Option value="Cartoon 3 dt" > Cartoon 3 dt</Option>
+            <Option value="Plastic Roll 3 dt" > Plastic Roll 3 dt</Option>
+          </Select>
+          </div>
+
         <div style={{ display: "flex" }} className="totalText">
           <h2 className="texttottalamountService">Total Amount</h2>
           <h4 className="TotalAmountService">18 dt</h4>

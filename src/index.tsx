@@ -7,14 +7,25 @@ import { BookingProvider } from "./context/booking";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BookingProvider ville="" addres="">
+    <BookingProvider
+      governorateAddressSource=""
+      addresSource=""
+      governorateAddressDestination=""
+      addressDestination=""
+      poids="0"
+      hauteur="0"
+      largeur="0"
+      profondeur="0"
+      TypeOfCars=""
+      service=""
+      packaging=""
+      PaymentMethode=""
+      noteToDriver=""
+    >
       <App />
     </BookingProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
