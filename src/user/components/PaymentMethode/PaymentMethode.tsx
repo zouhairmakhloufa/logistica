@@ -1,6 +1,6 @@
 import { useHistory } from "react-router-dom";
-import { LeftSquareOutlined } from "@ant-design/icons"
-import { Button, Select, Form } from 'antd';
+import { LeftSquareOutlined } from "@ant-design/icons";
+import { Button, Select, Form } from "antd";
 import { useContext } from "react";
 import BookinContext from "../../../context/booking";
 import "./PaymentMethode.scss";
@@ -10,14 +10,10 @@ const { Option } = Select;
 const PaymentMethode = () => {
   const history = useHistory();
 
-  const { setPaymentMethode, paymentMethode, }: any = useContext(BookinContext);
+  const { setPaymentMethode, paymentMethode }: any = useContext(BookinContext);
   console.log("Payment Methode :", paymentMethode);
 
   const onSubmit = async (event: any) => {
-    const registered = { paymentMethode };
-    const user = await axios.post(
-      "http://localhost:5000/Booking/booking", registered);
-    setPaymentMethode("");
     history.push("/NoteToDriver");
   };
 
@@ -25,8 +21,11 @@ const PaymentMethode = () => {
     <div className="contentImage">
       <img src="/imagePaymentUser/PaymentUser.jpg" className="imageAuth" />
       <div className="PaymentMethode">
-        <LeftSquareOutlined onClick={() => history.push("/Service")} className="ClickRetourPaymentMethode" />
-        <h2 className="text">  Payment Methode </h2>
+        <LeftSquareOutlined
+          onClick={() => history.push("/Service")}
+          className="ClickRetourPaymentMethode"
+        />
+        <h2 className="text"> Payment Methode </h2>
 
         <div className="MethodePayment">
           <Form
@@ -35,7 +34,7 @@ const PaymentMethode = () => {
             onFinish={onSubmit}
           >
             <div>
-            <Select
+              <Select
                 defaultValue="cache"
                 style={{ width: 120 }}
                 bordered={false}
@@ -44,19 +43,23 @@ const PaymentMethode = () => {
               >
                 <Option value="Cache">Cache</Option>
                 <Option value="salurt">salurt</Option>
-                <Option value="Carte" disabled > Carte</Option>
+                <Option value="Carte" disabled>
+                  {" "}
+                  Carte
+                </Option>
               </Select>
             </div>
-            
+
             <Button
               className="buttonPaymentMethode"
               type="primary"
               htmlType="submit"
               style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
               value="Submit"
-            >  Next{" "}
+            >
+              {" "}
+              Next{" "}
             </Button>
-
           </Form>
         </div>
       </div>

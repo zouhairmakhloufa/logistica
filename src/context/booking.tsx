@@ -5,66 +5,67 @@ const BookingContext = createContext({
   addresSource: "",
   governorateAddressDestination: "",
   addressDestination: "",
-  poids:"",
-  hauteur:"",
-  largeur:"",
-  profondeur:"",
-  TypeOfCars:"",
+  poids: "",
+  hauteur: "",
+  largeur: "",
+  profondeur: "",
+  TypeOfCars: "",
   service: "",
   packaging: "",
-  paymentMethode:"",
-  noteToDriver:"",
+  paymentMethode: "",
+  noteToDriver: "",
 });
 
-export const BookingProvider = ({
-  children,
-  governorateAddressSource,
-  addresSource,
-  governorateAddressDestination,
-  addressDestination,
-  poids,
-  hauteur,
-  largeur,
-  profondeur,
-  TypeOfCars,
-  service,
-  packaging,
-  paymentMethode,
-  noteToDriver
-}: any): JSX.Element => {
-
+export const BookingProvider = ({ children }: any): JSX.Element => {
   const initialState = {
-    governorateAddressSource,
-    addresSource,
-    governorateAddressDestination,
-    addressDestination,
-    poids,
-    hauteur,
-    largeur,
-    profondeur,
-    service,
-    packaging,
-    paymentMethode,
-    noteToDriver,
-
+    governorateAddressSource: "",
+    addresSource: "",
+    governorateAddressDestination: "",
+    addressDestination: "",
+    poids: "",
+    hauteur: "",
+    largeur: "",
+    profondeur: "",
+    typeOfCars: "",
+    service: "",
+    packaging: "",
+    paymentMethode: "",
+    noteToDriver: "",
+    driverId: "",
   };
 
-  const [state, setState] = useState(initialState);
+  const [state, setState] = useState({});
 
-  const setGovernorateAddressSource = (governorateAddressSource: string): void => setState({ ...state, governorateAddressSource });
-  const setAddresSource = (addresSource: String): void => setState({ ...state, addresSource });
-  const setGovernorateAddressDestination= (governorateAddressDestination: String): void => setState({ ...state, governorateAddressDestination });
-  const setAddressDestination = (addressDestination: String): void => setState({ ...state, addressDestination });
-  const setPoids = (poids: Number): void => setState({ ...state, poids });
-  const setHauteur = (hauteur: Number): void => setState({ ...state, hauteur });
-  const setLargeur = (largeur: Number): void => setState({ ...state, largeur });
-  const setProfondeur = (profondeur: Number): void => setState({ ...state, profondeur });
-  const setNoteToDriver = (noteToDriver: String): void => setState({ ...state, noteToDriver });
-  const setService = (service: String): void => setState({ ...state, service });
-  const setPackaging = (packaging: String): void => setState({ ...state, packaging });
-  const setPaymentMethode = (paymentMethode: boolean): void => setState({ ...state, paymentMethode });
+  const setGovernorateAddressSource = (
+    governorateAddressSource: string
+  ): void => setState({ ...state, governorateAddressSource });
+  const setAddresSource = (addresSource: string): void =>
+    setState({ ...state, addresSource });
+  const setGovernorateAddressDestination = (
+    governorateAddressDestination: string
+  ): void => setState({ ...state, governorateAddressDestination });
+  const setAddressDestination = (addressDestination: string): void =>
+    setState({ ...state, addressDestination });
+  const setPoids = (poids: string): void => setState({ ...state, poids });
+  const setHauteur = (hauteur: string): void => setState({ ...state, hauteur });
+  const setLargeur = (largeur: string): void => setState({ ...state, largeur });
+  const setProfondeur = (profondeur: string): void =>
+    setState({ ...state, profondeur });
+  const setNoteToDriver = (noteToDriver: string): void =>
+    setState({ ...state, noteToDriver });
+  const setService = (service: string): void => setState({ ...state, service });
+  const setPackaging = (packaging: string): void =>
+    setState({ ...state, packaging });
+  const setPaymentMethode = (paymentMethode: string): void =>
+    setState({ ...state, paymentMethode });
+  const setTypeOfCar = (typeOfCars: string): void =>
+    setState({ ...state, typeOfCars });
 
-  const updatedInitialState: any = { ...state,
+  const setDriverId = (driverId: string): void =>
+    setState({ ...state, driverId });
+
+  const updatedInitialState: any = {
+    ...state,
     setGovernorateAddressSource,
     setAddresSource,
     setGovernorateAddressDestination,
@@ -76,7 +77,9 @@ export const BookingProvider = ({
     setService,
     setPackaging,
     setNoteToDriver,
-    setPaymentMethode
+    setPaymentMethode,
+    setTypeOfCar,
+    setDriverId,
   };
 
   return (

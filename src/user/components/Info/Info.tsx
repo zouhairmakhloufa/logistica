@@ -1,28 +1,53 @@
 import { Button, Timeline } from "antd";
-import { LeftSquareOutlined } from "@ant-design/icons"
+import axios from "axios";
+import { LeftSquareOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
-import { List, Avatar } from 'antd';
-import { DollarOutlined } from "@ant-design/icons"
-import "./Info.scss"
+import { useContext } from "react";
+import { List, Avatar } from "antd";
+import { DollarOutlined } from "@ant-design/icons";
+import BookinContext from "../../../context/booking";
+
+import "./Info.scss";
 
 const data = [
   {
-    title: 'Logistica cars',
+    title: "Logistica cars",
   },
 ];
 const Info = () => {
   const history = useHistory();
+  const {
+    governorateAddressSource,
+    addresSource,
+    governorateAddressDestination,
+    addressDestination,
+    poids,
+    hauteur,
+    largeur,
+    profondeur,
+    typeOfCars,
+    service,
+    packaging,
+    driverId,
+    noteToDriver,
+  }: any = useContext(BookinContext);
+
   return (
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuthInfoUser" />
       <div className="InfoBooking">
-        <LeftSquareOutlined onClick={() => history.push("/NoteToDriver")} className="ClickRetourInfo" />
+        <LeftSquareOutlined
+          onClick={() => history.push("/NoteToDriver")}
+          className="ClickRetourInfo"
+        />
 
         <div>
           <h2> Booking details</h2>
           <Timeline className="timelineinfo">
             <Timeline.Item color="green">6731 Al Ulaya, Al Wurud</Timeline.Item>
-            <Timeline.Item color="green">King Khalid International Airport </Timeline.Item>
+            <Timeline.Item color="green">
+              King Khalid International Airport{" "}
+            </Timeline.Item>
           </Timeline>
         </div>
 
@@ -31,7 +56,7 @@ const Info = () => {
           <List
             itemLayout="horizontal"
             dataSource={data}
-            renderItem={item => (
+            renderItem={(item) => (
               <List.Item>
                 <List.Item.Meta
                   avatar={<Avatar src="/imageTypeOfCars/CarsPNG.jpg" />}
@@ -45,30 +70,32 @@ const Info = () => {
 
         <div className="paymentMethode">
           <h2 className="TextPaymentMethode"> Payment Methode</h2>
-          <DollarOutlined style={{ fontSize: '22px', color: '#08c' }} /> <Button className="ButtonCach" type="primary" htmlType="submit"
-            > Cach{" "}
+          <DollarOutlined style={{ fontSize: "22px", color: "#08c" }} />{" "}
+          <Button className="ButtonCach" type="primary" htmlType="submit">
+            {" "}
+            Cach{" "}
           </Button>
         </div>
 
         <div className="noteToDriver">
-          <h2 > Note To Driver</h2>
-          <h4>E.g I am located on the right side of</h4>
+          <h2> Note To Driver</h2>
+          <h4>{noteToDriver}</h4>
         </div>
 
         <h2> Pricing</h2>
-        <div style={{ display: "flex" }} className="Pricing" >
+        <div style={{ display: "flex" }} className="Pricing">
           <h4 className="pricingDeliveryequipe"> Delivery Service</h4>
           <h4>5 dt</h4>
         </div>
-        <div style={{ display: "flex" }} className="Pricing" >
+        <div style={{ display: "flex" }} className="Pricing">
           <h4 className="pricingBoardingequipe"> Boarding Service</h4>
           <h4>5 dt</h4>
         </div>
-        <div style={{ display: "flex" }} className="Pricing" >
+        <div style={{ display: "flex" }} className="Pricing">
           <h4 className="pricingShippingequipe"> Shipping Service</h4>
           <h4>5 dt</h4>
         </div>
-        <div style={{ display: "flex" }} className="Pricing" >
+        <div style={{ display: "flex" }} className="Pricing">
           <h4 className="pricingequipe"> Cortoon Service</h4>
           <h4>3 dt</h4>
         </div>
@@ -78,11 +105,38 @@ const Info = () => {
           <h4 className="TotalAmount20">18 dt</h4>
         </div>
 
-        <Button className="button-Info" type="primary" htmlType="submit"
+        <Button
+          className="button-Info"
+          type="primary"
+          htmlType="submit"
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-          onClick={() => history.push("/BookingSuccessful")}> Book Now{" "}
+          onClick={async () => {
+            const user = await axios.post(
+              "http://localhost:5000/Booking/booking",
+              {
+                governorateAddressSource,
+                addresSource,
+                governorateAddressDestination,
+                addressDestination,
+                poids,
+                hauteur,
+                largeur,
+                profondeur,
+                typeOfCars,
+                service,
+                packaging,
+                paymentMethode: "cache",
+                noteToDriver,
+                driverId,
+                userId: localStorage.getItem("token"),
+              }
+            );
+            history.push("/BookingSuccessful");
+          }}
+        >
+          {" "}
+          Book Now{" "}
         </Button>
-
       </div>
     </div>
   );

@@ -22,26 +22,17 @@ function MapInformation() {
     governorateAddressSource,
     addresSource,
     governorateAddressDestination,
-    addressDestination
+    addressDestination,
   }: any = useContext(BookinContext);
   console.log("governorate Address Source :", governorateAddressSource);
   console.log("addres Source : ", addresSource);
-  console.log("governorate Address destinataire : ", governorateAddressDestination);
+  console.log(
+    "governorate Address destinataire : ",
+    governorateAddressDestination
+  );
   console.log("addres destinataire : ", addressDestination);
 
   const onSubmit = async (event: any) => {
-    const registered = {
-      governorateAddressSource,
-      addresSource,
-      governorateAddressDestination,
-      addressDestination,
-    };
-    const user = await axios.post(
-      "http://localhost:5000/Booking/booking", registered);
-    setGovernorateAddressSource("");
-    setAddresSource("");
-    setGovernorateAddressDestination("");
-    setAddressDestination("");
     history.push("/PoidsAndTaille");
   };
 
@@ -100,8 +91,14 @@ function MapInformation() {
       </MapContainer>
 
       <div className="Auth-Signup-Info">
-        <LeftSquareOutlined onClick={() => history.push("/Auth/LoginAsUserOrDriver")} className="ClickRetourMenu" />
-        <MenuOutlined onClick={() => history.push("/MenuUser")} className="troisLigneMenuMap" />
+        <LeftSquareOutlined
+          onClick={() => history.push("/Auth/LoginAsUserOrDriver")}
+          className="ClickRetourMenu"
+        />
+        <MenuOutlined
+          onClick={() => history.push("/MenuUser")}
+          className="troisLigneMenuMap"
+        />
         <h1>Pick me up From </h1>
         <Popconfirm
           title={"Choose your source address by clicking on the map"}
@@ -157,8 +154,10 @@ function MapInformation() {
           <br></br>
           <br></br>
           <h3> Enter Your Accreditation and Adress </h3>
-          <Input placeholder="Rue de la Corniche, Hammamet"
-            onChange={event => setAddresSource(event.target.value)} />
+          <Input
+            placeholder="Rue de la Corniche, Hammamet"
+            onChange={(event) => setAddresSource(event.target.value)}
+          />
           <Popconfirm
             title={"Choose your destination address by clicking on the map "}
             onConfirm={chooseAdressDestination}
@@ -169,7 +168,7 @@ function MapInformation() {
               style={{ background: "#79BAEC", borderColor: "#79BAEC" }}
             >
               {" "}
-            Choose Your Adress Destination{" "}
+              Choose Your Adress Destination{" "}
             </Button>
           </Popconfirm>
           <br></br> <br></br>
@@ -209,8 +208,10 @@ function MapInformation() {
           <br></br>
           <br></br>
           <h3> Enter Your Accreditation and Adress </h3>
-          <Input placeholder="Rue de la Corniche, Hammamet"
-            onChange={event => setAddressDestination(event.target.value)} />
+          <Input
+            placeholder="Rue de la Corniche, Hammamet"
+            onChange={(event) => setAddressDestination(event.target.value)}
+          />
           <Button
             className="buttonRoute"
             type="primary"
@@ -221,18 +222,17 @@ function MapInformation() {
             }}
           >
             {" "}
-          Route
-        </Button>
+            Route
+          </Button>
           <br></br>
           <Button
             className="buttonNext"
             type="primary"
-            htmlType="submit"
             style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-            value="Submit"
+            onClick={() => history.push("/PoidsAndTaille")}
           >
             {" "}
-          Next{" "}
+            Next{" "}
           </Button>
         </Form>
       </div>

@@ -1,24 +1,31 @@
 import { Button } from "antd";
+import axios from "axios";
 import { LeftSquareOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { List, Avatar } from "antd";
 import BookinContext from "../../../context/booking";
 import "./TypeOfCars.scss";
 
-const data = [
-  { title1: "Golf", },
-  { title1: "Bmw", },
-];
-const data2 = [
-  { title2: "iveco camion", },
-  { title2: "isuzu camion", },
-];
+const data = [{ title1: "Golf" }, { title1: "Bmw" }];
+const data2 = [{ title2: "iveco camion" }, { title2: "isuzu camion" }];
 
 const TypeOfCars = () => {
   const history = useHistory();
-  const { setTypeOfCar, TypeOfCars, }: any = useContext(BookinContext);
-  console.log("Type Of Cars : ", TypeOfCars);
+  const [cars, setCars] = useState([]);
+  const { setTypeOfCar, setDriverId, typeOfCars }: any = useContext(
+    BookinContext
+  );
+
+  useEffect(() => {
+    const fetchCars = async () => {
+      const result = await axios.get("http://localhost:5000/car/cars");
+      setCars(result.data.cars);
+    };
+    fetchCars();
+  }, []);
+  console.log("Type Of Cars : ", typeOfCars);
+  console.log(" Of Cars : ", cars);
 
   return (
     <div className="contentImage">
@@ -28,33 +35,26 @@ const TypeOfCars = () => {
           onClick={() => history.push("/PoidsAndTaille")}
           className="ClickRetour"
         />
-        <h2> Type Of Cars</h2>
+        <h2> Type Of Cars: {typeOfCars}</h2>
         <div className="ListCars">
-
           <List
             itemLayout="horizontal"
-            dataSource={data}
-            renderItem={(item) => (
+            dataSource={cars}
+            renderItem={(item: any) => (
               <List.Item>
                 <List.Item.Meta
                   avatar={<Avatar src="/imageTypeOfCars/CarsPNG.jpg" />}
-                  title={<a onClick={() => { setTypeOfCar(item.title1) }} > {item.title1} </a>}
+                  title={
+                    <a
+                      onClick={() => {
+                        setTypeOfCar(item._id);
+                        setDriverId(item.driverId);
+                      }}
+                    >
+                      {item.name}
+                    </a>
+                  }
                   description=" 1-1000 Kg"
-
-                />
-              </List.Item>
-            )}
-          />
-
-          <List
-            itemLayout="horizontal"
-            dataSource={data2}
-            renderItem={(item) => (
-              <List.Item>
-                <List.Item.Meta
-                  avatar={<Avatar src="/imageTypeOfCars/Cars2PNG.jpg" />}
-                  title={<a onClick={() => { setTypeOfCar(item.title2) }}> {item.title2} </a>}
-                  description=" 1-2000 Kg"
                 />
               </List.Item>
             )}

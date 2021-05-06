@@ -15,15 +15,24 @@ const SignupUser = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const onSubmit = async (event: any) => {
-    const registered = { firstName, lastName, email, password, confirmPassword, };
+    const registered = {
+      firstName,
+      lastName,
+      email,
+      password,
+      confirmPassword,
+      type: "user",
+    };
     const user = await axios.post(
-      "http://localhost:5000/User/ajouter", registered);
+      "http://localhost:5000/User/ajouter",
+      registered
+    );
     setFirstName("");
     setLastName("");
     setEmail("");
     setPassword("");
     setConfirmPassword("");
-    history.push("/mapInformation");
+    history.push("/Auth/Signin");
   };
 
   const onFinishFailed = (errorInfo: any) => {

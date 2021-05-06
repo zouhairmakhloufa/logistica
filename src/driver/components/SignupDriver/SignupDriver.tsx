@@ -16,15 +16,26 @@ const SignupDriver = () => {
   const [TypeOfCars, setTypeOfCars] = useState("");
 
   const onSubmit = async (event: any) => {
-    const registered = { firstName, lastName, email, password,  confirmPassword, TypeOfCars };
-    const user = await axios.post( "http://localhost:5000/User/ajouter", registered );
+    const registered = {
+      firstName,
+      lastName,
+      email,
+      password,
+      confirmPassword,
+      TypeOfCars,
+      type: "driver",
+    };
+    const user = await axios.post(
+      "http://localhost:5000/User/ajouter",
+      registered
+    );
     setFirstName("");
     setLastName("");
     setEmail("");
     setPassword("");
     setConfirmPassword("");
     setTypeOfCars("");
-    history.push("/mapInformation");
+    history.push("/Auth/Signin");
   };
 
   const onFinishFailed = (errorInfo: any) => {
@@ -139,8 +150,8 @@ const SignupDriver = () => {
                 placeholder="exemple Golf"
                 style={{ width: "100%" }}
                 onChange={(event) => setTypeOfCars(event.target.value)}
-                value={TypeOfCars} />
-
+                value={TypeOfCars}
+              />
             </Form.Item>
           </div>
           <div style={{ display: "flex" }}>
