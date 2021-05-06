@@ -42,7 +42,6 @@ export const BookingProvider = ({
     hauteur,
     largeur,
     profondeur,
-    TypeOfCars,
     service,
     packaging,
     paymentMethode,
@@ -64,7 +63,6 @@ export const BookingProvider = ({
   const setService = (service: String): void => setState({ ...state, service });
   const setPackaging = (packaging: String): void => setState({ ...state, packaging });
   const setPaymentMethode = (paymentMethode: boolean): void => setState({ ...state, paymentMethode });
-  const setTypeOfCars = (TypeOfCars: String): void => setState({ ...state, TypeOfCars });
 
   const updatedInitialState: any = { ...state,
     setGovernorateAddressSource,
@@ -75,7 +73,6 @@ export const BookingProvider = ({
     setHauteur,
     setLargeur,
     setProfondeur,
-    setTypeOfCars,
     setService,
     setPackaging,
     setNoteToDriver,

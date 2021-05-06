@@ -1,10 +1,6 @@
 import { Form, Input, Button } from "antd";
 import { useHistory } from "react-router-dom";
-import {
-  LeftSquareOutlined,
-  MailOutlined,
-  LockOutlined,
-} from "@ant-design/icons";
+import {LeftSquareOutlined,MailOutlined,LockOutlined,} from "@ant-design/icons";
 import axios from "axios";
 import "./Signin.scss";
 

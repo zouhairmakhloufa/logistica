@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useContext } from "react";
 import { LeftSquareOutlined } from "@ant-design/icons"
 import BookinContext from "../../../context/booking";
+import axios from "axios";
 import "./PoidsAndTaille.scss";
 
 const PoidsAndTaille = () => {
@@ -23,6 +24,20 @@ const PoidsAndTaille = () => {
   console.log("largeur :", largeur);
   console.log("profondeur : ", profondeur);
 
+  const onSubmit = async (event: any) => {
+    const registered = { 
+      poids,
+      hauteur, 
+      largeur, 
+      profondeur, };
+    const user = await axios.post(
+      "http://localhost:5000/Booking/booking", registered);
+      setPoids("");
+      setHauteur("");
+      setLargeur("");
+      setProfondeur("");
+    history.push("/TypeOfCars");
+  };
   return (
     <div className="contentImage">
       <img src="/imageDimention/dimention bagage.jpg" className="imageAuth" />
@@ -33,6 +48,11 @@ const PoidsAndTaille = () => {
         <br></br>
         <br></br>
         <div className="DimensionAndPois">
+        <Form
+          name="basic"
+          initialValues={{ remember: true }}
+          onFinish={onSubmit}
+        >
           <Form.Item label="Poids (en Kg):" className="input2k">
             <InputNumber min={1} max={2000} placeholder="max 2000" style={{ width: "40%" }}
               onChange={setPoids}
@@ -53,14 +73,14 @@ const PoidsAndTaille = () => {
             <InputNumber min={1} max={2000} placeholder="max 2000" style={{ width: "45%" }}
             onChange={setProfondeur} />
           </Form.Item>
-        </div>
+   
 
         <Button className="button-Next-poids" type="primary" htmlType="submit"
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-          onClick={() => history.push("/TypeOfCars")}
-
         > Next{" "}
         </Button>
+        </Form>
+        </div>
       </div>
     </div>
   );

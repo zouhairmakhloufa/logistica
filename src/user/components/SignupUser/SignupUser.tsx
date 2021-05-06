@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Form, Input, Button, Alert } from "antd";
+import { Form, Input, Button } from "antd";
 import { UserOutlined, MailOutlined, LockOutlined } from "@ant-design/icons";
 import { LeftSquareOutlined } from "@ant-design/icons";
 import axios from "axios";
@@ -24,7 +24,6 @@ const SignupUser = () => {
     setPassword("");
     setConfirmPassword("");
     history.push("/mapInformation");
-    <Alert message="Success Tips" type="success" showIcon />
   };
 
   const onFinishFailed = (errorInfo: any) => {

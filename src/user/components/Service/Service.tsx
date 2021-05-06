@@ -1,17 +1,30 @@
 import { useContext } from "react";
-import { Button,Select } from "antd";
+import { Button,Select,Form } from "antd";
 import { LeftSquareOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
 import BookinContext from "../../../context/booking";
+import axios from "axios";
 import "./Service.scss";
 const { Option } = Select;
 
 const Service = () => {
   const history = useHistory();
+
   const { setService, setPackaging, service, packaging}: any = useContext(BookinContext);
   console.log("service  :", service);
   console.log("packaging :", packaging);
 
+  const onSubmit = async (event: any) => {
+    const registered = { 
+      service,
+      packaging, 
+   };
+    const user = await axios.post(
+      "http://localhost:5000/Booking/booking", registered);
+      setService("");
+      setPackaging("");
+    history.push("/PaymentMethode");
+  };
   return (
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
@@ -19,7 +32,11 @@ const Service = () => {
         <LeftSquareOutlined onClick={() => history.push("/TypeOfCars")} className="CickRetourService" />
 
         <h2 className="TitleService"> Service</h2>
-        <div>
+        <Form
+          name="basic"
+          initialValues={{ remember: true }}
+          onFinish={onSubmit}
+        >
           <Select
             defaultValue="Shipping "
             style={{ width: 140 , height: 35 }}
@@ -31,7 +48,7 @@ const Service = () => {
             <Option value="Delivery 5 dt" disabled > Delivery 5 dt</Option>
             <Option value="Boarding 5 dt" disabled > Boarding 5 dt</Option>
           </Select>
-          </div>
+        
         <h2 className="TitleService"> Packaging</h2>
         <div>
           <Select
@@ -56,10 +73,10 @@ const Service = () => {
           type="primary"
           htmlType="submit"
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-          onClick={() => history.push("/PaymentMethode")}
-        >
-          Continue{" "}
+          value="Submit"
+        > Continue{" "}
         </Button>
+        </Form>
       </div>
     </div>
   );
