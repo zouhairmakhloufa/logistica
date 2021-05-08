@@ -3,7 +3,6 @@ import { useContext } from "react";
 import { LeftSquareOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
 import BookinContext from "../../../context/booking";
-import axios from "axios";
 import "./NoteToDriver.scss";
 
 const NoteToDriver = () => {

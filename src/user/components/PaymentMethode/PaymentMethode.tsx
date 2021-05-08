@@ -4,7 +4,7 @@ import { Button, Select, Form } from "antd";
 import { useContext } from "react";
 import BookinContext from "../../../context/booking";
 import "./PaymentMethode.scss";
-import axios from "axios";
+
 const { Option } = Select;
 
 const PaymentMethode = () => {

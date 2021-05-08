@@ -11,7 +11,7 @@ const HomeDriver = () => {
 
       <div className="auth-Menu">
         <LeftSquareOutlined
-          onClick={() => history.push("/Auth/LoginAsUserOrDriver")} className="ClickRetourMenu" />
+          onClick={() => history.push("/")} className="ClickRetourMenu" />
         <MenuOutlined onClick={() => history.push("/MenuDriver")} className="troisLigneMenu" />
         <h2 className="TextHome"> Home</h2>
 

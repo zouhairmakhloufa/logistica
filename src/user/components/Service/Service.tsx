@@ -3,7 +3,6 @@ import { Button, Select, Form } from "antd";
 import { LeftSquareOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
 import BookinContext from "../../../context/booking";
-import axios from "axios";
 import "./Service.scss";
 const { Option } = Select;
 

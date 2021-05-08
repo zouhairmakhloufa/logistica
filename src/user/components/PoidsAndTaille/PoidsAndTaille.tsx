@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import { useContext } from "react";
 import { LeftSquareOutlined } from "@ant-design/icons";
 import BookinContext from "../../../context/booking";
-import axios from "axios";
 import "./PoidsAndTaille.scss";
 
 const PoidsAndTaille = () => {

@@ -7,7 +7,6 @@ import { Popconfirm, Button, Input, Select, Form } from "antd";
 import { useHistory } from "react-router-dom";
 import { LeftSquareOutlined, MenuOutlined } from "@ant-design/icons";
 import BookinContext from "../../../context/booking";
-import axios from "axios";
 
 const { Option } = Select;
 
@@ -92,7 +91,7 @@ function MapInformation() {
 
       <div className="Auth-Signup-Info">
         <LeftSquareOutlined
-          onClick={() => history.push("/Auth/LoginAsUserOrDriver")}
+          onClick={() => history.push("/")}
           className="ClickRetourMenu"
         />
         <MenuOutlined

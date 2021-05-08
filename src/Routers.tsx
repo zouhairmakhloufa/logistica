@@ -25,7 +25,6 @@ import SettingDriver from "./driver/components/SettingDriver";
 import Detaille from "./driver/components/Detaille";
 import OrdersDriver from "./driver/components/OrdersDriver";
 import Signin from "./Modules/Auth/Signin";
-import LoginAsUserOrDriver from "./Modules/Auth/LoginAsUserOrDriver";
 import SignUpUserOrDriver from "./Modules/Auth/SignUpUserOrDriver";
 
 function Routers(): JSX.Element {
@@ -46,7 +45,6 @@ function Routers(): JSX.Element {
         <Route path="/SettingUser" exact component={SettingUser} />
         <Route path="/SettingDriver" exact component={SettingDriver} />
         <Route path="/Auth/Signin" exact component={Signin} />
-        <Route path="/Auth/LoginAsUserOrDriver" exact  component={LoginAsUserOrDriver} />
         <Route path="/Auth/SignUpUserOrDriver"  exact  component={SignUpUserOrDriver} />
         <Route path="/Auth/SignupUser" exact component={SignupUser} />
         <Route path="/Auth/SignupDriver" exact component={SignupDriver} />
