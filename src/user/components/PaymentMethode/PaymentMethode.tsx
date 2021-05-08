@@ -42,11 +42,7 @@ const PaymentMethode = () => {
                 onChange={setPaymentMethode}
               >
                 <Option value="Cache">Cache</Option>
-                <Option value="salurt">salurt</Option>
-                <Option value="Carte" disabled>
-                  {" "}
-                  Carte
-                </Option>
+                <Option value="Carte" disabled>  {" "} Carte </Option>
               </Select>
             </div>
 

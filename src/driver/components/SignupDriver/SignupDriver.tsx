@@ -47,7 +47,7 @@ const SignupDriver = () => {
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
       <div className="signup-info-User">
         <LeftSquareOutlined
-          onClick={() => history.push("/Auth/SignupDriverOrDriver")}
+          onClick={() => history.push("/")}
           className="ClickRetour"
         />
         <h2>Add Your</h2>

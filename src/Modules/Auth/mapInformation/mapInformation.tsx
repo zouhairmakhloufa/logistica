@@ -25,10 +25,7 @@ function MapInformation() {
   }: any = useContext(BookinContext);
   console.log("governorate Address Source :", governorateAddressSource);
   console.log("addres Source : ", addresSource);
-  console.log(
-    "governorate Address destinataire : ",
-    governorateAddressDestination
-  );
+  console.log("governorate Address destinataire : ", governorateAddressDestination );
   console.log("addres destinataire : ", addressDestination);
 
   const onSubmit = async (event: any) => {
@@ -119,7 +116,7 @@ function MapInformation() {
         >
           <h3> Choose Your Governorate </h3>
           <Select
-            defaultValue="Monastir"
+            defaultValue="Tunis"
             onChange={setGovernorateAddressSource}
             style={{ width: 120 }}
             bordered={false}

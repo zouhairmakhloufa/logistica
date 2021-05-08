@@ -4,7 +4,6 @@ import { Avatar, Button } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import "./SettingUser.scss";
 
-
 const SettingUser = () => {
   const history = useHistory();
   return (

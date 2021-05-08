@@ -1,12 +1,11 @@
 import { Button, Timeline } from "antd";
-import axios from "axios";
 import { LeftSquareOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
 import { useContext } from "react";
 import { List, Avatar } from "antd";
 import { DollarOutlined } from "@ant-design/icons";
 import BookinContext from "../../../context/booking";
-
+import axios from "axios";
 import "./Info.scss";
 
 const data = [
@@ -28,8 +27,8 @@ const Info = () => {
     typeOfCars,
     service,
     packaging,
-    driverId,
     noteToDriver,
+    driverId,
   }: any = useContext(BookinContext);
 
   return (
@@ -44,9 +43,11 @@ const Info = () => {
         <div>
           <h2> Booking details</h2>
           <Timeline className="timelineinfo">
-            <Timeline.Item color="green">6731 Al Ulaya, Al Wurud</Timeline.Item>
             <Timeline.Item color="green">
-              King Khalid International Airport{" "}
+              {governorateAddressSource} <br></br> {addresSource}
+            </Timeline.Item>
+            <Timeline.Item color="green"> 
+            {governorateAddressDestination} <br></br> {addressDestination}
             </Timeline.Item>
           </Timeline>
         </div>
@@ -92,12 +93,10 @@ const Info = () => {
           <h4>5 dt</h4>
         </div>
         <div style={{ display: "flex" }} className="Pricing">
-          <h4 className="pricingShippingequipe"> Shipping Service</h4>
-          <h4>5 dt</h4>
+          <h4 className="pricingShippingequipe"> {service} </h4>
         </div>
         <div style={{ display: "flex" }} className="Pricing">
-          <h4 className="pricingequipe"> Cortoon Service</h4>
-          <h4>3 dt</h4>
+          <h4 className="pricingequipe">{packaging}</h4>
         </div>
 
         <div style={{ display: "flex" }} className="totalText">

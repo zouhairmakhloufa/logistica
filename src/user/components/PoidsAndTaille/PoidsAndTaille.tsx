@@ -24,19 +24,9 @@ const PoidsAndTaille = () => {
   console.log("profondeur : ", profondeur);
 
   const onSubmit = async (event: any) => {
-    // const registered = {
-    //   poids,
-    //   hauteur,
-    //   largeur,
-    //   profondeur, };
-    // const user = await axios.post(
-    //   "http://localhost:5000/Booking/booking", registered);
-    //   setPoids("");
-    //   setHauteur("");
-    //   setLargeur("");
-    //   setProfondeur("");
-    // history.push("/TypeOfCars");
+    history.push("/TypeOfCars")
   };
+
   return (
     <div className="contentImage">
       <img src="/imageDimention/dimention bagage.jpg" className="imageAuth" />
@@ -46,9 +36,7 @@ const PoidsAndTaille = () => {
           className="ClickRetour"
         />
 
-        <h3> Enter this information about your bag </h3>
-        <br></br>
-        <br></br>
+        <h3 className="Enter_this_information_about_your_bag"> Enter this information about your bag </h3>
         <div className="DimensionAndPois">
           <Form
             name="basic"
@@ -99,11 +87,8 @@ const PoidsAndTaille = () => {
               className="button-Next-poids"
               type="primary"
               htmlType="submit"
-              onClick={() => history.push("/TypeOfCars")}
               style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-            >
-              {" "}
-              Next{" "}
+            >   {" "} Next{" "}
             </Button>
           </Form>
         </div>

@@ -4,14 +4,13 @@ import { LeftSquareOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
 import BookinContext from "../../../context/booking";
 import "./Service.scss";
+
 const { Option } = Select;
 
 const Service = () => {
   const history = useHistory();
 
-  const { setService, setPackaging, service, packaging }: any = useContext(
-    BookinContext
-  );
+  const { setService, setPackaging, service, packaging }: any = useContext(BookinContext);
   console.log("service  :", service);
   console.log("packaging :", packaging);
 
@@ -45,14 +44,8 @@ const Service = () => {
             onChange={setService}
           >
             <Option value="Shipping 5 dt"> Shipping 5 dt</Option>
-            <Option value="Delivery 5 dt" disabled>
-              {" "}
-              Delivery 5 dt
-            </Option>
-            <Option value="Boarding 5 dt" disabled>
-              {" "}
-              Boarding 5 dt
-            </Option>
+            <Option value="Delivery 5 dt" disabled>  {" "} Delivery 5 dt </Option>
+            <Option value="Boarding 5 dt" disabled>  {" "} Boarding 5 dt </Option>
           </Select>
 
           <h2 className="TitleService"> Packaging</h2>
@@ -64,8 +57,8 @@ const Service = () => {
               className="SelectPaymentMethode"
               onChange={setPackaging}
             >
-              <Option value="Cartoon 3 dt"> Cartoon 3 dt</Option>
-              <Option value="Plastic Roll 3 dt"> Plastic Roll 3 dt</Option>
+              <Option value="Cartoon 3 dt"> Cartoon       3 dt</Option>
+              <Option value="Plastic Roll 3 dt">Plastic Roll       3 dt</Option>
             </Select>
           </div>
 
@@ -79,9 +72,7 @@ const Service = () => {
             type="primary"
             htmlType="submit"
             style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-            value="Submit"
-          >
-            {" "}
+            value="Submit" > {" "}
             Continue{" "}
           </Button>
         </Form>
