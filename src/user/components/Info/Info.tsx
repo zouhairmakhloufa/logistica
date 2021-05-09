@@ -46,8 +46,8 @@ const Info = () => {
             <Timeline.Item color="green">
               {governorateAddressSource} <br></br> {addresSource}
             </Timeline.Item>
-            <Timeline.Item color="green"> 
-            {governorateAddressDestination} <br></br> {addressDestination}
+            <Timeline.Item color="green">
+              {governorateAddressDestination} <br></br> {addressDestination}
             </Timeline.Item>
           </Timeline>
         </div>
@@ -127,7 +127,7 @@ const Info = () => {
                 paymentMethode: "cache",
                 noteToDriver,
                 driverId,
-                userId: localStorage.getItem("token"),
+                token: localStorage.getItem("token"),
               }
             );
             history.push("/BookingSuccessful");
