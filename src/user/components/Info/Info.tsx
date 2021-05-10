@@ -152,8 +152,7 @@ const Info = () => {
             });
             history.push("/BookingSuccessful");
           }}
-        >
-          {" "}
+        > {" "}
           Book Now{" "}
         </Button>
       </div>
