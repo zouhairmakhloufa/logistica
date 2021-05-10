@@ -110,7 +110,7 @@ const Info = () => {
           htmlType="submit"
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
           onClick={async () => {
-            const user = await axios.post(
+            const booking = await axios.post(
               "http://localhost:5000/Booking/booking",
               {
                 governorateAddressSource,
@@ -130,6 +130,13 @@ const Info = () => {
                 token: localStorage.getItem("token"),
               }
             );
+
+            console.log("booking", booking);
+
+            await axios.post("http://localhost:5000/Booking/sendemail", {
+              driverId,
+              token: localStorage.getItem("token"),
+            });
             history.push("/BookingSuccessful");
           }}
         >
