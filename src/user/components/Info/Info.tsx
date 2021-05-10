@@ -136,6 +136,19 @@ const Info = () => {
             await axios.post("http://localhost:5000/Booking/sendemail", {
               driverId,
               token: localStorage.getItem("token"),
+              governorateAddressSource,
+              addresSource,
+              governorateAddressDestination,
+              addressDestination,
+              poids,
+              hauteur,
+              largeur,
+              profondeur,
+              typeOfCars,
+              service,
+              packaging,
+              paymentMethode: "cache",
+              noteToDriver,
             });
             history.push("/BookingSuccessful");
           }}
