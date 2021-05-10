@@ -42,7 +42,7 @@ const Info = () => {
 
         <div>
           <h2> Booking details</h2>
-          <Timeline className="timelineinfo">
+          <Timeline className="timelineInfo">
             <Timeline.Item color="green">
               {governorateAddressSource} <br></br> {addresSource}
             </Timeline.Item>

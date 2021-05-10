@@ -50,8 +50,7 @@ export const BookingProvider = ({ children }: any): JSX.Element => {
   const setPaymentMethode = (paymentMethode: string): void => setState({ ...state, paymentMethode });
   const setTypeOfCar = (typeOfCars: string): void => setState({ ...state, typeOfCars });
 
-  const setDriverId = (driverId: string): void =>
-    setState({ ...state, driverId });
+  const setDriverId = (driverId: string): void => setState({ ...state, driverId });
 
   const updatedInitialState: any = {
     ...state,
