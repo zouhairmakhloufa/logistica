@@ -26,6 +26,7 @@ import Detaille from "./driver/components/Detaille";
 import OrdersDriver from "./driver/components/OrdersDriver";
 import Signin from "./Modules/Auth/Signin";
 import SignUpUserOrDriver from "./Modules/Auth/SignUpUserOrDriver";
+import Booking from "./user/components/Booking";
 
 function Routers(): JSX.Element {
   return (
@@ -45,7 +46,11 @@ function Routers(): JSX.Element {
         <Route path="/SettingUser" exact component={SettingUser} />
         <Route path="/SettingDriver" exact component={SettingDriver} />
         <Route path="/Auth/Signin" exact component={Signin} />
-        <Route path="/Auth/SignUpUserOrDriver"  exact  component={SignUpUserOrDriver} />
+        <Route
+          path="/Auth/SignUpUserOrDriver"
+          exact
+          component={SignUpUserOrDriver}
+        />
         <Route path="/Auth/SignupUser" exact component={SignupUser} />
         <Route path="/Auth/SignupDriver" exact component={SignupDriver} />
         <Route path="/mapInformation" exact component={MapInformation} />
@@ -57,6 +62,7 @@ function Routers(): JSX.Element {
         <Route path="/Detaille" exact component={Detaille} />
         <Route path="/NoteToDriver" exact component={NoteToDriver} />
         <Route path="/RetourRequest" exact component={RetourRequest} />
+        <Route path="/Booking/:id" exact component={Booking} />
       </div>
     </BrowserRouter>
   );

@@ -149,10 +149,12 @@ const Info = () => {
               packaging,
               paymentMethode: "cache",
               noteToDriver,
+              bookingId: booking.data.newBooking._id,
             });
             history.push("/BookingSuccessful");
           }}
-        > {" "}
+        >
+          {" "}
           Book Now{" "}
         </Button>
       </div>
