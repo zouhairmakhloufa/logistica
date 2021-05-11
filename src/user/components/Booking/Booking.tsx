@@ -32,10 +32,21 @@ const Booking = (props: any) => {
             const result = await axios.put(
               `http://localhost:5000/booking/bookingAccept/${props.match.params.id}`
             );
+            await axios.post(
+              "http://localhost:5000/Booking/sendemailResponse",
+              {
+                mail: booking?.userId.email,
+                token: localStorage.getItem("token"),
+                isAccept: true,
+                bookingId: booking.data.newBooking._id,
+              }
+            );
+
             setBooking((prevBooking: any) => ({
               ...prevBooking,
               status: "accepter",
             }));
+
             // send mail to user tinformih ennou trajet accepter
             console.log("result", result);
           }}
@@ -46,6 +57,15 @@ const Booking = (props: any) => {
           onClick={async () => {
             const result = await axios.put(
               `http://localhost:5000/booking/bookingRefut/${props.match.params.id}`
+            );
+            await axios.post(
+              "http://localhost:5000/Booking/sendemailResponse",
+              {
+                mail: booking?.userId.email,
+                token: localStorage.getItem("token"),
+                isAccept: false,
+                bookingId: booking.data.newBooking._id,
+              }
             );
             setBooking((prevBooking: any) => ({
               ...prevBooking,
