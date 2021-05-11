@@ -27,8 +27,37 @@ const Booking = (props: any) => {
       <p>poids: {booking.poids}</p>
       <p>status: {booking.status}</p>
       <div>
-        <button>accepter</button>
-        <button>refuser</button>
+        <button
+          onClick={async () => {
+            const result = await axios.put(
+              `http://localhost:5000/booking/bookingAccept/${props.match.params.id}`
+            );
+            setBooking((prevBooking: any) => ({
+              ...prevBooking,
+              status: "accepter",
+            }));
+            // send mail to user tinformih ennou trajet accepter
+            console.log("result", result);
+          }}
+        >
+          accepter
+        </button>
+        <button
+          onClick={async () => {
+            const result = await axios.put(
+              `http://localhost:5000/booking/bookingRefut/${props.match.params.id}`
+            );
+            setBooking((prevBooking: any) => ({
+              ...prevBooking,
+              status: "refuser",
+            }));
+
+            // send mail to user tinformih ennou trajet refuser
+            console.log("result", result);
+          }}
+        >
+          refuser
+        </button>
       </div>
     </>
   );
