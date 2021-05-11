@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button,Select  } from "antd";
 import { UserOutlined, MailOutlined, LockOutlined } from "@ant-design/icons";
 import { LeftSquareOutlined } from "@ant-design/icons";
 import axios from "axios";
 import "./SignupDriver.scss";
+
 
 const SignupDriver = () => {
   const history = useHistory();
@@ -14,6 +15,8 @@ const SignupDriver = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [TypeOfCars, setTypeOfCars] = useState("");
+  const [numDeTelf, setNumDeTelf] = useState("");
+
 
   const onSubmit = async (event: any) => {
     const registered = {
@@ -24,6 +27,7 @@ const SignupDriver = () => {
       confirmPassword,
       TypeOfCars,
       type: "driver",
+      numDeTelf
     };
     const user = await axios.post(
       "http://localhost:5000/User/ajouter",
@@ -35,13 +39,21 @@ const SignupDriver = () => {
     setPassword("");
     setConfirmPassword("");
     setTypeOfCars("");
+    setNumDeTelf("");
     history.push("/Auth/Signin");
   };
 
   const onFinishFailed = (errorInfo: any) => {
     console.log("Failed:", errorInfo);
   };
-
+  const { Option } = Select;
+  const prefixSelector = (
+    <Form.Item name="prefix" noStyle>
+      <Select style={{ width: 85 }}>
+        <Option  value="+216">+216</Option>
+      </Select>
+    </Form.Item>
+  );
   return (
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
@@ -153,6 +165,17 @@ const SignupDriver = () => {
                 value={TypeOfCars}
               />
             </Form.Item>
+            <Form.Item
+            name="phone"
+            rules={[{ message: 'Please input your phone number!' }]}
+          >
+            <Input 
+            placeholder="Add your Phone Number"
+            addonBefore={prefixSelector} 
+            style={{ width: "70%" }}
+            onChange={(event) => setNumDeTelf(event.target.value)}
+             />
+          </Form.Item>
           </div>
           <div style={{ display: "flex" }}>
             <h5
