@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import { HomeOutlined,MailOutlined } from "@ant-design/icons"
+import { HomeOutlined,MailOutlined,MenuOutlined } from "@ant-design/icons"
 import "./Navbar2.scss"
 
 const Navbar2 = () => {
@@ -11,6 +11,7 @@ const Navbar2 = () => {
         <ul>
           <a href="/"> <HomeOutlined />  </a>
           <a href="/Contact"><MailOutlined /> </a>
+          <a href="/menu"> <MenuOutlined /> </a> 
         </ul>
       </div>
     </div>

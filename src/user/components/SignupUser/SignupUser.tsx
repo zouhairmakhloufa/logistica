@@ -155,9 +155,9 @@ const SignupUser = () => {
             addonBefore={prefixSelector} 
             style={{ width: "70%" }}
             onChange={(event) => setNumDeTelf(event.target.value)}
-
              />
           </Form.Item>
+          
           <div style={{ display: "flex" }}>
             <h5
               style={{ marginRight: "50px" }}

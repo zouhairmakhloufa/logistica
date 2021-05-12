@@ -61,12 +61,7 @@ const Service = () => {
               <Option value="Plastic Roll 3 dt">Plastic Roll       3 dt</Option>
             </Select>
           </div>
-
-          <div style={{ display: "flex" }} className="totalText">
-            <h2 className="texttottalamountService">Total Amount</h2>
-            <h4 className="TotalAmountService">18 dt</h4>
-          </div>
-
+          
           <Button
             className="button-Service"
             type="primary"

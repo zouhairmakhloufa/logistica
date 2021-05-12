@@ -17,7 +17,6 @@ import NotificationUser from "./user/components/NotificationUser";
 import SettingUser from "./user/components/SettingUser";
 import PaymentUser from "./user/components/PaymentUser";
 import PaymentMethode from "./user/components/PaymentMethode";
-import AddPaymentMethod from "./user/components/AddPaymentMethod";
 import InfoDetailCurrent from "./user/components/InfoDetailCurrent";
 import MenuDriver from "./driver/components/MenuDriver";
 import HomeDriver from "./driver/components/HomeDriver";
@@ -26,7 +25,7 @@ import Detaille from "./driver/components/Detaille";
 import OrdersDriver from "./driver/components/OrdersDriver";
 import Signin from "./Modules/Auth/Signin";
 import SignUpUserOrDriver from "./Modules/Auth/SignUpUserOrDriver";
-import Booking from "./user/components/Booking";
+import Booking from "./driver/components/Booking";
 
 function Routers(): JSX.Element {
   return (
@@ -41,16 +40,11 @@ function Routers(): JSX.Element {
         <Route path="/OrdersUser" exact component={OrdersUser} />
         <Route path="/PaymentUser" exact component={PaymentUser} />
         <Route path="/PaymentMethode" exact component={PaymentMethode} />
-        <Route path="/AddPaymentMethod" exact component={AddPaymentMethod} />
         <Route path="/NotificationUser" exact component={NotificationUser} />
         <Route path="/SettingUser" exact component={SettingUser} />
         <Route path="/SettingDriver" exact component={SettingDriver} />
         <Route path="/Auth/Signin" exact component={Signin} />
-        <Route
-          path="/Auth/SignUpUserOrDriver"
-          exact
-          component={SignUpUserOrDriver}
-        />
+        <Route path="/Auth/SignUpUserOrDriver" exact component={SignUpUserOrDriver} />
         <Route path="/Auth/SignupUser" exact component={SignupUser} />
         <Route path="/Auth/SignupDriver" exact component={SignupDriver} />
         <Route path="/mapInformation" exact component={MapInformation} />
