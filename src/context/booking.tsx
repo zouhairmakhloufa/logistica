@@ -14,7 +14,6 @@ const BookingContext = createContext({
   packaging: "",
   paymentMethode: "",
   noteToDriver: "",
-  numDeTelf: "",
 });
 
 export const BookingProvider = ({ children }: any): JSX.Element => {
@@ -32,7 +31,6 @@ export const BookingProvider = ({ children }: any): JSX.Element => {
     packaging: "",
     paymentMethode: "",
     noteToDriver: "",
-    numDeTelf: "",
     driverId: "",
   };
 
@@ -51,7 +49,6 @@ export const BookingProvider = ({ children }: any): JSX.Element => {
   const setPackaging = (packaging: string): void => setState({ ...state, packaging });
   const setPaymentMethode = (paymentMethode: string): void => setState({ ...state, paymentMethode });
   const setTypeOfCar = (typeOfCars: string): void => setState({ ...state, typeOfCars });
-  const setNumDeTelf = (numDeTelf: string): void => setState({ ...state, numDeTelf });
 
   const setDriverId = (driverId: string): void => setState({ ...state, driverId });
 
@@ -71,7 +68,7 @@ export const BookingProvider = ({ children }: any): JSX.Element => {
     setPaymentMethode,
     setTypeOfCar,
     setDriverId,
-    setNumDeTelf,
+    
   };
 
   return (

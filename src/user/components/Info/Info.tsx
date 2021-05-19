@@ -1,8 +1,7 @@
-import { Button, Timeline } from "antd";
+import { Button, Timeline,List, Avatar  } from "antd";
 import { LeftSquareOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
 import { useContext } from "react";
-import { List, Avatar } from "antd";
 import { DollarOutlined } from "@ant-design/icons";
 import BookinContext from "../../../context/booking";
 import axios from "axios";

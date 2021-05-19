@@ -25,8 +25,7 @@ import Detaille from "./driver/components/Detaille";
 import OrdersDriver from "./driver/components/OrdersDriver";
 import Signin from "./Modules/Auth/Signin";
 import SignUpUserOrDriver from "./Modules/Auth/SignUpUserOrDriver";
-import Booking from "./driver/components/Booking";
-
+import Booking from "./user/components/Booking";
 function Routers(): JSX.Element {
   return (
     <BrowserRouter>

@@ -6,7 +6,8 @@ const Booking = (props: any) => {
   const [booking, setBooking]: any = useState(null);
   useEffect(() => {
     const fetchBooking = async () => {
-      const result = await axios.get(`http://localhost:5000/booking/booking/${props.match.params.id}`);
+      const result = await axios.get(
+        `http://localhost:5000/booking/booking/${props.match.params.id}`);
       setBooking(result.data.booking);
     };
     fetchBooking();
@@ -21,22 +22,22 @@ const Booking = (props: any) => {
     <div className="InfoBooking">
     <>
       <p>Reservation</p>
-      <p>name: {booking?.userId.firstName} {booking?.userId.lastName} </p>
-      <p>numero:  {booking?.userId.numDeTelf}   </p>
-      <p>adresse source : {booking?.userId.governorateAddressSource}
-        {booking?.userId.addresSource}</p>
-      <p>adresse destinataire : {booking?.userId.governorateAddressDestination}
-        {booking?.userId.addressDestination}</p>
-      <p>poids: {booking.poids}</p>
-      <p>hauteur: {booking.hauteur}</p>
-      <p>largeur: {booking.largeur}</p>
-      <p>profondeur: {booking.profondeur}</p>
-      <p>type de cars: {booking.TypeOfCars}</p>
-      <p>service: {booking.service}</p>
-      <p>packaging: {booking.packaging}</p>
-      <p>payment Methode: {booking.paymentMethode}</p>
-      <p>noteToDriver: {booking.noteToDriver}</p>
-      <p>status: {booking.status}</p>
+      <p>Name: {booking?.userId.firstName} {booking?.userId.lastName} </p>
+      <p>Adress Source (governorate): {booking?.userId.governorateAddressSource}  </p>
+      <p>Adress {booking?.userId.addresSource} </p>
+
+      <p>Adress destinataire (governorate): {booking?.userId.governorateAddressDestination} </p>
+      <p>Adress : {booking?.userId.addressDestination}</p>
+      <p>Poids: {booking.poids}</p>
+      <p>Hauteur: {booking.hauteur}</p>
+      <p>Largeur: {booking.largeur}</p>
+      <p>Profondeur: {booking.profondeur}</p>
+      <p>Type of cars: {booking.TypeOfCars}</p>
+      <p>Service: {booking.service}</p>
+      <p>Packaging: {booking.packaging}</p>
+      <p>Payment Methode: {booking.paymentMethode}</p>
+      <p>NoteToDriver: {booking.noteToDriver}</p>
+      <p>Status: {booking.status}</p>
       <div>
         <button
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
@@ -50,7 +51,6 @@ const Booking = (props: any) => {
                 mail: booking?.userId.email,
                 token: localStorage.getItem("token"),
                 isAccept: true,
-                bookingId: booking.data.booking_id,
               }
             );
 
