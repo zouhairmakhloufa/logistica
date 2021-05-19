@@ -51,8 +51,10 @@ const Booking = (props: any) => {
                 mail: booking?.userId.email,
                 token: localStorage.getItem("token"),
                 isAccept: true,
+                bookingId:props.match.params.id ,
               }
             );
+            console.log("props", booking);
 
             setBooking((prevBooking: any) => ({
               ...prevBooking,
@@ -79,7 +81,7 @@ const Booking = (props: any) => {
                 mail: booking?.userId.email,
                 token: localStorage.getItem("token"),
                 isAccept: false,
-                bookingId: booking.data.booking_id,
+                bookingId:props.match.params.id ,
               }
             );
             setBooking((prevBooking: any) => ({
