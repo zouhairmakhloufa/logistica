@@ -21,23 +21,22 @@ const Booking = (props: any) => {
     <img src="/imageAuth/imageAuth.jpg" className="imageAuthInfo" />
     <div className="InfoBooking">
     <>
-      <p>Reservation</p>
-      <p>Name: {booking?.userId.firstName} {booking?.userId.lastName} </p>
-      <p>Adress Source (governorate): {booking?.userId.governorateAddressSource}  </p>
-      <p>Adress {booking?.userId.addresSource} </p>
-
-      <p>Adress destinataire (governorate): {booking?.userId.governorateAddressDestination} </p>
-      <p>Adress : {booking?.userId.addressDestination}</p>
-      <p>Poids: {booking.poids}</p>
-      <p>Hauteur: {booking.hauteur}</p>
-      <p>Largeur: {booking.largeur}</p>
-      <p>Profondeur: {booking.profondeur}</p>
-      <p>Type of cars: {booking.TypeOfCars}</p>
-      <p>Service: {booking.service}</p>
-      <p>Packaging: {booking.packaging}</p>
-      <p>Payment Methode: {booking.paymentMethode}</p>
-      <p>NoteToDriver: {booking.noteToDriver}</p>
-      <p>Status: {booking.status}</p>
+      <p>Reservation Client</p>
+      <p> - Name: {booking?.userId.firstName} {booking?.userId.lastName} </p>
+      <p> - Adress Source (governorate): {booking?.governorateAddressSource}  </p>
+      <p> - Adress :  {booking?.addresSource} </p>
+      <p> - Adress destinataire (governorate): {booking?.governorateAddressDestination} </p>
+      <p> - Adress : {booking?.addressDestination}</p>
+      <p> - Poids: {booking.poids}</p>
+      <p> - Hauteur: {booking.hauteur}</p>
+      <p> - Largeur: {booking.largeur}</p>
+      <p> - Profondeur: {booking.profondeur}</p>
+      <p> - Type of cars: {booking.userId.TypeOfCars}</p>
+      <p> - Service: {booking.service}</p>
+      <p> - Packaging: {booking.packaging}</p>
+      <p> - Payment Methode: {booking.paymentMethode}</p>
+      <p> - NoteToDriver: {booking.noteToDriver}</p>
+      <p> - Status: {booking.status}</p>
       <div>
         <button
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
@@ -54,14 +53,12 @@ const Booking = (props: any) => {
                 bookingId:props.match.params.id ,
               }
             );
-            console.log("props", booking);
-
             setBooking((prevBooking: any) => ({
               ...prevBooking,
               status: "accepter",
             }));
 
-            // send mail to user tinformih ennou trajet accepter
+            // send mail to user  "trajet accepter"
             console.log("result", result);
           }}
         >
@@ -89,7 +86,7 @@ const Booking = (props: any) => {
               status: "refuser",
             }));
 
-            // send mail to user tinformih ennou trajet refuser
+            // send mail to user  "trajet reffuser"
             console.log("result", result);
           }}
         >

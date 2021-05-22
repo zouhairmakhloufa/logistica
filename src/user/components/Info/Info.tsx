@@ -1,8 +1,7 @@
 import { Button, Timeline,List, Avatar  } from "antd";
-import { LeftSquareOutlined } from "@ant-design/icons";
+import { LeftSquareOutlined,DollarOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
 import { useContext } from "react";
-import { DollarOutlined } from "@ant-design/icons";
 import BookinContext from "../../../context/booking";
 import axios from "axios";
 import "./Info.scss";
@@ -43,7 +42,7 @@ const Info = () => {
           <h2> Booking details</h2>
           <Timeline className="timelineInfo">
             <Timeline.Item color="green">
-              {governorateAddressSource} <br></br> {addresSource}
+              {governorateAddressSource} <br></br> {addresSource} 
             </Timeline.Item>
             <Timeline.Item color="green">
               {governorateAddressDestination} <br></br> {addressDestination}

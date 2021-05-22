@@ -1,10 +1,9 @@
-import { Button } from "antd";
-import axios from "axios";
 import { LeftSquareOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
-import { List, Avatar } from "antd";
+import { Button,List, Avatar } from "antd";
 import BookinContext from "../../../context/booking";
+import axios from "axios";
 import "./TypeOfCars.scss";
 
 const data = [{ title1: "Golf" }, { title1: "Bmw" }];
@@ -25,7 +24,7 @@ const TypeOfCars = () => {
     fetchCars();
   }, []);
   console.log("Type Of Cars : ", typeOfCars);
-  console.log(" Of Cars : ", cars);
+  console.log("Cars : ", cars);
 
   return (
     <div className="contentImage">
