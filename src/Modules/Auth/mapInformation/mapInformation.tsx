@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { MapContainer, TileLayer, Polyline } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./mapInformation.scss";
@@ -17,7 +18,8 @@ function MapInformation() {
     setAddresSource,
     setGovernorateAddressDestination,
     setAddressDestination,
-
+    setDistance,
+    distance,
     governorateAddressSource,
     addresSource,
     governorateAddressDestination,
@@ -25,7 +27,10 @@ function MapInformation() {
   }: any = useContext(BookinContext);
   console.log("governorate Address Source :", governorateAddressSource);
   console.log("addres Source : ", addresSource);
-  console.log("governorate Address destinataire : ", governorateAddressDestination );
+  console.log(
+    "governorate Address destinataire : ",
+    governorateAddressDestination
+  );
   console.log("addres destinataire : ", addressDestination);
 
   const onSubmit = async (event: any) => {
@@ -66,6 +71,20 @@ function MapInformation() {
     );
   }
 
+  const distances = [
+    { source: "Mahdia", destination: "Tunis", distance: 300 },
+    { source: "Mahdia", destination: "Sousse", distance: 50 },
+  ];
+
+  const selectedDistance = distances.find(
+    (item) =>
+      (item.source === governorateAddressSource &&
+        item.destination === governorateAddressDestination) ||
+      (item.source === governorateAddressDestination &&
+        item.destination === governorateAddressSource)
+  );
+  console.log("distance", selectedDistance);
+
   return (
     <div className="contentImage">
       <MapContainer
@@ -96,6 +115,8 @@ function MapInformation() {
           className="troisLigneMenuMap"
         />
         <h1>Pick me up From </h1>
+        <h1>selected distance: {selectedDistance?.distance} klm </h1>
+
         <Popconfirm
           title={"Choose your source address by clicking on the map"}
           onConfirm={chooseAdressSource}
@@ -225,10 +246,13 @@ function MapInformation() {
             className="buttonNext"
             type="primary"
             style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-            onClick={() => history.push("/PoidsAndTaille")}
+            onClick={() => {
+              setDistance(selectedDistance?.distance);
+              console.log("disctance", distance);
+              history.push("/PoidsAndTaille");
+            }}
           >
-            {" "}
-            Next{" "}
+            Next
           </Button>
         </Form>
       </div>

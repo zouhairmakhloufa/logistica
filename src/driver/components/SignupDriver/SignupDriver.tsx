@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Form, Input, Button,Select  } from "antd";
+import { Form, Input, Button, Select, InputNumber } from "antd";
 import { UserOutlined, MailOutlined, LockOutlined } from "@ant-design/icons";
 import { LeftSquareOutlined } from "@ant-design/icons";
 import axios from "axios";
 import "./SignupDriver.scss";
-
 
 const SignupDriver = () => {
   const history = useHistory();
@@ -16,7 +15,8 @@ const SignupDriver = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [TypeOfCars, setTypeOfCars] = useState("");
   const [numDeTelf, setNumDeTelf] = useState("");
-
+  const [basePrice, setBasePrice] = useState(0);
+  const [klmPrice, setKlmPrice] = useState(0);
 
   const onSubmit = async (event: any) => {
     const registered = {
@@ -27,7 +27,9 @@ const SignupDriver = () => {
       confirmPassword,
       TypeOfCars,
       type: "driver",
-      numDeTelf
+      numDeTelf,
+      basePrice,
+      klmPrice,
     };
     const user = await axios.post(
       "http://localhost:5000/User/ajouter",
@@ -40,6 +42,8 @@ const SignupDriver = () => {
     setConfirmPassword("");
     setTypeOfCars("");
     setNumDeTelf("");
+    setBasePrice(0);
+    setKlmPrice(0);
     history.push("/Auth/Signin");
   };
 
@@ -50,7 +54,7 @@ const SignupDriver = () => {
   const prefixSelector = (
     <Form.Item name="prefix" noStyle>
       <Select style={{ width: 85 }}>
-        <Option  value="+216">+216</Option>
+        <Option value="+216">+216</Option>
       </Select>
     </Form.Item>
   );
@@ -166,17 +170,36 @@ const SignupDriver = () => {
               />
             </Form.Item>
             <Form.Item
-            name="phone"
-            rules={[{ message: 'Please input your phone number!' }]}
-          >
-            <Input 
-            placeholder="Add your Phone Number"
-            addonBefore={prefixSelector} 
-            style={{ width: "70%" }}
-            onChange={(event) => setNumDeTelf(event.target.value)}
-             />
-          </Form.Item>
-          
+              name="phone"
+              rules={[{ message: "Please input your phone number!" }]}
+            >
+              <Input
+                placeholder="Add your Phone Number"
+                addonBefore={prefixSelector}
+                style={{ width: "70%" }}
+                onChange={(event) => setNumDeTelf(event.target.value)}
+              />
+            </Form.Item>
+            <Form.Item label="base price" className="input2k">
+              <InputNumber
+                min={1}
+                max={2000}
+                placeholder="base price"
+                style={{ width: "40%" }}
+                // @ts-ignore
+                onChange={setBasePrice}
+              />
+            </Form.Item>
+            <Form.Item label="klm price" className="input2k">
+              <InputNumber
+                min={1}
+                max={2000}
+                placeholder="klm price"
+                style={{ width: "40%" }}
+                // @ts-ignore
+                onChange={setKlmPrice}
+              />
+            </Form.Item>
           </div>
           <div style={{ display: "flex" }}>
             <h5

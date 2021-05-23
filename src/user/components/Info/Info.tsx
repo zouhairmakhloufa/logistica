@@ -23,6 +23,7 @@ const Info = () => {
     noteToDriver,
     driverId,
     carName,
+    total,
   }: any = useContext(BookinContext);
   console.log("typeOfCars", typeOfCars);
   return (
@@ -95,7 +96,7 @@ const Info = () => {
 
         <div style={{ display: "flex" }} className="totalText">
           <h2 className="texttottalamount">Total Amount</h2>
-          <h4 className="TotalAmount20">18 dt</h4>
+          <h4 className="TotalAmount20">{total} dt</h4>
         </div>
 
         <Button
@@ -122,6 +123,7 @@ const Info = () => {
                 noteToDriver,
                 driverId,
                 token: localStorage.getItem("token"),
+                total,
               }
             );
 
@@ -144,6 +146,7 @@ const Info = () => {
               paymentMethode: "cache",
               noteToDriver,
               bookingId: booking.data.newBooking._id,
+              total,
             });
             history.push("/BookingSuccessful");
           }}

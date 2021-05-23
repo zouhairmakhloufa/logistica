@@ -15,6 +15,8 @@ const BookingContext = createContext({
   paymentMethode: "",
   noteToDriver: "",
   carName: "",
+  distance: "",
+  total: "",
 });
 
 export const BookingProvider = ({ children }: any): JSX.Element => {
@@ -70,6 +72,14 @@ export const BookingProvider = ({ children }: any): JSX.Element => {
     setState((state) => ({ ...state, carName }));
   };
 
+  const setDistance = (distance: string): void => {
+    setState((state) => ({ ...state, distance }));
+  };
+
+  const setTotal = (total: string): void => {
+    setState((state) => ({ ...state, total }));
+  };
+
   const setDriverId = (driverId: string): void =>
     setState((state) => ({ ...state, driverId }));
 
@@ -91,6 +101,8 @@ export const BookingProvider = ({ children }: any): JSX.Element => {
     setTypeOfCar,
     setDriverId,
     setCarName,
+    setDistance,
+    setTotal,
   };
 
   return (

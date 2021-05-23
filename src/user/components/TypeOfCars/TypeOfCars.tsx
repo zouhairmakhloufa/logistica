@@ -9,8 +9,15 @@ import "./TypeOfCars.scss";
 const TypeOfCars = () => {
   const history = useHistory();
   const [cars, setCars] = useState([]);
-  const { setTypeOfCar, setDriverId, setCarName, typeOfCars }: any =
-    useContext(BookinContext);
+  const {
+    setTypeOfCar,
+    setDriverId,
+    setCarName,
+    typeOfCars,
+    carName,
+    distance,
+    setTotal,
+  }: any = useContext(BookinContext);
 
   useEffect(() => {
     const fetchCars = async () => {
@@ -21,7 +28,7 @@ const TypeOfCars = () => {
   }, []);
   console.log("Type Of Cars : ", typeOfCars);
   console.log("Cars : ", cars);
-
+  console.log("distance", distance);
   return (
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
@@ -30,9 +37,10 @@ const TypeOfCars = () => {
           onClick={() => history.push("/PoidsAndTaille")}
           className="ClickRetour"
         />
-        <h2> Type Of Cars: {typeOfCars}</h2>
+        <h2> Type Of Cars: {carName}</h2>
         <div className="ListCars">
           <List
+            style={{ width: 600 }}
             itemLayout="horizontal"
             dataSource={cars}
             renderItem={(item: any) => (
@@ -46,12 +54,21 @@ const TypeOfCars = () => {
                         setCarName(item.name);
                         setDriverId(item.driverId);
                         setTypeOfCar(item._id);
+                        setTotal(
+                          Number(distance) * Number(item.klmPrice) +
+                            Number(item.basePrice)
+                        );
                       }}
                     >
                       {item.name}
                     </a>
                   }
-                  description=" 1-1000 Kg"
+                  description={`1-1000 Kg  klm price: ${
+                    item.klmPrice
+                  }dt base price: ${item.basePrice}dt total: ${
+                    Number(distance) * Number(item.klmPrice) +
+                    Number(item.basePrice)
+                  }dt `}
                 />
               </List.Item>
             )}
