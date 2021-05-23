@@ -1,16 +1,11 @@
-import { Button, Timeline,List, Avatar  } from "antd";
-import { LeftSquareOutlined,DollarOutlined } from "@ant-design/icons";
+import { Button, Timeline, List, Avatar } from "antd";
+import { LeftSquareOutlined, DollarOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
 import { useContext } from "react";
 import BookinContext from "../../../context/booking";
 import axios from "axios";
 import "./Info.scss";
 
-const data = [
-  {
-    title: "Logistica cars",
-  },
-];
 const Info = () => {
   const history = useHistory();
   const {
@@ -27,8 +22,9 @@ const Info = () => {
     packaging,
     noteToDriver,
     driverId,
+    carName,
   }: any = useContext(BookinContext);
-
+  console.log("typeOfCars", typeOfCars);
   return (
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuthInfoUser" />
@@ -42,7 +38,7 @@ const Info = () => {
           <h2> Booking details</h2>
           <Timeline className="timelineInfo">
             <Timeline.Item color="green">
-              {governorateAddressSource} <br></br> {addresSource} 
+              {governorateAddressSource} <br></br> {addresSource}
             </Timeline.Item>
             <Timeline.Item color="green">
               {governorateAddressDestination} <br></br> {addressDestination}
@@ -54,12 +50,12 @@ const Info = () => {
           <h2> Type of Cars</h2>
           <List
             itemLayout="horizontal"
-            dataSource={data}
+            dataSource={[carName]}
             renderItem={(item) => (
               <List.Item>
                 <List.Item.Meta
                   avatar={<Avatar src="/imageTypeOfCars/CarsPNG.jpg" />}
-                  title={<a>{item.title}</a>}
+                  title={<a>{item}</a>}
                   description=" 1-1000 Kg"
                 />
               </List.Item>

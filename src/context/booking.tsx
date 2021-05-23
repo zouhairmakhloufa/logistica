@@ -9,11 +9,12 @@ const BookingContext = createContext({
   hauteur: "",
   largeur: "",
   profondeur: "",
-  TypeOfCars: "",
+  typeOfCars: "",
   service: "",
   packaging: "",
   paymentMethode: "",
   noteToDriver: "",
+  carName: "",
 });
 
 export const BookingProvider = ({ children }: any): JSX.Element => {
@@ -36,22 +37,43 @@ export const BookingProvider = ({ children }: any): JSX.Element => {
 
   const [state, setState] = useState({});
 
-  const setGovernorateAddressSource = ( governorateAddressSource: string): void => setState({ ...state, governorateAddressSource });
-  const setAddresSource = (addresSource: string): void => setState({ ...state, addresSource });
-  const setGovernorateAddressDestination = ( governorateAddressDestination: string ): void => setState({ ...state, governorateAddressDestination });
-  const setAddressDestination = (addressDestination: string): void => setState({ ...state, addressDestination });
+  const setGovernorateAddressSource = (
+    governorateAddressSource: string
+  ): void => setState({ ...state, governorateAddressSource });
+  const setAddresSource = (addresSource: string): void =>
+    setState({ ...state, addresSource });
+  const setGovernorateAddressDestination = (
+    governorateAddressDestination: string
+  ): void => setState({ ...state, governorateAddressDestination });
+  const setAddressDestination = (addressDestination: string): void =>
+    setState({ ...state, addressDestination });
   const setPoids = (poids: string): void => setState({ ...state, poids });
   const setHauteur = (hauteur: string): void => setState({ ...state, hauteur });
   const setLargeur = (largeur: string): void => setState({ ...state, largeur });
-  const setProfondeur = (profondeur: string): void =>setState({ ...state, profondeur });
-  const setNoteToDriver = (noteToDriver: string): void => setState({ ...state, noteToDriver });
+  const setProfondeur = (profondeur: string): void =>
+    setState({ ...state, profondeur });
+  const setNoteToDriver = (noteToDriver: string): void =>
+    setState({ ...state, noteToDriver });
   const setService = (service: string): void => setState({ ...state, service });
-  const setPackaging = (packaging: string): void => setState({ ...state, packaging });
-  const setPaymentMethode = (paymentMethode: string): void => setState({ ...state, paymentMethode });
-  const setTypeOfCar = (typeOfCars: string): void => setState({ ...state, typeOfCars });
+  const setPackaging = (packaging: string): void =>
+    setState({ ...state, packaging });
+  const setPaymentMethode = (paymentMethode: string): void =>
+    setState({ ...state, paymentMethode });
+  const setTypeOfCar = (typeOfCars: string): void => {
+    setState((prevState) => ({
+      ...prevState,
+      typeOfCars,
+    }));
+  };
 
-  const setDriverId = (driverId: string): void => setState({ ...state, driverId });
+  const setCarName = (carName: string): void => {
+    setState((state) => ({ ...state, carName }));
+  };
 
+  const setDriverId = (driverId: string): void =>
+    setState((state) => ({ ...state, driverId }));
+
+  console.log("state", state);
   const updatedInitialState: any = {
     ...state,
     setGovernorateAddressSource,
@@ -68,7 +90,7 @@ export const BookingProvider = ({ children }: any): JSX.Element => {
     setPaymentMethode,
     setTypeOfCar,
     setDriverId,
-    
+    setCarName,
   };
 
   return (

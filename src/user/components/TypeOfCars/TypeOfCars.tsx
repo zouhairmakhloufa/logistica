@@ -1,20 +1,16 @@
 import { LeftSquareOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
-import { Button,List, Avatar } from "antd";
+import { Button, List, Avatar } from "antd";
 import BookinContext from "../../../context/booking";
 import axios from "axios";
 import "./TypeOfCars.scss";
 
-const data = [{ title1: "Golf" }, { title1: "Bmw" }];
-const data2 = [{ title2: "iveco camion" }, { title2: "isuzu camion" }];
-
 const TypeOfCars = () => {
   const history = useHistory();
   const [cars, setCars] = useState([]);
-  const { setTypeOfCar, setDriverId, typeOfCars }: any = useContext(
-    BookinContext
-  );
+  const { setTypeOfCar, setDriverId, setCarName, typeOfCars }: any =
+    useContext(BookinContext);
 
   useEffect(() => {
     const fetchCars = async () => {
@@ -45,9 +41,11 @@ const TypeOfCars = () => {
                   avatar={<Avatar src="/imageTypeOfCars/CarsPNG.jpg" />}
                   title={
                     <a
-                      onClick={() => {
-                        setTypeOfCar(item._id);
+                      onClick={async () => {
+                        console.log("item", item);
+                        setCarName(item.name);
                         setDriverId(item.driverId);
+                        setTypeOfCar(item._id);
                       }}
                     >
                       {item.name}
