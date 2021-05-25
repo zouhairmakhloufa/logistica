@@ -74,6 +74,12 @@ function MapInformation() {
   const distances = [
     { source: "Mahdia", destination: "Tunis", distance: 300 },
     { source: "Mahdia", destination: "Sousse", distance: 50 },
+    { source: "Mahdia", destination: "Monastir", distance: 48 },
+    { source: "Mahdia", destination: "Sfax", distance: 127 },
+    { source: "Sfax", destination: "Sousse", distance: 132 }, 
+    { source: "Sfax", destination: "Tunis", distance: 271 }, 
+    { source: "Sfax", destination: "Nabeul", distance: 271 }, 
+
   ];
 
   const selectedDistance = distances.find(
@@ -115,7 +121,7 @@ function MapInformation() {
           className="troisLigneMenuMap"
         />
         <h1>Pick me up From </h1>
-        <h1>selected distance: {selectedDistance?.distance} klm </h1>
+        <h1>selected distance: {selectedDistance?.distance} km </h1>
 
         <Popconfirm
           title={"Choose your source address by clicking on the map"}
@@ -137,13 +143,14 @@ function MapInformation() {
         >
           <h3> Choose Your Governorate </h3>
           <Select
-            defaultValue="Tunis"
+            defaultValue="Bizerte"
             onChange={setGovernorateAddressSource}
             style={{ width: 120 }}
             bordered={false}
             className="select"
           >
             <Option value="Tunis">Tunis</Option>
+            <Option value="Mahdia">Mahdia</Option>
             <Option value="Ariana"> Ariana</Option>
             <Option value="Béja">Béja</Option>
             <Option value="Ben Arous">Ben Arous</Option>
@@ -155,7 +162,6 @@ function MapInformation() {
             <Option value="Kasserine"> Kasserine</Option>
             <Option value="Kébili">Kébili</Option>
             <Option value="Kef">Kef</Option>
-            <Option value="Mahdia">Mahdia</Option>
             <Option value="Manouba">Manouba</Option>
             <Option value="Médenine">Médenine</Option>
             <Option value="Monastir">Monastir</Option>
@@ -191,13 +197,14 @@ function MapInformation() {
           <br></br> <br></br>
           <h3> Choose Your Governorate </h3>
           <Select
-            defaultValue="Monastir"
+            defaultValue="Ariana"
             style={{ width: 120 }}
             bordered={false}
             className="select"
             onChange={setGovernorateAddressDestination}
           >
             <Option value="Tunis">Tunis</Option>
+            <Option value="Mahdia">Mahdia</Option>
             <Option value="Ariana"> Ariana</Option>
             <Option value="Béja">Béja</Option>
             <Option value="Ben Arous">Ben Arous</Option>
@@ -209,7 +216,6 @@ function MapInformation() {
             <Option value="Kasserine"> Kasserine</Option>
             <Option value="Kébili">Kébili</Option>
             <Option value="Kef">Kef</Option>
-            <Option value="Mahdia">Mahdia</Option>
             <Option value="Manouba">Manouba</Option>
             <Option value="Médenine">Médenine</Option>
             <Option value="Monastir">Monastir</Option>

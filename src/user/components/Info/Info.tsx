@@ -23,6 +23,8 @@ const Info = () => {
     noteToDriver,
     driverId,
     carName,
+    priceService,
+    pricePackaging,
     total,
   }: any = useContext(BookinContext);
   console.log("typeOfCars", typeOfCars);
@@ -96,7 +98,7 @@ const Info = () => {
 
         <div style={{ display: "flex" }} className="totalText">
           <h2 className="texttottalamount">Total Amount</h2>
-          <h4 className="TotalAmount20">{total} dt</h4>
+          <h4 className="TotalAmount20">{total+priceService+pricePackaging} dt</h4>
         </div>
 
         <Button

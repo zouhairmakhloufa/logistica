@@ -10,9 +10,16 @@ const { Option } = Select;
 const Service = () => {
   const history = useHistory();
 
-  const { setService, setPackaging, service, packaging }: any = useContext(BookinContext);
-  console.log("service  :", service);
-  console.log("packaging :", packaging);
+  const {
+    setService,
+    setPackaging,
+    setPriceService,
+    setPricePackaging,
+
+    priceService,
+    pricePackaging,
+    service,
+    packaging }: any = useContext(BookinContext);
 
   const onSubmit = async (event: any) => {
     const registered = {
@@ -21,6 +28,30 @@ const Service = () => {
     };
     history.push("/PaymentMethode");
   };
+  const LesServices = [
+    { services: "Shipping 5 dt",  priceService: 15 },
+  ];
+
+  const selectedService = LesServices.find(
+    (item) =>
+      (item.services === service ) 
+  );
+  console.log("service", selectedService);
+
+
+  const LesPackaging = [
+    { packaging: "Cartoon 3 dt",  pricePackaging: 3 },
+    { packaging: "Plastic Roll 3 dt",  pricePackaging: 3 },
+
+  ];
+
+  const selectedPackaging = LesPackaging.find(
+    (item) =>
+      (item.packaging === packaging ) 
+  );
+  console.log("packaging", selectedPackaging);
+
+
   return (
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
@@ -30,7 +61,11 @@ const Service = () => {
           className="CickRetourService"
         />
 
-        <h2 className="TitleService"> Service</h2>
+        <h1 className="TitleService"> Service</h1>
+        <h2>price service : {selectedService?.priceService} dt </h2> 
+        <h2>price Packaging : {selectedPackaging?.pricePackaging} dt </h2> 
+
+
         <Form
           name="basic"
           initialValues={{ remember: true }}
@@ -57,17 +92,22 @@ const Service = () => {
               className="SelectPaymentMethode"
               onChange={setPackaging}
             >
-              <Option value="Cartoon 3 dt"> Cartoon       3 dt</Option>
-              <Option value="Plastic Roll 3 dt">Plastic Roll       3 dt</Option>
+              <Option value="Cartoon 3 dt"> Cartoon 3 dt</Option>
+              <Option value="Plastic Roll 3 dt">Plastic Roll 3 dt</Option>
             </Select>
           </div>
-          
+
           <Button
             className="button-Service"
             type="primary"
             htmlType="submit"
             style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-            value="Submit" > {" "}
+            value="Submit" 
+            onClick={() => {
+              setPriceService(selectedService?.priceService);
+              setPricePackaging(selectedPackaging?.pricePackaging);
+
+            }}>
             Continue{" "}
           </Button>
         </Form>

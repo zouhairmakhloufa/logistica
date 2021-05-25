@@ -47,7 +47,8 @@ const HomeDriver = () => {
             {bookingsByWaitingStatus &&
               bookingsByWaitingStatus.map((item: any) => (
                 <button onClick={() => history.push("/Detaille")}>
-                  <Card title={`${item.total}dt`} style={{ width: 380 }}>
+                  <Card title={`Car price : ${item.total} dt`}
+                    style={{ width: 380 }}> 
                     <Timeline>
                       <Timeline.Item color="green">
                         {item.addressId.addresSource}{" "}

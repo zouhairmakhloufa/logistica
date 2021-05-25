@@ -45,6 +45,11 @@ const Booking = (props: any) => {
           <p> - Packaging: {booking.packaging}</p>
           <p> - Payment Methode: {booking.paymentMethode}</p>
           <p> - NoteToDriver: {booking.noteToDriver}</p>
+          <p> - Total: {booking.total} dt </p>
+          <p> - price Service: {booking.priceService} dt </p>
+          <p> - price Packaging: {booking.pricePackaging} dt </p>
+
+
           <p> - Status: {booking.status}</p>
           <div>
             <button
