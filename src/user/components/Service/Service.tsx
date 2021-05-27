@@ -60,10 +60,8 @@ const Service = () => {
           onClick={() => history.push("/TypeOfCars")}
           className="CickRetourService"
         />
-
-        <h1 className="TitleService"> Service</h1>
-        <h2>price service : {selectedService?.priceService} dt </h2> 
-        <h2>price Packaging : {selectedPackaging?.pricePackaging} dt </h2> 
+        <h3>price service : {selectedService?.priceService} dt </h3> 
+        <h3 className="text">price Packaging : {selectedPackaging?.pricePackaging} dt </h3> 
 
 
         <Form
@@ -71,6 +69,7 @@ const Service = () => {
           initialValues={{ remember: true }}
           onFinish={onSubmit}
         >
+           <h2 className="TitleService"> Service</h2>
           <Select
             defaultValue="Shipping "
             style={{ width: 140, height: 35 }}

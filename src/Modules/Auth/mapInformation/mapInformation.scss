@@ -1,8 +1,18 @@
 .leaflet-container {
   position: initial;
-  height: 115px;
+  height: 100px;
     width: 1000px;
   }
+  .map{
+    height: 100vh;
+    position: relative;
+}
+.text{
+  margin-bottom: 40px;
+}
+.select{
+  margin-bottom: 15px;
+}
   .contentImage{
     display: flex;
     flex-direction: row;

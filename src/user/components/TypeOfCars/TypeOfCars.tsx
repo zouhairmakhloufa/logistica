@@ -40,7 +40,7 @@ const TypeOfCars = () => {
         <h2> Type Of Cars: {carName}</h2>
         <div className="ListCars">
           <List
-            style={{ width: 600 }}
+            style={{ width: 450 }}
             itemLayout="horizontal"
             dataSource={cars}
             renderItem={(item: any) => (
@@ -63,12 +63,9 @@ const TypeOfCars = () => {
                       {item.name}
                     </a>
                   }
-                  description={`1-1000 Kg ,  klm price: ${
-                    item.klmPrice
-                  }dt  , base price: ${item.basePrice}dt  , total: ${
-                    Number(distance) * Number(item.klmPrice) +
-                    Number(item.basePrice)
-                  }dt `}
+                  description={`1-1000 Kg ,  klm price: ${item.klmPrice}dt  
+                  , base price: ${item.basePrice}dt   total: ${
+                    Number(distance) * Number(item.klmPrice) + Number(item.basePrice) }dt `}
                 />
               </List.Item>
             )}

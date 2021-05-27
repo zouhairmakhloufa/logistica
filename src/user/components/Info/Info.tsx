@@ -1,4 +1,4 @@
-import { Button, Timeline, List, Avatar } from "antd";
+import { Button, Timeline, List, Avatar,Popconfirm } from "antd";
 import { LeftSquareOutlined, DollarOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
 import { useContext } from "react";
@@ -23,6 +23,7 @@ const Info = () => {
     noteToDriver,
     driverId,
     carName,
+    distance,
     priceService,
     pricePackaging,
     total,
@@ -41,14 +42,20 @@ const Info = () => {
           <h2> Booking details</h2>
           <Timeline className="timelineInfo">
             <Timeline.Item color="green">
-              {governorateAddressSource} <br></br> {addresSource}
+              {governorateAddressSource}  {addresSource}
             </Timeline.Item>
             <Timeline.Item color="green">
-              {governorateAddressDestination} <br></br> {addressDestination}
+              {governorateAddressDestination} {addressDestination}
             </Timeline.Item>
           </Timeline>
         </div>
-
+        <div className="infoBag">
+          <h2> information about your bag </h2>
+          <h4> weight : {poids} kg </h4>
+          <h4>height :{hauteur} cm </h4>
+          <h4>width : {largeur} cm </h4>
+          <h4>depth : {profondeur} cm </h4>
+        </div>
         <div className="typeofcars">
           <h2> Type of Cars</h2>
           <List
@@ -59,7 +66,9 @@ const Info = () => {
                 <List.Item.Meta
                   avatar={<Avatar src="/imageTypeOfCars/CarsPNG.jpg" />}
                   title={<a>{item}</a>}
-                  description=" 1-1000 Kg"
+                  description={`1-1000 Kg ,  klm price: ${item.klmPrice}dt  
+                  , base price: ${item.basePrice}dt   total: ${
+                    Number(distance) * Number(item.klmPrice) + Number(item.basePrice) }dt `}
                 />
               </List.Item>
             )}
@@ -67,7 +76,7 @@ const Info = () => {
         </div>
 
         <div className="paymentMethode">
-          <h2 className="TextPaymentMethode"> Payment Methode</h2>
+          <h2 className="text-paymentMethode"> Payment Methode</h2>
           <DollarOutlined style={{ fontSize: "22px", color: "#08c" }} />{" "}
           <Button className="ButtonCach" type="primary" htmlType="submit">
             {" "}
@@ -97,12 +106,13 @@ const Info = () => {
         </div>
 
         <div style={{ display: "flex" }} className="totalText">
-          <h2 className="texttottalamount">Total Amount</h2>
-          <h4 className="TotalAmount20">{total+priceService+pricePackaging} dt</h4>
+          <h2 className="text-totale-amount">Total Amount</h2>
+          <h4 className="TotalAmount1">{total+priceService+pricePackaging} dt</h4>
         </div>
-
+        <div>
+     
         <Button
-          className="button-Info"
+          className="buttonConfirm"
           type="primary"
           htmlType="submit"
           style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
@@ -154,8 +164,19 @@ const Info = () => {
           }}
         >
           {" "}
-          Book Now{" "}
+          Confirm {" "}
         </Button>
+    
+        <Button
+            className="buttonMap"
+            type="primary"
+            style={{ background: "red", borderColor: "red" }}
+            onClick={() => history.push("/")}
+          >
+            Cancel
+          </Button>
+
+      </div>
       </div>
     </div>
   );
