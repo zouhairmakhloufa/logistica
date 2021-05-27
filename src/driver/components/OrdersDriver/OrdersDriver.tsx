@@ -1,9 +1,9 @@
 import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import "./OrdersDriver.scss";
 import { LeftSquareOutlined } from "@ant-design/icons";
 import { Button, Tabs, Timeline } from "antd";
+import "./OrdersDriver.scss";
 
 const { TabPane } = Tabs;
 function callback(key: any) {
@@ -48,10 +48,8 @@ const OrdersDriver = () => {
         />
         <h2> Orders </h2>
 
-        <Tabs defaultActiveKey="1" onChange={callback}>
-          <br></br> <br></br>
+        <Tabs defaultActiveKey="1" onChange={callback} className="tabs1">
           <TabPane tab="Current" key="1" className="tabs">
-            <br></br>
             {bookingsByWaitingStatus &&
               bookingsByWaitingStatus.map((item: any) => (
                 <div>
@@ -61,26 +59,28 @@ const OrdersDriver = () => {
                   >
                     <Timeline>
                       <Timeline.Item color="green">
-                        {item.addressId.addresSource}{" "}
                         {item.addressId.governorateAddressSource}{" "}
+                        {item.addressId.addresSource}{" "}
                       </Timeline.Item>
                       <Timeline.Item color="green">
-                        {item.addressId.addressDestination}{" "}
                         {item.addressId.governorateAddressDestination}{" "}
+                        {item.addressId.addressDestination}{" "}
                       </Timeline.Item>
                     </Timeline>
                   </Button>
+
                   <div style={{ display: "flex" }}>
-                    <h3 style={{ marginRight: "120px" }}> {item.total}</h3>
-                    <h3>
-                      {item.userId.firstName} {item.userId.lastName}
-                    </h3>
+
+                    <h3 style={{ marginRight: "120px" }}> Car Price {item.total} </h3>
+
+                    <h3> {item.userId.firstName} {item.userId.lastName}  </h3>
+
                   </div>
                 </div>
               ))}
           </TabPane>
           <TabPane tab="Finished" key="2" className="tabs">
-            <br></br>
+
             {bookingsByfinishedStatus &&
               bookingsByfinishedStatus.map((item: any) => (
                 <div>
@@ -90,15 +90,17 @@ const OrdersDriver = () => {
                   >
                     <Timeline>
                       <Timeline.Item color="green">
-                        {item.addressId.addresSource}{" "}
                         {item.addressId.governorateAddressSource}{" "}
+                        {item.addressId.addresSource}{" "}
                       </Timeline.Item>
                       <Timeline.Item color="green">
-                        {item.addressId.addressDestination}{" "}
                         {item.addressId.governorateAddressDestination}{" "}
+                        {item.addressId.addressDestination}{" "}
                       </Timeline.Item>
                     </Timeline>
                   </Button>
+
+
                   <div style={{ display: "flex" }}>
                     <h3 style={{ marginRight: "120px" }}> {item.total}</h3>
                     <h3>
@@ -108,8 +110,9 @@ const OrdersDriver = () => {
                 </div>
               ))}
           </TabPane>
+
           <TabPane tab="Canceled" key="3" className="tabs">
-            <br></br>
+
             {bookingsBycancledStatus &&
               bookingsBycancledStatus.map((item: any) => (
                 <div>
@@ -119,12 +122,12 @@ const OrdersDriver = () => {
                   >
                     <Timeline>
                       <Timeline.Item color="green">
-                        {item.addressId.addresSource}{" "}
                         {item.addressId.governorateAddressSource}{" "}
+                        {item.addressId.addresSource}{" "}
                       </Timeline.Item>
                       <Timeline.Item color="green">
-                        {item.addressId.addressDestination}{" "}
                         {item.addressId.governorateAddressDestination}{" "}
+                        {item.addressId.addressDestination}{" "}
                       </Timeline.Item>
                     </Timeline>
                   </Button>

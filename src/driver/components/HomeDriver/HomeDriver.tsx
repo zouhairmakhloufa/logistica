@@ -48,15 +48,15 @@ const HomeDriver = () => {
               bookingsByWaitingStatus.map((item: any) => (
                 <button onClick={() => history.push("/Detaille")}>
                   <Card title={`Car price : ${item.total} dt`}
-                    style={{ width: 380 }}> 
+                    style={{ width: 380 }}>
                     <Timeline>
                       <Timeline.Item color="green">
-                        {item.addressId.addresSource}{" "}
                         {item.addressId.governorateAddressSource}
+                        {item.addressId.addresSource}{" "}
                       </Timeline.Item>
                       <Timeline.Item color="green">
-                        {item.addressId.addressDestination}{" "}
                         {item.addressId.governorateAddressDestination}
+                        {item.addressId.addressDestination}{" "}
                       </Timeline.Item>
                     </Timeline>{" "}
                   </Card>
