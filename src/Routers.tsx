@@ -26,9 +26,12 @@ import OrdersDriver from "./driver/components/OrdersDriver";
 import Signin from "./Modules/Auth/Signin";
 import SignUpUserOrDriver from "./Modules/Auth/SignUpUserOrDriver";
 import Booking from "./user/components/Booking";
+import Navbar from "./Modules/dashbord/Navbar/Navbar";
+
 function Routers(): JSX.Element {
   return (
     <BrowserRouter>
+      <Navbar />
       <div className="app">
         <Route path="/" exact component={dashbord} />
         <Route path="/MenuUser" exact component={MenuUser} />
@@ -43,7 +46,11 @@ function Routers(): JSX.Element {
         <Route path="/SettingUser" exact component={SettingUser} />
         <Route path="/SettingDriver" exact component={SettingDriver} />
         <Route path="/Auth/Signin" exact component={Signin} />
-        <Route path="/Auth/SignUpUserOrDriver" exact component={SignUpUserOrDriver} />
+        <Route
+          path="/Auth/SignUpUserOrDriver"
+          exact
+          component={SignUpUserOrDriver}
+        />
         <Route path="/Auth/SignupUser" exact component={SignupUser} />
         <Route path="/Auth/SignupDriver" exact component={SignupDriver} />
         <Route path="/mapInformation" exact component={MapInformation} />

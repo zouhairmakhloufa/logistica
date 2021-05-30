@@ -1,15 +1,23 @@
 import Main from "./Main";
-import Navbar from "./Navbar";
+import MapInformation from "../../Modules/Auth/mapInformation/mapInformation";
+import HomeDriver from "../../driver/components/HomeDriver/HomeDriver";
 
 function dashbord(): JSX.Element {
   return (
     <div>
-      <Navbar />
-      <div className="DashboardImage">
-        <Main />
+      {/* <div className="DashboardImage"> */}
+      <div>
+        {localStorage.getItem("token") ? (
+          localStorage.getItem("role") === "driver" ? (
+            <HomeDriver />
+          ) : (
+            <MapInformation />
+          )
+        ) : (
+          <Main />
+        )}
       </div>
     </div>
   );
-};
+}
 export default dashbord;
-

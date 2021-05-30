@@ -17,9 +17,15 @@ const Signin = () => {
       password: values.password,
     });
 
+    console.log("result", result);
+
     localStorage.setItem("token", result.data.token);
-    localStorage.setItem("role", result.data.user.role);
+    localStorage.setItem("role", result.data.user.type);
     localStorage.setItem("userid", result.data.user._id);
+    localStorage.setItem(
+      "userName",
+      `${result.data.user.firstName} ${result.data.user.lastName}`
+    );
     console.log("result.data.user", result.data.user);
 
     if (result.data.user.type === "driver") {
