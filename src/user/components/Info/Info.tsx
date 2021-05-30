@@ -1,4 +1,4 @@
-import { Button, Timeline, List, Avatar,Popconfirm } from "antd";
+import { Button, Timeline, List, Avatar, Popconfirm } from "antd";
 import { LeftSquareOutlined, DollarOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
 import { useContext } from "react";
@@ -42,7 +42,7 @@ const Info = () => {
           <h2> Booking details</h2>
           <Timeline className="timelineInfo">
             <Timeline.Item color="green">
-              {governorateAddressSource}  {addresSource}
+              {governorateAddressSource} {addresSource}
             </Timeline.Item>
             <Timeline.Item color="green">
               {governorateAddressDestination} {addressDestination}
@@ -68,7 +68,9 @@ const Info = () => {
                   title={<a>{item}</a>}
                   description={`1-1000 Kg ,  klm price: ${item.klmPrice}dt  
                   , base price: ${item.basePrice}dt   total: ${
-                    Number(distance) * Number(item.klmPrice) + Number(item.basePrice) }dt `}
+                    Number(distance) * Number(item.klmPrice) +
+                    Number(item.basePrice)
+                  }dt `}
                 />
               </List.Item>
             )}
@@ -107,19 +109,46 @@ const Info = () => {
 
         <div style={{ display: "flex" }} className="totalText">
           <h2 className="text-totale-amount">Total Amount</h2>
-          <h4 className="TotalAmount1">{total+priceService+pricePackaging} dt</h4>
+          <h4 className="TotalAmount1">
+            {total + priceService + pricePackaging} dt
+          </h4>
         </div>
         <div>
-     
-        <Button
-          className="buttonConfirm"
-          type="primary"
-          htmlType="submit"
-          style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-          onClick={async () => {
-            const booking = await axios.post(
-              "http://localhost:5000/Booking/booking",
-              {
+          <Button
+            className="buttonConfirm"
+            type="primary"
+            htmlType="submit"
+            style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
+            onClick={async () => {
+              const booking = await axios.post(
+                "http://localhost:5000/Booking/booking",
+                {
+                  governorateAddressSource,
+                  addresSource,
+                  governorateAddressDestination,
+                  addressDestination,
+                  poids,
+                  hauteur,
+                  largeur,
+                  profondeur,
+                  typeOfCars,
+                  service,
+                  packaging,
+                  paymentMethode: "cache",
+                  noteToDriver,
+                  driverId,
+                  token: localStorage.getItem("token"),
+                  total,
+                  priceService,
+                  pricePackaging,
+                }
+              );
+
+              console.log("booking", booking);
+
+              await axios.post("http://localhost:5000/Booking/sendemail", {
+                driverId,
+                token: localStorage.getItem("token"),
                 governorateAddressSource,
                 addresSource,
                 governorateAddressDestination,
@@ -133,41 +162,18 @@ const Info = () => {
                 packaging,
                 paymentMethode: "cache",
                 noteToDriver,
-                driverId,
-                token: localStorage.getItem("token"),
+                bookingId: booking.data.newBooking._id,
                 total,
-              }
-            );
+                priceService,
+                pricePackaging,
+              });
+              history.push("/BookingSuccessful");
+            }}
+          >
+            Confirm
+          </Button>
 
-            console.log("booking", booking);
-
-            await axios.post("http://localhost:5000/Booking/sendemail", {
-              driverId,
-              token: localStorage.getItem("token"),
-              governorateAddressSource,
-              addresSource,
-              governorateAddressDestination,
-              addressDestination,
-              poids,
-              hauteur,
-              largeur,
-              profondeur,
-              typeOfCars,
-              service,
-              packaging,
-              paymentMethode: "cache",
-              noteToDriver,
-              bookingId: booking.data.newBooking._id,
-              total,
-            });
-            history.push("/BookingSuccessful");
-          }}
-        >
-          {" "}
-          Confirm {" "}
-        </Button>
-    
-        <Button
+          <Button
             className="buttonMap"
             type="primary"
             style={{ background: "red", borderColor: "red" }}
@@ -175,8 +181,7 @@ const Info = () => {
           >
             Cancel
           </Button>
-
-      </div>
+        </div>
       </div>
     </div>
   );
