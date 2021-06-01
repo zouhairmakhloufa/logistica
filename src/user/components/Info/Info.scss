@@ -1,6 +1,6 @@
 .imageAuthInfoUser {
   width: 60%;
-  height: 140%;
+  height: 130%;
 }
 .contentImage{
   display: flex;
@@ -17,6 +17,9 @@
   background: white;
   border-color: white;
   color: black;
+}
+.cc{
+  margin-right: 10px;
 }
 .Form{
     text-align: center;
@@ -36,8 +39,7 @@
   margin-top: 15px;
 }
 .noteToDriver{
-  margin-top: 15px;
-}
+margin-top: 140px;}
 .InfoBooking{
   width: 40%;
   justify-content: center;
@@ -48,7 +50,7 @@
   padding-right: 1%;
 }
 .timelineInfo {
-  height: 100px;
+  height: 75px;
 }
  .infoBag{
   margin-right: 150px;
@@ -60,6 +62,7 @@
   }
 .totalText{
     color:#5eb89a ;
+    margin-top: 10px;
   }
 .pricingequipe{
   margin-right: 210px;

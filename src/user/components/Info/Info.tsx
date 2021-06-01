@@ -5,6 +5,7 @@ import { useContext } from "react";
 import BookinContext from "../../../context/booking";
 import axios from "axios";
 import "./Info.scss";
+import PaymentMethode from "../PaymentMethode";
 
 const Info = () => {
   const history = useHistory();
@@ -42,10 +43,10 @@ const Info = () => {
           <h2> Booking details</h2>
           <Timeline className="timelineInfo">
             <Timeline.Item color="green">
-              {governorateAddressSource} {addresSource}
+            governorate :{governorateAddressSource} , Adress :{addresSource}
             </Timeline.Item>
             <Timeline.Item color="green">
-              {governorateAddressDestination} {addressDestination}
+            governorate :{governorateAddressDestination} , Adress : {addressDestination}
             </Timeline.Item>
           </Timeline>
         </div>
@@ -68,27 +69,15 @@ const Info = () => {
                   title={<a>{item}</a>}
                   description={`1-1000 Kg ,  klm price: ${item.klmPrice}dt  
                   , base price: ${item.basePrice}dt   total: ${
-                    Number(distance) * Number(item.klmPrice) +
-                    Number(item.basePrice)
-                  }dt `}
+                    Number(distance) * Number(item.klmPrice) + Number(item.basePrice) }dt `}
                 />
               </List.Item>
             )}
           />
         </div>
 
-        <div className="paymentMethode">
-          <h2 className="text-paymentMethode"> Payment Methode</h2>
-          <DollarOutlined style={{ fontSize: "22px", color: "#08c" }} />{" "}
-          <Button className="ButtonCach" type="primary" htmlType="submit">
-            {" "}
-            Cach{" "}
-          </Button>
-        </div>
-
         <div className="noteToDriver">
-          <h2> Note To Driver</h2>
-          <h4>{noteToDriver}</h4>
+          <h2> Note To Driver : {noteToDriver}</h2>
         </div>
 
         <h2> Pricing</h2>
@@ -101,11 +90,12 @@ const Info = () => {
           <h4>5 dt</h4>
         </div>
         <div style={{ display: "flex" }} className="Pricing">
-          <h4 className="pricingShippingequipe"> {service} </h4>
+          <h4 className="pricingShippingequipe"> Shipping Service  {priceService} dt  </h4>
         </div>
         <div style={{ display: "flex" }} className="Pricing">
-          <h4 className="pricingequipe">{packaging}</h4>
+          <h4 className="pricingequipe"> Packaging Service  {pricePackaging} dt </h4>
         </div>
+        
 
         <div style={{ display: "flex" }} className="totalText">
           <h2 className="text-totale-amount">Total Amount</h2>

@@ -60,8 +60,8 @@ const Service = () => {
           onClick={() => history.push("/TypeOfCars")}
           className="CickRetourService"
         />
-        <h3>price service : {selectedService?.priceService} dt </h3> 
-        <h3 className="text">price Packaging : {selectedPackaging?.pricePackaging} dt </h3> 
+        <h3>Price Delivery,Boarding and Shipping service : {selectedService?.priceService} dt </h3> 
+          <h3 className="text">Price Packaging : {selectedPackaging?.pricePackaging} dt </h3> 
 
 
         <Form

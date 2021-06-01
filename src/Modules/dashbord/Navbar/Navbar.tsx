@@ -1,5 +1,4 @@
 import { useHistory } from "react-router-dom";
-import { SearchOutlined } from "@ant-design/icons";
 
 const Navbar = () => {
   const history = useHistory();
@@ -30,7 +29,7 @@ const Navbar = () => {
                 window.location.replace("/");
               }}
             >
-              deconnexion
+              disconnection
             </button>
           )}
         </ul>
