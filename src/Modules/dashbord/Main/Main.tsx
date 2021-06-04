@@ -21,7 +21,7 @@ const Main = () => {
           onClick={() => history.push("/Auth/Signin")}
         >
           {" "}
-          Start Now{" "}
+          Join us{" "}
         </Button>
       </div>
     </div>

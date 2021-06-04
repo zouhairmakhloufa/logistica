@@ -1,10 +1,6 @@
 import { Form, Input, Button } from "antd";
 import { useHistory } from "react-router-dom";
-import {
-  LeftSquareOutlined,
-  MailOutlined,
-  LockOutlined,
-} from "@ant-design/icons";
+import { LeftSquareOutlined, MailOutlined, LockOutlined} from "@ant-design/icons";
 import axios from "axios";
 import "./Signin.scss";
 
@@ -22,10 +18,7 @@ const Signin = () => {
     localStorage.setItem("token", result.data.token);
     localStorage.setItem("role", result.data.user.type);
     localStorage.setItem("userid", result.data.user._id);
-    localStorage.setItem(
-      "userName",
-      `${result.data.user.firstName} ${result.data.user.lastName}`
-    );
+    localStorage.setItem("userName",`${result.data.user.firstName} ${result.data.user.lastName}` );
     console.log("result.data.user", result.data.user);
 
     if (result.data.user.type === "driver") {
@@ -34,7 +27,6 @@ const Signin = () => {
       window.location.replace("/mapInformation");
     }
   };
-
   const onFinishFailed = (errorInfo: any) => {
     console.log("Failed:", errorInfo);
   };

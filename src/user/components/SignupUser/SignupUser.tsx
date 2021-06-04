@@ -26,7 +26,7 @@ const SignupUser = () => {
       numDeTelf
     };
     const user = await axios.post(
-      "http://localhost:5000/User/ajouter",
+      "http://localhost:5000/User/signup",
       registered
     );
     setFirstName("");
@@ -52,17 +52,13 @@ const SignupUser = () => {
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
       <div className="signup-info-User">
-        <LeftSquareOutlined
-          onClick={() => history.push("/Auth/SignUpUserOrDriver")}
-          className="ClickRetour"
-        />
-        <h2>Add Your</h2>
         <Form
           name="basic"
           initialValues={{ remember: true }}
           onFinish={onSubmit}
           onFinishFailed={onFinishFailed}
         >
+        <h2>  Create your account </h2>
           <Form.Item
             name="firstName"
             rules={[{ required: true, message: "Enter your firstName !" }]}
@@ -73,6 +69,7 @@ const SignupUser = () => {
               prefix={<UserOutlined />}
               onChange={(event) => setFirstName(event.target.value)}
               value={firstName}
+              
             />
           </Form.Item>
 
@@ -148,7 +145,7 @@ const SignupUser = () => {
           </Form.Item>
           <Form.Item
             name="phone"
-            rules={[{ message: 'Please input your phone number!' }]}
+            rules={[{ required: true, message: 'Please input your phone number!' }]}
           >
             <Input 
             placeholder="Add your Phone Number"

@@ -9,7 +9,6 @@ import TypeOfCars from "./user/components/TypeOfCars";
 import Service from "./user/components/Service";
 import BookingSuccessful from "./user/components/BookingSuccessful";
 import NoteToDriver from "./user/components/NoteToDriver";
-import RetourRequest from "./user/components/RetourRequest";
 import MenuUser from "./user/components/MenuUser";
 import Info from "./user/components/Info";
 import OrdersUser from "./user/components/OrdersUser";
@@ -17,7 +16,6 @@ import NotificationUser from "./user/components/NotificationUser";
 import SettingUser from "./user/components/SettingUser";
 import PaymentUser from "./user/components/PaymentUser";
 import PaymentMethode from "./user/components/PaymentMethode";
-import InfoDetailCurrent from "./user/components/InfoDetailCurrent";
 import MenuDriver from "./driver/components/MenuDriver";
 import HomeDriver from "./driver/components/HomeDriver";
 import SettingDriver from "./driver/components/SettingDriver";
@@ -38,7 +36,6 @@ function Routers(): JSX.Element {
         <Route path="/MenuDriver" exact component={MenuDriver} />
         <Route path="/OrdersDriver" exact component={OrdersDriver} />
         <Route path="/Info" exact component={Info} />
-        <Route path="/InfoDetailCurrent" exact component={InfoDetailCurrent} />
         <Route path="/OrdersUser" exact component={OrdersUser} />
         <Route path="/PaymentUser" exact component={PaymentUser} />
         <Route path="/PaymentMethode" exact component={PaymentMethode} />
@@ -46,11 +43,7 @@ function Routers(): JSX.Element {
         <Route path="/SettingUser" exact component={SettingUser} />
         <Route path="/SettingDriver" exact component={SettingDriver} />
         <Route path="/Auth/Signin" exact component={Signin} />
-        <Route
-          path="/Auth/SignUpUserOrDriver"
-          exact
-          component={SignUpUserOrDriver}
-        />
+        <Route path="/Auth/SignUpUserOrDriver" exact component={SignUpUserOrDriver} />
         <Route path="/Auth/SignupUser" exact component={SignupUser} />
         <Route path="/Auth/SignupDriver" exact component={SignupDriver} />
         <Route path="/mapInformation" exact component={MapInformation} />
@@ -61,7 +54,6 @@ function Routers(): JSX.Element {
         <Route path="/HomeDriver" exact component={HomeDriver} />
         <Route path="/Detaille" exact component={Detaille} />
         <Route path="/NoteToDriver" exact component={NoteToDriver} />
-        <Route path="/RetourRequest" exact component={RetourRequest} />
         <Route path="/Booking/:id" exact component={Booking} />
       </div>
     </BrowserRouter>

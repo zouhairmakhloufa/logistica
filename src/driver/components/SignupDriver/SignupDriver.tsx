@@ -61,12 +61,7 @@ const SignupDriver = () => {
   return (
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
-      <div className="signup-info-User">
-        <LeftSquareOutlined
-          onClick={() => history.push("/")}
-          className="ClickRetour"
-        />
-        <h2>Add Your</h2>
+      <div className="signup-info-Driver">
         <Form
           name="basic"
           initialValues={{ remember: true }}
@@ -155,32 +150,25 @@ const SignupDriver = () => {
               onChange={(event) => setConfirmPassword(event.target.value)}
               value={confirmPassword}
             />
+
           </Form.Item>
           <div className="carsInfo">
-            <h3>Type Of Car</h3>
             <Form.Item
               name="CarInfo"
               rules={[{ required: true, message: "Enter your CarInfo !" }]}
             >
               <Input
-                placeholder="exemple Golf"
-                style={{ width: "100%" }}
+                placeholder="Enter your car name                       exemple Golf"
+                style={{ width: "70%" }}
                 onChange={(event) => setTypeOfCars(event.target.value)}
                 value={TypeOfCars}
               />
             </Form.Item>
+
             <Form.Item
-              name="phone"
-              rules={[{ message: "Please input your phone number!" }]}
+              name="BasePrice"
+              rules={[{ required: true, message: "Enter Your base price !" }]}
             >
-              <Input
-                placeholder="Add your Phone Number"
-                addonBefore={prefixSelector}
-                style={{ width: "70%" }}
-                onChange={(event) => setNumDeTelf(event.target.value)}
-              />
-            </Form.Item>
-            <Form.Item label="base price" className="input2k">
               <InputNumber
                 min={1}
                 max={2000}
@@ -190,7 +178,10 @@ const SignupDriver = () => {
                 onChange={setBasePrice}
               />
             </Form.Item>
-            <Form.Item label="klm price" className="input2k">
+            <Form.Item
+              name="KlmPrice"
+              rules={[{ required: true, message: "Enter Your klm price !" }]}
+            >
               <InputNumber
                 min={1}
                 max={2000}
@@ -198,6 +189,18 @@ const SignupDriver = () => {
                 style={{ width: "40%" }}
                 // @ts-ignore
                 onChange={setKlmPrice}
+              />
+            </Form.Item>
+            <Form.Item
+              className="NumberPhone"
+              name="phone"
+              rules={[{ required: true, message: "Please input your phone number!" }]}
+            >
+              <Input
+                placeholder="Add your Phone Number"
+                addonBefore={prefixSelector}
+                style={{ width: "70%" }}
+                onChange={(event) => setNumDeTelf(event.target.value)}
               />
             </Form.Item>
           </div>
