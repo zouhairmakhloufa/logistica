@@ -26,7 +26,7 @@ const SettingDriver = () => {
   return (
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuthSettingDriver" />
-      <div className="signup-info-driver">
+      <div className="setting-info-Driver">
         <LeftSquareOutlined onClick={() => history.push("/MenuDriver")} className="ClickRetour" /> 
          <div style={{ display: "flex" }} >
             <h2 style={{ marginRight: "50px" }} className="TextAccountBalence">Profile</h2>
@@ -85,10 +85,6 @@ const SettingDriver = () => {
             <h4 className="TotalAmount">350 R. S.</h4>
           </div>
 
-          <div style={{ display: "flex" }} >
-            <h2 style={{ marginRight: "50px" }}>Payment</h2>
-          </div>
-          <a href="/" className="logOut"> Log out</a>
           <Form.Item {...tailLayout}>
             <Button
               className="button-SettingDriver"

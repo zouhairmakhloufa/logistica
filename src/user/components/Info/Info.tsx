@@ -5,7 +5,6 @@ import { useContext } from "react";
 import BookinContext from "../../../context/booking";
 import axios from "axios";
 import "./Info.scss";
-import PaymentMethode from "../PaymentMethode";
 
 const Info = () => {
   const history = useHistory();

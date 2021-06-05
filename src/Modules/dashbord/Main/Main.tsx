@@ -21,7 +21,7 @@ const Main = () => {
           onClick={() => history.push("/Auth/Signin")}
         >
           {" "}
-          Join us{" "}
+          Join Logistica{" "}
         </Button>
       </div>
     </div>

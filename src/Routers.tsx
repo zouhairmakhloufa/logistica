@@ -12,7 +12,6 @@ import NoteToDriver from "./user/components/NoteToDriver";
 import MenuUser from "./user/components/MenuUser";
 import Info from "./user/components/Info";
 import OrdersUser from "./user/components/OrdersUser";
-import NotificationUser from "./user/components/NotificationUser";
 import SettingUser from "./user/components/SettingUser";
 import PaymentUser from "./user/components/PaymentUser";
 import PaymentMethode from "./user/components/PaymentMethode";
@@ -39,7 +38,6 @@ function Routers(): JSX.Element {
         <Route path="/OrdersUser" exact component={OrdersUser} />
         <Route path="/PaymentUser" exact component={PaymentUser} />
         <Route path="/PaymentMethode" exact component={PaymentMethode} />
-        <Route path="/NotificationUser" exact component={NotificationUser} />
         <Route path="/SettingUser" exact component={SettingUser} />
         <Route path="/SettingDriver" exact component={SettingDriver} />
         <Route path="/Auth/Signin" exact component={Signin} />

@@ -23,14 +23,6 @@ const MenuUser = () => {
           onClick={() => history.push("/OrdersUser")}> Orders{" "}
         </Button> <br></br> <br></br>
 
-        <NotificationOutlined /><Button className="ButtonMenu" type="primary" htmlType="submit"
-          onClick={() => history.push("/NotificationUser")} > Notification{" "}
-        </Button> <br></br> <br></br>
-
-        <CreditCardOutlined /> <Button className="ButtonMenu" type="primary" htmlType="submit"
-          onClick={() => history.push("/PaymentUser")}> Payment{" "}
-        </Button> <br></br> <br></br>
-
         <SettingOutlined /><Button className="ButtonMenu" type="primary" htmlType="submit"
           onClick={() => history.push("/SettingUser")}> Setting{" "}
         </Button>

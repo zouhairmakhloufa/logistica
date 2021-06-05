@@ -1,7 +1,9 @@
 import { useHistory } from "react-router-dom";
-import "./OrdersUser.scss";
+import { useEffect, useState } from "react";
 import { LeftSquareOutlined } from "@ant-design/icons";
 import { Button, Tabs, Timeline } from "antd";
+import axios from "axios";
+import "./OrdersUser.scss";
 
 const { TabPane } = Tabs;
 function callback(key: any) {
@@ -10,6 +12,31 @@ function callback(key: any) {
 
 const OrdersUser = () => {
   const history = useHistory();
+  const [bookings, setBookings]: any = useState(null);
+
+  useEffect(() => {
+    const fetchBooking = async () => {
+      const result = await axios.get(
+        `http://localhost:5000/booking/user/booking/${localStorage.getItem(
+          "userid"
+        )}`
+      );
+      setBookings(result.data.bookings);
+    };
+    fetchBooking();
+  }, []);
+const bookingsByWaitingStatus = bookings?.filter(
+    (item: any) => item.status === "en attente"
+  );
+
+  const bookingsByfinishedStatus = bookings?.filter(
+    (item: any) => item.status === "terminé"
+  );
+
+  const bookingsBycancledStatus = bookings?.filter(
+    (item: any) => item.status === "annulé"
+  );
+
   return (
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
@@ -21,38 +48,97 @@ const OrdersUser = () => {
         />
         <h2> Orders </h2>
 
-        <Tabs defaultActiveKey="1" onChange={callback}>
-          <br></br> <br></br>
+        <Tabs defaultActiveKey="1" onChange={callback} className="tabs1">
           <TabPane tab="Current" key="1" className="tabs">
-            <br></br>
-            <div>
-              <Button
-                onClick={() => history.push("/InfoDetailCurrent")}
-                style={{ background: "#d6d6d6", borderColor: "#d6d6d6" }}
-              >
-                <Timeline>
-                  <Timeline.Item color="green">
-                    6731 Al Ulaya, Al Wurud
-                  </Timeline.Item>
-                  <Timeline.Item color="green">
-                    King Khalid International Airport{" "}
-                  </Timeline.Item>
-                </Timeline>{" "}
-              </Button>
-            </div>
-            <br></br> <br></br>
-            <div style={{ display: "flex" }}>
-              <h3 style={{ marginRight: "120px" }}> 8dt</h3>
-              <h3>Adem Ragheb</h3>
-            </div>
+            {bookingsByWaitingStatus &&
+              bookingsByWaitingStatus.map((item: any) => (
+                <div>
+                  <Button
+                    onClick={() => history.push("/InfoDetailCurrent")}
+                    style={{ background: "#d6d6d6", borderColor: "#d6d6d6" }}
+                  >
+                    <Timeline>
+                      <Timeline.Item color="green">
+                        {item.addressId.governorateAddressSource}{" "}
+                        {item.addressId.addresSource}{" "}
+                      </Timeline.Item>
+                      <Timeline.Item color="green">
+                        {item.addressId.governorateAddressDestination}{" "}
+                        {item.addressId.addressDestination}{" "}
+                      </Timeline.Item>
+                    </Timeline>
+                  </Button>
+
+                  <div style={{ display: "flex" }}>
+
+                    <h3 style={{ marginRight: "120px" }}> Car Price {item.total} </h3>
+
+                    <h3> {item.userId.firstName} {item.userId.lastName}  </h3>
+
+                  </div>
+                </div>
+              ))}
           </TabPane>
           <TabPane tab="Finished" key="2" className="tabs">
-            <br></br>
-            <h3> Adem Ragheb</h3>
+
+            {bookingsByfinishedStatus &&
+              bookingsByfinishedStatus.map((item: any) => (
+                <div>
+                  <Button
+                    onClick={() => history.push("/InfoDetailCurrent")}
+                    style={{ background: "#d6d6d6", borderColor: "#d6d6d6" }}
+                  >
+                    <Timeline>
+                      <Timeline.Item color="green">
+                        {item.addressId.governorateAddressSource}{" "}
+                        {item.addressId.addresSource}{" "}
+                      </Timeline.Item>
+                      <Timeline.Item color="green">
+                        {item.addressId.governorateAddressDestination}{" "}
+                        {item.addressId.addressDestination}{" "}
+                      </Timeline.Item>
+                    </Timeline>
+                  </Button>
+
+
+                  <div style={{ display: "flex" }}>
+                    <h3 style={{ marginRight: "120px" }}> {item.total}</h3>
+                    <h3>
+                      {item.userId.firstName} {item.userId.lastName}
+                    </h3>
+                  </div>
+                </div>
+              ))}
           </TabPane>
+
           <TabPane tab="Canceled" key="3" className="tabs">
-            <br></br>
-            <h3> Adem Ragheb</h3>
+
+            {bookingsBycancledStatus &&
+              bookingsBycancledStatus.map((item: any) => (
+                <div>
+                  <Button
+                    onClick={() => history.push("/InfoDetailCurrent")}
+                    style={{ background: "#d6d6d6", borderColor: "#d6d6d6" }}
+                  >
+                    <Timeline>
+                      <Timeline.Item color="green">
+                        {item.addressId.governorateAddressSource}{" "}
+                        {item.addressId.addresSource}{" "}
+                      </Timeline.Item>
+                      <Timeline.Item color="green">
+                        {item.addressId.governorateAddressDestination}{" "}
+                        {item.addressId.addressDestination}{" "}
+                      </Timeline.Item>
+                    </Timeline>
+                  </Button>
+                  <div style={{ display: "flex" }}>
+                    <h3 style={{ marginRight: "120px" }}> {item.total}</h3>
+                    <h3>
+                      {item.userId.firstName} {item.userId.lastName}
+                    </h3>
+                  </div>
+                </div>
+              ))}
           </TabPane>
         </Tabs>
       </div>

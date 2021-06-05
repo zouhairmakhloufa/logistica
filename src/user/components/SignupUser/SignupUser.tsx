@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Form, Input, Button,Select, } from "antd";
 import { UserOutlined, MailOutlined, LockOutlined } from "@ant-design/icons";
-import { LeftSquareOutlined } from "@ant-design/icons";
 import axios from "axios";
 import "./SignupUser.scss";
 const { Option } = Select;
