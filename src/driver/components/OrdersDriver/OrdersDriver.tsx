@@ -30,6 +30,10 @@ const OrdersDriver = () => {
     (item: any) => item.status === "en attente"
   );
 
+  const bookingsByCurrentStatus = bookings?.filter(
+    (item: any) => item.status === "accepter"
+  );
+
   const bookingsByfinishedStatus = bookings?.filter(
     (item: any) => item.status === "terminé"
   );
@@ -37,6 +41,7 @@ const OrdersDriver = () => {
   const bookingsBycancledStatus = bookings?.filter(
     (item: any) => item.status === "annulé"
   );
+  console.log("bookingsByWaitingStatus", bookingsByWaitingStatus);
   return (
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
@@ -50,8 +55,8 @@ const OrdersDriver = () => {
 
         <Tabs defaultActiveKey="1" onChange={callback} className="tabs1">
           <TabPane tab="Current" key="1" className="tabs">
-            {bookingsByWaitingStatus &&
-              bookingsByWaitingStatus.map((item: any) => (
+            {bookingsByCurrentStatus &&
+              bookingsByCurrentStatus.map((item: any) => (
                 <div>
                   <Button
                     onClick={() => history.push("/InfoDetailCurrent")}
@@ -70,17 +75,20 @@ const OrdersDriver = () => {
                   </Button>
 
                   <div style={{ display: "flex" }}>
+                    <h3 style={{ marginRight: "120px" }}>
+                      {" "}
+                      Car Price {item.total}{" "}
+                    </h3>
 
-                    <h3 style={{ marginRight: "120px" }}> Car Price {item.total} </h3>
-
-                    <h3> {item.userId.firstName} {item.userId.lastName}  </h3>
-
+                    <h3>
+                      {" "}
+                      {item.userId.firstName} {item.userId.lastName}{" "}
+                    </h3>
                   </div>
                 </div>
               ))}
           </TabPane>
           <TabPane tab="Finished" key="2" className="tabs">
-
             {bookingsByfinishedStatus &&
               bookingsByfinishedStatus.map((item: any) => (
                 <div>
@@ -100,7 +108,6 @@ const OrdersDriver = () => {
                     </Timeline>
                   </Button>
 
-
                   <div style={{ display: "flex" }}>
                     <h3 style={{ marginRight: "120px" }}> {item.total}</h3>
                     <h3>
@@ -112,7 +119,6 @@ const OrdersDriver = () => {
           </TabPane>
 
           <TabPane tab="Canceled" key="3" className="tabs">
-
             {bookingsBycancledStatus &&
               bookingsBycancledStatus.map((item: any) => (
                 <div>
@@ -137,6 +143,91 @@ const OrdersDriver = () => {
                       {item.userId.firstName} {item.userId.lastName}
                     </h3>
                   </div>
+                </div>
+              ))}
+          </TabPane>
+
+          <TabPane tab="Wating" key="4" className="tabs">
+            {bookingsByWaitingStatus &&
+              bookingsByWaitingStatus.map((item: any) => (
+                <div>
+                  <Button
+                    onClick={() => history.push("/InfoDetailCurrent")}
+                    style={{ background: "#d6d6d6", borderColor: "#d6d6d6" }}
+                  >
+                    <Timeline>
+                      <Timeline.Item color="green">
+                        {item.addressId.governorateAddressSource}{" "}
+                        {item.addressId.addresSource}{" "}
+                      </Timeline.Item>
+                      <Timeline.Item color="green">
+                        {item.addressId.governorateAddressDestination}{" "}
+                        {item.addressId.addressDestination}{" "}
+                      </Timeline.Item>
+                    </Timeline>
+                  </Button>
+                  <div style={{ display: "flex" }}>
+                    <h3 style={{ marginRight: "120px" }}> {item.total}</h3>
+                    <h3>
+                      {item.userId.firstName} {item.userId.lastName}
+                    </h3>
+                  </div>
+                  <button
+                    onClick={async () => {
+                      try {
+                        const result = await axios.put(
+                          `http://localhost:5000/booking/bookingAccept/${item._id}`
+                        );
+                        if (result.status === 200) {
+                        } else {
+                        }
+                        const res = await axios.post(
+                          "http://localhost:5000/Booking/sendemailResponse",
+                          {
+                            mail: item?.userId.email,
+                            token: localStorage.getItem("token"),
+                            isAccept: true,
+                            bookingId: item._id,
+                          }
+                        );
+                        if (res.status === 200) {
+                        } else {
+                        }
+                      } catch (err) {
+                        // setStatus
+                      }
+                    }}
+                  >
+                    accept
+                  </button>
+                  <button
+                    onClick={async () => {
+                      try {
+                        const result = await axios.put(
+                          `http://localhost:5000/booking/bookingAccept/${item._id}`
+                        );
+                        if (result.status === 200) {
+                        } else {
+                        }
+                        const res = await axios.post(
+                          "http://localhost:5000/Booking/sendemailResponse",
+                          {
+                            mail: item?.userId.email,
+                            token: localStorage.getItem("token"),
+                            isAccept: false,
+                            bookingId: item._id,
+                          }
+                        );
+                        if (res.status === 200) {
+                        } else {
+                        }
+                      } catch (err) {
+                        // setStatus
+                      }
+                    }}
+                  >
+                    refuse
+                  </button>
                 </div>
               ))}
           </TabPane>

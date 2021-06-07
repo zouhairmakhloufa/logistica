@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { Alert } from "antd";
 import { useHistory } from "react-router-dom";
-import { Form, Input, Button,Select, } from "antd";
+import { Form, Input, Button, Select } from "antd";
 import { UserOutlined, MailOutlined, LockOutlined } from "@ant-design/icons";
 import axios from "axios";
 import "./SignupUser.scss";
@@ -13,6 +14,7 @@ const SignupUser = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [numDeTelf, setNumDeTelf] = useState("");
+  const [status, setStatus] = useState("");
 
   const onSubmit = async (event: any) => {
     const registered = {
@@ -22,19 +24,31 @@ const SignupUser = () => {
       password,
       confirmPassword,
       type: "user",
-      numDeTelf
+      numDeTelf,
     };
-    const user = await axios.post(
-      "http://localhost:5000/User/signup",
-      registered
-    );
+    try {
+      const user = await axios.post(
+        "http://localhost:5000/User/signup",
+        registered
+      );
+
+      console.log("user", user);
+
+      if (user.status === 200) {
+        setStatus("succes");
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      setStatus("error");
+    }
     setFirstName("");
     setLastName("");
     setEmail("");
     setPassword("");
     setConfirmPassword("");
     setNumDeTelf("");
-    history.push("/Auth/Signin");
+    // history.push("/Auth/Signin");
   };
 
   const onFinishFailed = (errorInfo: any) => {
@@ -43,7 +57,7 @@ const SignupUser = () => {
   const prefixSelector = (
     <Form.Item name="prefix" noStyle>
       <Select style={{ width: 85 }}>
-        <Option  value="+216">+216</Option>
+        <Option value="+216">+216</Option>
       </Select>
     </Form.Item>
   );
@@ -51,13 +65,24 @@ const SignupUser = () => {
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
       <div className="signup-info-User">
+        {status === "succes" && (
+          <Alert message="Success singjsdkjhskdjskd" type="success" showIcon />
+        )}
+        {status === "error" && (
+          <Alert
+            message="Error"
+            description="This is an error message about copywriting."
+            type="error"
+            showIcon
+          />
+        )}
         <Form
           name="basic"
           initialValues={{ remember: true }}
           onFinish={onSubmit}
           onFinishFailed={onFinishFailed}
         >
-        <h2>  Create your account </h2>
+          <h2> Create your account </h2>
           <Form.Item
             name="firstName"
             rules={[{ required: true, message: "Enter your firstName !" }]}
@@ -68,7 +93,6 @@ const SignupUser = () => {
               prefix={<UserOutlined />}
               onChange={(event) => setFirstName(event.target.value)}
               value={firstName}
-              
             />
           </Form.Item>
 
@@ -144,16 +168,18 @@ const SignupUser = () => {
           </Form.Item>
           <Form.Item
             name="phone"
-            rules={[{ required: true, message: 'Please input your phone number!' }]}
+            rules={[
+              { required: true, message: "Please input your phone number!" },
+            ]}
           >
-            <Input 
-            placeholder="Add your Phone Number"
-            addonBefore={prefixSelector} 
-            style={{ width: "70%" }}
-            onChange={(event) => setNumDeTelf(event.target.value)}
-             />
+            <Input
+              placeholder="Add your Phone Number"
+              addonBefore={prefixSelector}
+              style={{ width: "70%" }}
+              onChange={(event) => setNumDeTelf(event.target.value)}
+            />
           </Form.Item>
-          
+
           <div style={{ display: "flex" }}>
             <h5
               style={{ marginRight: "50px" }}

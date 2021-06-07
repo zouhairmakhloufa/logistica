@@ -5,7 +5,6 @@ import HomeDriver from "../../driver/components/HomeDriver/HomeDriver";
 function dashbord(): JSX.Element {
   return (
     <div>
-      {/* <div className="DashboardImage"> */}
       <div>
         {localStorage.getItem("token") ? (
           localStorage.getItem("role") === "driver" ? (
