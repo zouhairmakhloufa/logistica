@@ -1,11 +1,14 @@
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button,Alert } from "antd";
 import { useHistory } from "react-router-dom";
-import { LeftSquareOutlined, MailOutlined, LockOutlined} from "@ant-design/icons";
+import { useState } from "react";
+import { MailOutlined, LockOutlined} from "@ant-design/icons";
 import axios from "axios";
 import "./Signin.scss";
 
 const Signin = () => {
   const history = useHistory();
+  const [status, setStatus] = useState("");
+
 
   const onFinish = async (values: any) => {
     const result = await axios.post("http://localhost:5000/User/login", {
@@ -26,6 +29,11 @@ const Signin = () => {
     } else {
       window.location.replace("/mapInformation");
     }
+    if (result.status === 200) {
+      setStatus("succes");
+    } else {
+      setStatus("error");
+    }
   };
   const onFinishFailed = (errorInfo: any) => {
     console.log("Failed:", errorInfo);
@@ -35,6 +43,12 @@ const Signin = () => {
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
       <div className="auth-signup-info">
+      {status === "succes" && (
+           <Alert message="successfully done" type="success" showIcon closable  />
+        )}
+        {status === "error" && (
+        <Alert message="Error" type="error" showIcon closable />
+        )}
         <h1>Sign-in </h1>
         <h4>Welcome back! </h4>
         <Form

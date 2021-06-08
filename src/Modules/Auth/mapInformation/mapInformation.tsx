@@ -1,8 +1,8 @@
 import { MapContainer, TileLayer } from "react-leaflet";
-import { useContext,useState } from "react";
+import { useContext, useState } from "react";
 import { Button, Input, Select, Form } from "antd";
 import { useHistory } from "react-router-dom";
-import { LeftSquareOutlined, MenuOutlined } from "@ant-design/icons";
+import { MenuOutlined } from "@ant-design/icons";
 import BookinContext from "../../../context/booking";
 import "leaflet/dist/leaflet.css";
 import "./mapInformation.scss";
@@ -40,7 +40,12 @@ function MapInformation() {
     { source: "Mahdia", destination: "Sousse", distance: 50 },
     { source: "Mahdia", destination: "Monastir", distance: 48 },
     { source: "Mahdia", destination: "Sfax", distance: 127 },
+    { source: "Mahdia", destination: "Zaghouan", distance: 163 },
+    { source: "Mahdia", destination: "Kef", distance: 163 },
+    { source: "Mahdia", destination: "Nabeul", distance: 170 },
+    { source: "Mahdia", destination: "Ariana", distance: 220 },
     { source: "Sfax", destination: "Sousse", distance: 132 },
+    { source: "Sfax", destination: "Monastir", distance: 134 },
     { source: "Sfax", destination: "Tunis", distance: 271 },
     { source: "Sfax", destination: "Nabeul", distance: 259 },
     { source: "Sfax", destination: "Ariana", distance: 278 },
@@ -50,12 +55,30 @@ function MapInformation() {
     { source: "Tunis", destination: "Nabeul", distance: 68 },
     { source: "Tunis", destination: "Zaghouan", distance: 56 },
     { source: "Tunis", destination: "Tozeur", distance: 454 },
+    { source: "Tunis", destination: "Monastir", distance: 168 },
+    { source: "Sousse", destination: "Monastir", distance: 21 },
+    { source: "Sousse", destination: "Nabeul", distance: 108 },
+    { source: "Sousse", destination: "Ariana", distance: 158 },
+    { source: "Sousse", destination: "Zaghouan", distance: 102 },
+    { source: "Kasserine", destination: "Ariana", distance: 259 },
+    { source: "Kasserine", destination: "Monastir", distance: 232 },
+    { source: "Kasserine", destination: "Sousse", distance: 196 },
+    { source: "Kasserine", destination: "Tunis", distance: 298 },
+    { source: "Kasserine", destination: "Sfax", distance: 199 },
+    { source: "Kasserine", destination: "Mahdia", distance: 242 },
+    { source: "Monastir", destination: "Kef", distance: 253 },
+    { source: "Monastir", destination: "Sidi Bouzid", distance: 175 },
+    { source: "Monastir", destination: "Kébili", distance: 380 },
+    { source: "Monastir", destination: "Ben Arous", distance: 161 },
+    { source: "Ariana", destination: "Béja", distance: 116 },
   ];
 
   const selectedDistance = distances.find(
     (item) =>
       (item.source === governorateAddressSource &&
-        item.destination === governorateAddressDestination) ||
+
+       
+ item.destination === governorateAddressDestination) ||
       (item.source === governorateAddressDestination &&
         item.destination === governorateAddressSource)
   );
@@ -89,7 +112,7 @@ function MapInformation() {
         >
           <h3> Choose Your Governorate </h3>
           <Select
-            defaultValue="Bizerte"
+            defaultValue="Nabeul"
             onChange={setGovernorateAddressSource}
             style={{ width: 120 }}
             bordered={false}
@@ -98,7 +121,11 @@ function MapInformation() {
             <Option value="Tunis">Tunis</Option>
             <Option value="Mahdia">Mahdia</Option>
             <Option value="Ariana"> Ariana</Option>
-            <Option value="Béja">Béja</Option>
+            <Option value="Monastir">Monastir</Option>
+            <Option value="Nabeul">Nabeul</Option>
+            <Option value="Sfax">Sfax</Option>
+            <Option value="Sousse">Sousse</Option>
+            <Option value="Kasserine"> Kasserine</Option>
             <Option value="Ben Arous">Ben Arous</Option>
             <Option value="Bizerte">Bizerte</Option>
             <Option value="Gabès">Gabès</Option>
@@ -107,15 +134,12 @@ function MapInformation() {
             <Option value="Kairouan">Kairouan</Option>
             <Option value="Kasserine"> Kasserine</Option>
             <Option value="Kébili">Kébili</Option>
+            <Option value="Béja">Béja</Option>
             <Option value="Kef">Kef</Option>
             <Option value="Manouba">Manouba</Option>
             <Option value="Médenine">Médenine</Option>
-            <Option value="Monastir">Monastir</Option>
-            <Option value="Nabeul">Nabeul</Option>
-            <Option value="Sfax">Sfax</Option>
             <Option value="Sidi Bouzid">Sidi Bouzid</Option>
             <Option value="Siliana">Siliana</Option>
-            <Option value="Sousse">Sousse</Option>
             <Option value="Tataouine">Tataouine</Option>
             <Option value="Tozeur">Tozeur</Option>
             <Option value="Zaghouan">Zaghouan</Option>
@@ -138,7 +162,11 @@ function MapInformation() {
             <Option value="Tunis">Tunis</Option>
             <Option value="Mahdia">Mahdia</Option>
             <Option value="Ariana"> Ariana</Option>
-            <Option value="Béja">Béja</Option>
+            <Option value="Monastir">Monastir</Option>
+            <Option value="Nabeul">Nabeul</Option>
+            <Option value="Sfax">Sfax</Option>
+            <Option value="Sousse">Sousse</Option>
+            <Option value="Kasserine"> Kasserine</Option>
             <Option value="Ben Arous">Ben Arous</Option>
             <Option value="Bizerte">Bizerte</Option>
             <Option value="Gabès">Gabès</Option>
@@ -147,19 +175,17 @@ function MapInformation() {
             <Option value="Kairouan">Kairouan</Option>
             <Option value="Kasserine"> Kasserine</Option>
             <Option value="Kébili">Kébili</Option>
+            <Option value="Béja">Béja</Option>
             <Option value="Kef">Kef</Option>
             <Option value="Manouba">Manouba</Option>
             <Option value="Médenine">Médenine</Option>
-            <Option value="Monastir">Monastir</Option>
-            <Option value="Nabeul">Nabeul</Option>
-            <Option value="Sfax">Sfax</Option>
             <Option value="Sidi Bouzid">Sidi Bouzid</Option>
             <Option value="Siliana">Siliana</Option>
-            <Option value="Sousse">Sousse</Option>
             <Option value="Tataouine">Tataouine</Option>
             <Option value="Tozeur">Tozeur</Option>
             <Option value="Zaghouan">Zaghouan</Option>
           </Select>
+
 
           <h3> Enter Your Accreditation and Adress </h3>
           <Input

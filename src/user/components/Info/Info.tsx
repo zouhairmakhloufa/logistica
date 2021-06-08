@@ -1,13 +1,15 @@
-import { Button, Timeline, List, Avatar, Popconfirm } from "antd";
-import { LeftSquareOutlined, DollarOutlined } from "@ant-design/icons";
+import { Button, Timeline, List, Avatar, Alert } from "antd";
+import { LeftSquareOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import BookinContext from "../../../context/booking";
 import axios from "axios";
 import "./Info.scss";
 
 const Info = () => {
   const history = useHistory();
+  const [status, setStatus] = useState("");
+
   const {
     governorateAddressSource,
     addresSource,
@@ -42,10 +44,10 @@ const Info = () => {
           <h2> Booking details</h2>
           <Timeline className="timelineInfo">
             <Timeline.Item color="green">
-            governorate :{governorateAddressSource} , Adress :{addresSource}
+              governorate :{governorateAddressSource} , Adress :{addresSource}
             </Timeline.Item>
             <Timeline.Item color="green">
-            governorate :{governorateAddressDestination} , Adress : {addressDestination}
+              governorate :{governorateAddressDestination} , Adress : {addressDestination}
             </Timeline.Item>
           </Timeline>
         </div>
@@ -67,8 +69,7 @@ const Info = () => {
                   avatar={<Avatar src="/imageTypeOfCars/CarsPNG.jpg" />}
                   title={<a>{item}</a>}
                   description={`1-1000 Kg ,  klm price: ${item.klmPrice}dt  
-                  , base price: ${item.basePrice}dt   total: ${
-                    Number(distance) * Number(item.klmPrice) + Number(item.basePrice) }dt `}
+                  , base price: ${item.basePrice}dt   total: ${Number(distance) * Number(item.klmPrice) + Number(item.basePrice)}dt `}
                 />
               </List.Item>
             )}
@@ -94,7 +95,7 @@ const Info = () => {
         <div style={{ display: "flex" }} className="Pricing">
           <h4 className="pricingequipe"> Packaging Service  {pricePackaging} dt </h4>
         </div>
-        
+
 
         <div style={{ display: "flex" }} className="totalText">
           <h2 className="text-totale-amount">Total Amount</h2>
@@ -132,6 +133,11 @@ const Info = () => {
                   pricePackaging,
                 }
               );
+              if (booking.status === 200) {
+                setStatus("succes");
+              } else {
+                setStatus("error");
+              }
 
               console.log("booking", booking);
 
@@ -161,7 +167,6 @@ const Info = () => {
           >
             Confirm
           </Button>
-
           <Button
             className="buttonMap"
             type="primary"
@@ -170,6 +175,12 @@ const Info = () => {
           >
             Cancel
           </Button>
+          {status === "succes" && (
+            <Alert message="successfully done" type="success" showIcon closable  />
+          )}
+          {status === "error" && (
+            <Alert message="Error" type="error" showIcon closable />
+          )}
         </div>
       </div>
     </div>

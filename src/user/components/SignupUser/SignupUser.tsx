@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { Alert } from "antd";
 import { useHistory } from "react-router-dom";
-import { Form, Input, Button, Select } from "antd";
+import { Form, Input, Button, Select,Alert } from "antd";
 import { UserOutlined, MailOutlined, LockOutlined } from "@ant-design/icons";
 import axios from "axios";
 import "./SignupUser.scss";
@@ -65,16 +64,11 @@ const SignupUser = () => {
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
       <div className="signup-info-User">
-        {status === "succes" && (
-          <Alert message="Success singjsdkjhskdjskd" type="success" showIcon />
+      {status === "succes" && (
+           <Alert message="successfully done" type="success" showIcon closable />
         )}
         {status === "error" && (
-          <Alert
-            message="Error"
-            description="This is an error message about copywriting."
-            type="error"
-            showIcon
-          />
+        <Alert message="Error" type="error" showIcon closable />
         )}
         <Form
           name="basic"
