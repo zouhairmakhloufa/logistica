@@ -14,21 +14,29 @@ const MenuDriver = () => {
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
 
       <div className="auth-Menu">
-        <LeftSquareOutlined onClick={() => history.push("/HomeDriver")} className="ClickRetourMenu" />
         <Avatar size={90} icon={<UserOutlined />} className="iconsImageProfile" />
-        <h2> Zouhair Makhloufa </h2>
+        <h2> {localStorage.getItem("userName")}  </h2>
         <br></br>
-        <CarOutlined /> <Button className="ButtonMenu" type="primary" htmlType="submit"
-          onClick={() => history.push("/HomeDriver")}> Home{" "}
-        </Button> <br></br> <br></br>
-
-        <CarOutlined /> <Button className="ButtonMenu" type="primary" htmlType="submit"
-          onClick={() => history.push("/OrdersDriver")}> Mytrip{" "}
-        </Button> <br></br> <br></br>
-
-        <SettingOutlined /><Button className="ButtonMenu" type="primary" htmlType="submit"
-          onClick={() => history.push("/SettingDriver")}> Setting{" "}
+        <div>
+          <CarOutlined />
+          <Button className="ButtonMenu" type="primary" htmlType="submit"
+            onClick={() => history.push("/HomeDriver")}> Home
         </Button>
+        </div>
+
+        <div>  <CarOutlined />
+          <Button className="ButtonMenu" type="primary" htmlType="submit"
+            onClick={() => history.push("/OrdersDriver")}> Mytrip
+        </Button>
+        </div>
+
+        <div>
+          <SettingOutlined />
+          <Button className="ButtonMenu" type="primary" htmlType="submit"
+            onClick={() => history.push("/SettingDriver")}> Setting
+        </Button>
+
+        </div>
 
       </div>
     </div>

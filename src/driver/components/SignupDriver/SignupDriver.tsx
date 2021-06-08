@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Form, Input, Button, Select, InputNumber } from "antd";
+import { Form, Input, Button, Select, InputNumber,Alert } from "antd";
 import { UserOutlined, MailOutlined, LockOutlined } from "@ant-design/icons";
-import { LeftSquareOutlined } from "@ant-design/icons";
 import axios from "axios";
 import "./SignupDriver.scss";
 
@@ -17,6 +16,7 @@ const SignupDriver = () => {
   const [numDeTelf, setNumDeTelf] = useState("");
   const [basePrice, setBasePrice] = useState(0);
   const [klmPrice, setKlmPrice] = useState(0);
+  const [status, setStatus] = useState("");
 
   const onSubmit = async (event: any) => {
     const registered = {
@@ -31,10 +31,19 @@ const SignupDriver = () => {
       basePrice,
       klmPrice,
     };
-    const user = await axios.post(
-      "http://localhost:5000/User/ajouter",
+  try {
+      const user = await axios.post(
+      "http://localhost:5000/User/signup",
       registered
     );
+    if (user.status === 200) {
+      setStatus("succes");
+    } else {
+      setStatus("error");
+    }
+  } catch (err) {
+    setStatus("error");
+  }
     setFirstName("");
     setLastName("");
     setEmail("");
@@ -62,6 +71,12 @@ const SignupDriver = () => {
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
       <div className="signup-info-Driver">
+      {status === "succes" && (
+           <Alert message="successfully done" type="success" showIcon closable />
+        )}
+        {status === "error" && (
+        <Alert message="Error" type="error" showIcon closable />
+        )}
         <Form
           name="basic"
           initialValues={{ remember: true }}
