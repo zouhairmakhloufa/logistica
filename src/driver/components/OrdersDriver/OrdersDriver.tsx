@@ -25,7 +25,7 @@ const OrdersDriver = () => {
     };
     fetchBooking();
   }, []);
-
+  console.log("bookings", bookings);
   const bookingsByWaitingStatus = bookings?.filter(
     (item: any) => item.status === "en attente"
   );
@@ -39,7 +39,7 @@ const OrdersDriver = () => {
   );
 
   const bookingsBycancledStatus = bookings?.filter(
-    (item: any) => item.status === "annulé"
+    (item: any) => item.status === "refuser"
   );
   console.log("bookingsByWaitingStatus", bookingsByWaitingStatus);
   return (
@@ -47,12 +47,11 @@ const OrdersDriver = () => {
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
 
       <div className="auth-Menu">
-
         {status === "succes" && (
-           <Alert message="successfully done" type="success" showIcon closable  />
+          <Alert message="successfully done" type="success" showIcon closable />
         )}
         {status === "error" && (
-        <Alert message="Error" type="error" showIcon closable />
+          <Alert message="Error" type="error" showIcon closable />
         )}
         <h2> Orders </h2>
 
@@ -77,14 +76,20 @@ const OrdersDriver = () => {
                     </Timeline>
                   </Button>
                   <div style={{ display: "flex" }}>
-                    <h3 style={{ marginRight: "110px" }}>  total price :
-                    {item.total}+{item.priceService}+{item.pricePackaging}</h3> 
-                    <h3> Client : {item.userId.firstName} {item.userId.lastName} </h3>
+                    <h3 style={{ marginRight: "110px" }}>
+                      {" "}
+                      total price :{item.total}+{item.priceService}+
+                      {item.pricePackaging}
+                    </h3>
+                    <h3>
+                      {" "}
+                      Client : {item.userId.firstName} {item.userId.lastName}{" "}
+                    </h3>
                   </div>
 
                   <button
-                  style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-                  className="butttonAccept"
+                    style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
+                    className="butttonAccept"
                     onClick={async () => {
                       try {
                         const result = await axios.put(
@@ -112,6 +117,7 @@ const OrdersDriver = () => {
                       } catch (err) {
                         setStatus("error");
                       }
+                      window.location.reload();
                     }}
                   >
                     accept
@@ -122,7 +128,7 @@ const OrdersDriver = () => {
                     onClick={async () => {
                       try {
                         const result = await axios.put(
-                          `http://localhost:5000/booking/bookingAccept/${item._id}`
+                          `http://localhost:5000/booking/bookingReffuse/${item._id}`
                         );
                         if (result.status === 200) {
                           setStatus("succes");
@@ -146,6 +152,7 @@ const OrdersDriver = () => {
                       } catch (err) {
                         setStatus("error");
                       }
+                      window.location.reload();
                     }}
                   >
                     refuse
@@ -153,7 +160,6 @@ const OrdersDriver = () => {
                 </div>
               ))}
           </TabPane>
-
 
           <TabPane tab="Current" key="2" className="tabs">
             {bookingsByCurrentStatus &&
@@ -176,17 +182,32 @@ const OrdersDriver = () => {
                   </Button>
 
                   <div style={{ display: "flex" }}>
-
-                    <h3 style={{ marginRight: "110px" }}>  total price :
-                    {item.total}+{item.priceService}+{item.pricePackaging}</h3> 
-                    <h3> Client : {item.userId.firstName} {item.userId.lastName} </h3>
-
+                    <h3 style={{ marginRight: "110px" }}>
+                      {" "}
+                      total price :{item.total}+{item.priceService}+
+                      {item.pricePackaging}
+                    </h3>
+                    <h3>
+                      {" "}
+                      Client : {item.userId.firstName} {item.userId.lastName}{" "}
+                    </h3>
                   </div>
                   <button
-                  style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
-                  className="butttonAccept"
+                    style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
+                    className="butttonAccept"
+                    onClick={async () => {
+                      const result = await axios.put(
+                        `http://localhost:5000/booking/bookingFini/${item._id}`
+                      );
+                      if (result.status === 200) {
+                        setStatus("succes");
+                      } else {
+                        setStatus("error");
+                      }
+                      window.location.reload();
+                    }}
                   >
-                   fini
+                    fini
                   </button>
                 </div>
               ))}
@@ -249,8 +270,6 @@ const OrdersDriver = () => {
                 </div>
               ))}
           </TabPane>
-
-
         </Tabs>
       </div>
     </div>
