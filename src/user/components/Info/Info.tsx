@@ -9,7 +9,6 @@ import "./Info.scss";
 const Info = () => {
   const history = useHistory();
   const [status, setStatus] = useState("");
-
   const {
     governorateAddressSource,
     addresSource,
@@ -68,8 +67,6 @@ const Info = () => {
                 <List.Item.Meta
                   avatar={<Avatar src="/imageTypeOfCars/CarsPNG.jpg" />}
                   title={<a>{item}</a>}
-                  description={`1-1000 Kg ,  klm price: ${item.klmPrice}dt  
-                  , base price: ${item.basePrice}dt   total: ${Number(distance) * Number(item.klmPrice) + Number(item.basePrice)}dt `}
                 />
               </List.Item>
             )}
@@ -82,15 +79,15 @@ const Info = () => {
 
         <h2> Pricing</h2>
         <div style={{ display: "flex" }} className="Pricing">
-          <h4 className="pricingDeliveryequipe"> Delivery Service</h4>
+          <h4 className="pricingequipe"> Delivery Service</h4>
           <h4>5 dt</h4>
         </div>
         <div style={{ display: "flex" }} className="Pricing">
-          <h4 className="pricingBoardingequipe"> Boarding Service</h4>
+          <h4 className="pricingequipe"> Boarding Service</h4>
           <h4>5 dt</h4>
         </div>
         <div style={{ display: "flex" }} className="Pricing">
-          <h4 className="pricingShippingequipe"> Shipping Service  {priceService} dt  </h4>
+          <h4 className="pricingShippingequipe">  Service And Shipping {priceService} dt  </h4>
         </div>
         <div style={{ display: "flex" }} className="Pricing">
           <h4 className="pricingequipe"> Packaging Service  {pricePackaging} dt </h4>
@@ -176,7 +173,7 @@ const Info = () => {
             Cancel
           </Button>
           {status === "succes" && (
-            <Alert message="successfully done" type="success" showIcon closable  />
+            <Alert message="successfully done : The mail has been sent to the driver" type="success" showIcon closable  />
           )}
           {status === "error" && (
             <Alert message="Error" type="error" showIcon closable />

@@ -9,6 +9,7 @@ const { Option } = Select;
 
 const PaymentMethode = () => {
   const history = useHistory();
+  
 
   const { setPaymentMethode, paymentMethode }: any = useContext(BookinContext);
   console.log("Payment Methode :", paymentMethode);
@@ -25,7 +26,7 @@ const PaymentMethode = () => {
           onClick={() => history.push("/Service")}
           className="ClickRetourPaymentMethode"
         />
-        <h2 className="text"> Payment Methode </h2>
+        <h2 className="text"> Payment Methode :{paymentMethode}</h2>
 
         <div className="MethodePayment">
           <Form

@@ -41,7 +41,7 @@ const OrdersDriver = () => {
   const bookingsBycancledStatus = bookings?.filter(
     (item: any) => item.status === "refuser"
   );
-  console.log("bookingsByWaitingStatus", bookingsByWaitingStatus);
+  console.log("bookings By Waiting Status :", bookingsByWaitingStatus);
   return (
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
@@ -233,10 +233,7 @@ const OrdersDriver = () => {
                   </Button>
 
                   <div style={{ display: "flex" }}>
-                    <h3 style={{ marginRight: "120px" }}> {item.total}</h3>
-                    <h3>
-                      {item.userId.firstName} {item.userId.lastName}
-                    </h3>
+                    <h3> Clinet : {item.userId.firstName} {item.userId.lastName} </h3>
                   </div>
                 </div>
               ))}
@@ -262,10 +259,7 @@ const OrdersDriver = () => {
                     </Timeline>
                   </Button>
                   <div style={{ display: "flex" }}>
-                    <h3 style={{ marginRight: "120px" }}> {item.total}</h3>
-                    <h3>
-                      {item.userId.firstName} {item.userId.lastName}
-                    </h3>
+                  <h3> Clinet : {item.userId.firstName} {item.userId.lastName} </h3>
                   </div>
                 </div>
               ))}

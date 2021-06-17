@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import "./HomeDriver.scss";
 import { LeftSquareOutlined, MenuOutlined } from "@ant-design/icons";
 import { Timeline, Space, Card } from "antd";
+import "./HomeDriver.scss";
 
 const HomeDriver = () => {
   const history = useHistory();

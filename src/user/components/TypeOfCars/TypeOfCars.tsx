@@ -63,8 +63,8 @@ const TypeOfCars = () => {
                       {item.name}
                     </a>
                   }
-                  description={`1-1000 Kg ,  klm price: ${item.klmPrice}dt  
-                  , base price: ${item.basePrice}dt   total: ${
+                  description={`1-2000 Kg ,  klm price: ${item.klmPrice}dt  
+                  , base price: ${item.basePrice}dt  Car Price : ${
                     Number(distance) * Number(item.klmPrice) + Number(item.basePrice) }dt `}
                 />
               </List.Item>
