@@ -1,7 +1,6 @@
-import { useHistory } from "react-router-dom";
+import "./navbar.scss";
 
 const Navbar = () => {
-  const history = useHistory();
   return (
     <div className="navbar">
       <div className="container">
@@ -10,20 +9,27 @@ const Navbar = () => {
           Logistica{" "}
         </a>
         <ul>
-          <a href="/">Home </a>
+          <a href="/"
+           className="button_navbar"
+           >Home </a>
+          {!localStorage.getItem("token") && (
+            <a href="/Auth/SignUpUserOrDriver"
+            className="button_navbar">Sign-up </a>
+          )}
 
           {!localStorage.getItem("token") && (
-            <a href="/Auth/SignUpUserOrDriver">Sign-up </a>
+            <a href="/Auth/Signin"
+            className="button_navbar"
+            >Sign-in </a>
           )}
-          {!localStorage.getItem("token") && (
-            <a href="/Auth/Signin">Sign-in </a>
-          )}
-          <a href="/Contact"> Contact </a>
+
           {localStorage.getItem("token") && (
             <a>{localStorage.getItem("userName")} </a>
           )}
+          
           {localStorage.getItem("token") && (
             <button
+            className="button_disconnection"
               onClick={() => {
                 localStorage.clear();
                 window.location.replace("/");

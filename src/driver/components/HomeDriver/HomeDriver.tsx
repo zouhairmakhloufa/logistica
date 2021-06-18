@@ -43,7 +43,7 @@ const HomeDriver = () => {
         <h2 className="TextHome"> Home</h2>
 
         <div>
-          <Space direction="vertical">
+          <Space direction="vertical" className="Spacecenter">
             {bookingsByWaitingStatus &&
               bookingsByWaitingStatus.map((item: any) => (
                 <button onClick={() => history.push(`/booking/${item._id}`)}>
