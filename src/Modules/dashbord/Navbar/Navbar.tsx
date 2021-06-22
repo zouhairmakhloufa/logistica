@@ -10,26 +10,30 @@ const Navbar = () => {
         </a>
         <ul>
           <a href="/"
-           className="button_navbar"
-           >Home </a>
+            className="button_navbar"
+          >Home </a>
           {!localStorage.getItem("token") && (
             <a href="/Auth/SignUpUserOrDriver"
-            className="button_navbar">Sign-up </a>
+              className="button_navbar">Sign-up </a>
           )}
+          {
+            localStorage.getItem("role") &&
+            <a href={localStorage.getItem("role") === "driver" ? '/MenuDriver' : '/MenuUser'}>menu</a>
+          }
 
           {!localStorage.getItem("token") && (
             <a href="/Auth/Signin"
-            className="button_navbar"
+              className="button_navbar"
             >Sign-in </a>
           )}
 
           {localStorage.getItem("token") && (
             <a>{localStorage.getItem("userName")} </a>
           )}
-          
+
           {localStorage.getItem("token") && (
             <button
-            className="button_disconnection"
+              className="button_disconnection"
               onClick={() => {
                 localStorage.clear();
                 window.location.replace("/");

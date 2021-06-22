@@ -1,5 +1,6 @@
 import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Rate } from 'antd';
 import axios from "axios";
 import { Button, Tabs, Timeline, Alert } from "antd";
 import "./OrdersDriver.scss";
@@ -234,6 +235,10 @@ const OrdersDriver = () => {
 
                   <div style={{ display: "flex" }}>
                     <h3> Clinet : {item.userId.firstName} {item.userId.lastName} </h3>
+                    <span>
+                      <Rate value={item.rate} disabled />
+                      {<span className="ant-rate-text">{item.rate} stars</span>}
+                    </span>
                   </div>
                 </div>
               ))}

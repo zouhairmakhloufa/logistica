@@ -1,5 +1,6 @@
 import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Rate } from 'antd';
 import axios from "axios";
 import { Button, Tabs, Timeline, Alert } from "antd";
 import "./OrdersUser.scss";
@@ -13,6 +14,12 @@ const OrdersUser = () => {
   const history = useHistory();
   const [bookings, setBookings]: any = useState(null);
   const [status, setStatus] = useState("");
+  const [rate, setRating] = useState(0);
+
+  const addRating = async (value: any, id: any) => {
+    await axios.put(`http://localhost:5000/booking/rating/${id}`, { rate: value })
+    setRating(value)
+  }
 
   useEffect(() => {
     const fetchBooking = async () => {
@@ -25,7 +32,7 @@ const OrdersUser = () => {
     };
     fetchBooking();
   }, []);
-  console.log("bookings", bookings);
+
   const bookingsByWaitingStatus = bookings?.filter(
     (item: any) => item.status === "en attente"
   );
@@ -41,7 +48,7 @@ const OrdersUser = () => {
   const bookingsBycancledStatus = bookings?.filter(
     (item: any) => item.status === "refuser"
   );
-  console.log("bookings By Waiting Status :", bookingsByWaitingStatus);
+  console.log("rate", rate)
   return (
     <div className="contentImage">
       <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
@@ -132,6 +139,10 @@ const OrdersUser = () => {
 
                   <div style={{ display: "flex" }}>
                     <h3> your reservation has been Finished </h3>
+                    <span>
+                      <Rate onChange={(value) => addRating(value, item._id)} value={rate} />
+                      <span className="ant-rate-text">{rate} stars</span>
+                    </span>
                   </div>
                 </div>
               ))}
