@@ -139,7 +139,7 @@ const OrdersUser = () => {
 
                   <div style={{ display: "flex" }}>
                     <h3> your reservation has been Finished </h3>
-                    <span>
+                    <span className="rate">
                       <Rate onChange={(value) => addRating(value, item._id)} value={rate} />
                       <span className="ant-rate-text">{rate} stars</span>
                     </span>

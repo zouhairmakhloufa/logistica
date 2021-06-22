@@ -161,6 +161,7 @@ const OrdersDriver = () => {
                 </div>
               ))}
           </TabPane>
+   
 
           <TabPane tab="Current" key="2" className="tabs">
             {bookingsByCurrentStatus &&
@@ -235,7 +236,7 @@ const OrdersDriver = () => {
 
                   <div style={{ display: "flex" }}>
                     <h3> Clinet : {item.userId.firstName} {item.userId.lastName} </h3>
-                    <span>
+                    <span className="rate">
                       <Rate value={item.rate} disabled />
                       {<span className="ant-rate-text">{item.rate} stars</span>}
                     </span>

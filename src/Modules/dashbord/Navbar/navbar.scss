@@ -4,6 +4,7 @@
     position:sticky;
     top: 0;
     width: 100%;
+    background-color: #f8c4c4;
   }
   .container {
     width: 70%;
@@ -15,7 +16,7 @@
     float: left;
     display: block;
     margin: 10px 0;
-    color: #66CDAA;
+    color: #ffffff;
   }
   .button_disconnection{
     background-color: hsl(158, 66%, 83%);;
@@ -23,9 +24,7 @@
     border-radius: 4px;
   }
   .button_navbar{
-    background-color: hsl(162, 100%, 98%);;
-    border: #dbf8ee;
-    border-radius: 8px;
+    color: #ffffff;
   }
   ul{
     width: 70%;
