@@ -7,17 +7,16 @@ const Main = () => {
 
   return (
     <div className="DashboardImage">
-      <div className="welcome">
+      <div className="TextDashbord">
         <h1> Welcome to Logistica </h1>
         <h4>
           logistica is a dynamic website that connects customers who have
           luggage to transmit with carriers
         </h4>
         <Button
-          className="button"
+          className="buttonJoinUs"
           type="primary"
           htmlType="submit"
-          style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
           onClick={() => history.push("/Auth/Signin")}
         >
           {" "}

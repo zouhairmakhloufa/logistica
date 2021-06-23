@@ -9,8 +9,8 @@
     height: 100vh;
   }
 .tabs{
-  background-color: #d6d6d6 ;
-  border-color: #d6d6d6;
+  background-color: #e6e6e6 ;
+  border-color: #e6e6e6;
   width: 300px;
 }  
 .auth-signup-info{
@@ -24,12 +24,21 @@
     padding-right: 4%;
     text-align: center;
   }
+  .xx{
+    margin-top: -20px;
+  }
   .refresh{
     margin-left: 450px;
     font-size: 20px;
   }
   .rate{
     width: 220px;
+    margin-bottom: 15px;
+    margin-top: -25px;
+  }
+  .ant-rate-text{
+    color: #000000;
+    margin-top: 5px;
   }
 
 

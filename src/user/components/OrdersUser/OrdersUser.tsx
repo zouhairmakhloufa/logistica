@@ -68,8 +68,7 @@ const OrdersUser = () => {
               bookingsByWaitingStatus.map((item: any) => (
                 <div>
                   <Button
-                    onClick={() => history.push("/InfoDetailCurrent")}
-                    style={{ background: "#d6d6d6", borderColor: "#d6d6d6" }}
+                     style={{ background: "#e6e6e6", borderColor: "#e6e6e6" }}
                   >
                     <Timeline className="timeline">
                       <Timeline.Item color="green">
@@ -83,7 +82,7 @@ const OrdersUser = () => {
                     </Timeline>
                   </Button>
                   <div style={{ display: "flex" }}>
-                    <h3> Your reservation is on hold </h3>
+                    <h3 className="xx"> Your reservation is on hold </h3>
                   </div>
 
 
@@ -112,7 +111,7 @@ const OrdersUser = () => {
                   </Button>
 
                   <div style={{ display: "flex" }}>
-                    <h3> Your Reservation in the process of delivery </h3>
+                    <h3 className="xx"> Your Reservation in the process of delivery </h3>
                   </div>
                 </div>
               ))}
@@ -138,7 +137,7 @@ const OrdersUser = () => {
                   </Button>
 
                   <div style={{ display: "flex" }}>
-                    <h3> your reservation has been Finished </h3>
+                    <h3 className="xx"> your reservation has been Finished </h3>
                     <span className="rate">
                       <Rate onChange={(value) => addRating(value, item._id)} value={rate} />
                       <span className="ant-rate-text">{rate} stars</span>
@@ -168,7 +167,7 @@ const OrdersUser = () => {
                     </Timeline>
                   </Button>
                   <div style={{ display: "flex" }}>
-                    <h3> your reservation has been refused </h3>
+                    <h3 className="xx"> your reservation has been refused </h3>
                   </div>
                 </div>
               ))}
