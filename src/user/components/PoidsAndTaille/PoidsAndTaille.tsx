@@ -36,7 +36,7 @@ const PoidsAndTaille = () => {
           className="ClickRetour"
         />
 
-        <h3 className="Enter_this_information_about_your_bag"> Enter this information about your bag </h3>
+        <h2 className="Enter_this_information_about_your_bag"> Enter this information about your bag </h2>
         <div className="DimensionAndPois">
           <Form
             name="basic"

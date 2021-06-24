@@ -31,7 +31,7 @@ const TypeOfCars = () => {
   console.log("distance", distance);
   return (
     <div className="contentImage">
-      <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
+      <img src="/typeOfCars/typeOfCars2.jpg" className="imageAuth" />
       <div className="TypeOfCars">
         <LeftSquareOutlined
           onClick={() => history.push("/PoidsAndTaille")}

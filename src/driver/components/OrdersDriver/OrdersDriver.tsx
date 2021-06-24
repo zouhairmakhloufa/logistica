@@ -234,9 +234,9 @@ const OrdersDriver = () => {
                   </Button>
 
                   <div style={{ display: "flex" }}>
-                    <h3> Clinet : {item.userId.firstName} {item.userId.lastName} </h3>
+                    <h3 className="textclient"> Clinet : {item.userId.firstName} {item.userId.lastName} </h3>
                     <span className="rate">
-                      <Rate value={item.rate} disabled />
+                      <Rate value={item.rate} disabled className="rateetoile"/>
                       {<span className="ant-rate-text">{item.rate} stars</span>}
                     </span>
                   </div>

@@ -54,7 +54,7 @@ const Service = () => {
 
   return (
     <div className="contentImage">
-      <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
+      <img src="/service/service.jpg" className="imageAuth" />
       <div className="Service">
         <LeftSquareOutlined
           onClick={() => history.push("/TypeOfCars")}
@@ -62,8 +62,6 @@ const Service = () => {
         />
         <h3>Price Delivery,Boarding and Shipping service : {selectedService?.priceService} dt </h3> 
           <h3 className="text">Price Packaging : {selectedPackaging?.pricePackaging} dt </h3> 
-
-
         <Form
           name="basic"
           initialValues={{ remember: true }}

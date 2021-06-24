@@ -62,7 +62,7 @@ const SignupUser = () => {
   );
   return (
     <div className="contentImage">
-      <img src="/imageAuth/signup.jpeg" className="imageAuth" />
+      <img src="/imageAuth/SignUp3.jpg" className="imageAuth" />
       <div className="signup-info-User">
         {status === "succes" && (
           <Alert message="successfully done" type="success" showIcon closable />
