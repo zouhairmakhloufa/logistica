@@ -1,11 +1,11 @@
 .navbar{
     overflow: hidden;
     color: black; 
-    position:sticky;
+    position:relative;
     top: 0;
     width: 100%;
-    background-color: hsl(0, 0%, 100%);
-  }
+    background-color: white;
+}
   .container {
     width: 70%;
     margin: auto; 
@@ -16,11 +16,11 @@
     float: left;
     display: block;
     margin: 10px 0;
-    color: #7ddf0d;
+    color: #4abd96;
   }
   .button_disconnection{
-    background-color: #c2ff7c;
-    border: #d1fff0;
+    background-color: #9fe9d0;
+    border: #9fe9d0;
     border-radius: 4px;
   }
   .button_navbar{

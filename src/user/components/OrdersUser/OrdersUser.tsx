@@ -60,7 +60,7 @@ const OrdersUser = () => {
         {status === "error" && (
           <Alert message="Error" type="error" showIcon closable />
         )}
-        <h2> Orders </h2>
+        <h2> My trip </h2>
 
         <Tabs defaultActiveKey="1" onChange={callback} className="tabs1">
           <TabPane tab="Wating" key="1" className="tabs">
@@ -96,7 +96,7 @@ const OrdersUser = () => {
                 <div>
                   <Button
                     onClick={() => history.push("/InfoDetailCurrent")}
-                    style={{ background: "#d6d6d6", borderColor: "#d6d6d6" }}
+                    style={{ background: "#e6e6e6", borderColor: "#e6e6e6" }}
                   >
                     <Timeline className="timeline">
                       <Timeline.Item color="green">
@@ -122,7 +122,7 @@ const OrdersUser = () => {
                 <div>
                   <Button
                     onClick={() => history.push("/InfoDetailCurrent")}
-                    style={{ background: "#d6d6d6", borderColor: "#d6d6d6" }}
+                    style={{ background: "#e6e6e6", borderColor: "#e6e6e6" }}
                   >
                     <Timeline>
                       <Timeline.Item color="green">
@@ -153,7 +153,7 @@ const OrdersUser = () => {
                 <div>
                   <Button
                     onClick={() => history.push("/InfoDetailCurrent")}
-                    style={{ background: "#d6d6d6", borderColor: "#d6d6d6" }}
+                    style={{ background: "#e6e6e6", borderColor: "#e6e6e6" }}
                   >
                     <Timeline>
                       <Timeline.Item color="green">

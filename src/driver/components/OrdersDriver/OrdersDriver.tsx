@@ -1,8 +1,7 @@
 import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Rate } from 'antd';
+import { Button, Tabs, Timeline, Alert, Rate} from "antd";
 import axios from "axios";
-import { Button, Tabs, Timeline, Alert } from "antd";
 import "./OrdersDriver.scss";
 
 const { TabPane } = Tabs;
@@ -63,7 +62,7 @@ const OrdersDriver = () => {
                 <div>
                   <Button
                     onClick={() => history.push("/InfoDetailCurrent")}
-                    style={{ background: "#d6d6d6", borderColor: "#d6d6d6" }}
+                    style={{ background: "#e6e6e6", borderColor: "#e6e6e6" }}
                   >
                     <Timeline className="timeline">
                       <Timeline.Item color="green">
@@ -169,7 +168,7 @@ const OrdersDriver = () => {
                 <div>
                   <Button
                     onClick={() => history.push("/InfoDetailCurrent")}
-                    style={{ background: "#d6d6d6", borderColor: "#d6d6d6" }}
+                    style={{ background: "#e6e6e6", borderColor: "#e6e6e6" }}
                   >
                     <Timeline className="timeline">
                       <Timeline.Item color="green">
@@ -195,7 +194,7 @@ const OrdersDriver = () => {
                     </h3>
                   </div>
                   <button
-                    style={{ background: "#66CDAA", borderColor: "#66CDAA" }}
+                    style={{ background: "#e6e6e6", borderColor: "#e6e6e6" }}
                     className="butttonAccept"
                     onClick={async () => {
                       const result = await axios.put(
@@ -220,7 +219,7 @@ const OrdersDriver = () => {
                 <div>
                   <Button
                     onClick={() => history.push("/InfoDetailCurrent")}
-                    style={{ background: "#d6d6d6", borderColor: "#d6d6d6" }}
+                    style={{ background: "#e6e6e6", borderColor: "#e6e6e6" }}
                   >
                     <Timeline>
                       <Timeline.Item color="green">
@@ -251,7 +250,7 @@ const OrdersDriver = () => {
                 <div>
                   <Button
                     onClick={() => history.push("/InfoDetailCurrent")}
-                    style={{ background: "#d6d6d6", borderColor: "#d6d6d6" }}
+                    style={{ background: "#e6e6e6", borderColor: "#e6e6e6" }}
                   >
                     <Timeline>
                       <Timeline.Item color="green">

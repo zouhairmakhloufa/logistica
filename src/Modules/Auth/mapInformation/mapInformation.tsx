@@ -2,7 +2,6 @@ import { MapContainer, TileLayer } from "react-leaflet";
 import { useContext, useState } from "react";
 import { Button, Input, Select, Form } from "antd";
 import { useHistory } from "react-router-dom";
-import { MenuOutlined } from "@ant-design/icons";
 import BookinContext from "../../../context/booking";
 import "leaflet/dist/leaflet.css";
 import "./mapInformation.scss";
@@ -98,10 +97,6 @@ function MapInformation() {
       </MapContainer>
 
       <div className="Auth-Signup-Info">
-        <MenuOutlined
-          onClick={() => history.push("/MenuUser")}
-          className="troisLigneMenuMap"
-        />
         <h2>Pick me up From </h2>
         <h2 className="text" >selected distance: {selectedDistance?.distance} km </h2>
 

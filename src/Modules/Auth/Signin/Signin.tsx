@@ -1,7 +1,7 @@
-import { Form, Input, Button,Alert } from "antd";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
-import { MailOutlined, LockOutlined} from "@ant-design/icons";
+import { Form, Input, Button, Alert } from "antd";
+import { MailOutlined, LockOutlined } from "@ant-design/icons";
 import axios from "axios";
 import "./Signin.scss";
 
@@ -21,7 +21,7 @@ const Signin = () => {
     localStorage.setItem("token", result.data.token);
     localStorage.setItem("role", result.data.user.type);
     localStorage.setItem("userid", result.data.user._id);
-    localStorage.setItem("userName",`${result.data.user.firstName} ${result.data.user.lastName}` );
+    localStorage.setItem("userName", `${result.data.user.firstName} ${result.data.user.lastName}`);
     console.log("result.data.user", result.data.user);
 
     if (result.data.user.type === "driver") {
@@ -41,12 +41,13 @@ const Signin = () => {
 
   return (
     <div className="contentImage">
+      <img src="/imageAuth/login.jpg" className="imageAuth" />
       <div className="auth-signup-info">
-      {status === "succes" && (
-           <Alert message="successfully done" type="success" showIcon closable  />
+        {status === "succes" && (
+          <Alert message="successfully done" type="success" showIcon closable />
         )}
         {status === "error" && (
-        <Alert message="Error" type="error" showIcon closable />
+          <Alert message="Error" type="error" showIcon closable />
         )}
         <h1>Sign-in </h1>
         <h4>Welcome back! </h4>
@@ -93,7 +94,7 @@ const Signin = () => {
           </div>
           <Form.Item>
             <Button
-              className="button "
+              className="button"
               type="primary"
               htmlType="submit"
               style={{ background: "#66CDAA", borderColor: "#66CDAA" }}

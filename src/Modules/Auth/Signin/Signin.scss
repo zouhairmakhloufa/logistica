@@ -1,31 +1,38 @@
 .contentImage{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: 100vh;
-  }
-  .auth-signup-info{
-    width: 50%;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    padding-top: 5%;
-    padding-left: 7%;
-    padding-right: 4%;
-  }
-  .imageAuth {
-    height: 635px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100vh;
 }
-  .Signup{
-    margin-left: 10px;
-    font-size: 15px;
-    color: #66CDAA;
+.auth-signup-info{
+  width: 40%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding-top: 5%;
+  padding-left: 7%;
+  padding-right: 4%;
+}
+.Signup{
+  margin-left: 10px;
+  font-size: 15px;
+  color: #66CDAA;
+}
+.button{
+  width: 55%;
+    height: 40px;
+    border-radius: 9px;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+    background: #66CDAA;
+    border-color: #66CDAA;
   }
-  .NotYetRegister{
-    margin-left: 95px;
-  }
-  .ClickRetourSignin {
-    font-size: 30px;
-    margin-bottom: 20px;
-    margin-right: 360px;
+.NotYetRegister{
+  margin-left: 95px;
+}
+.ClickRetourSignin {
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-right: 360px;
 }

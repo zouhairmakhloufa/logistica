@@ -20,7 +20,7 @@ const MenuUser = () => {
         <br></br>
 
         <CarOutlined /> <Button className="ButtonMenu" type="primary" htmlType="submit"
-          onClick={() => history.push("/OrdersUser")}> Orders{" "}
+          onClick={() => history.push("/OrdersUser")}> My trip{" "}
         </Button> <br></br> <br></br>
 
         <SettingOutlined /><Button className="ButtonMenu" type="primary" htmlType="submit"

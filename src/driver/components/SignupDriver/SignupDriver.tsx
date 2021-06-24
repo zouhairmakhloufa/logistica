@@ -69,7 +69,7 @@ const SignupDriver = () => {
   );
   return (
     <div className="contentImage">
-      <img src="/imageAuth/login.jpg" className="imageAuth" />
+      <img src="/imageAuth/signup.jpeg" className="imageAuth" />
       <div className="signup-info-Driver">
       {status === "succes" && (
            <Alert message="successfully done" type="success" showIcon closable />
