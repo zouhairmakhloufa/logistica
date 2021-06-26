@@ -1,6 +1,5 @@
 import { Button } from 'antd';
 import { useHistory } from "react-router-dom";
-import { LeftSquareOutlined } from "@ant-design/icons"
 import "./SignUpUserOrDriver.scss"
 
 const SignUpUserOrDriver = () => {
@@ -8,13 +7,10 @@ const SignUpUserOrDriver = () => {
 
     return (
         <div className="contentImage">
-            <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
-
+            <img src="/imageAuth/SignUp3.jpg" className="imageAuth" />
             <div className="auth-signup-info">
-              
-                <h1>
-                    Do you want to Subscribe as
-                </h1>
+
+                <h1> Do you want to Subscribe as </h1>
                 <h1>  User or Driver? </h1>
 
                 <Button className="button" type="primary" htmlType="submit"

@@ -16,7 +16,7 @@ const NoteToDriver = () => {
 
   return (
     <div className="contentImage">
-      <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
+      <img src="/note/note2.jpg" className="imageAuth" />
       <div className="NoteToDriverAuth">
         <LeftSquareOutlined
           onClick={() => history.push("/PaymentMethode")}

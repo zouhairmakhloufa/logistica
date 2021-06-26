@@ -51,7 +51,7 @@ const OrdersUser = () => {
   console.log("rate", rate)
   return (
     <div className="contentImage">
-      <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
+      <img src="/my trip/my trip.jpg" className="imageAuth" />
 
       <div className="auth-Menu">
         {status === "succes" && (

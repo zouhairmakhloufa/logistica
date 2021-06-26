@@ -44,7 +44,7 @@ const OrdersDriver = () => {
   console.log("bookings By Waiting Status :", bookingsByWaitingStatus);
   return (
     <div className="contentImage">
-      <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
+      <img src="/my trip/my trip.jpg" className="imageAuth" />
 
       <div className="auth-Menu">
         {status === "succes" && (
@@ -53,7 +53,7 @@ const OrdersDriver = () => {
         {status === "error" && (
           <Alert message="Error" type="error" showIcon closable />
         )}
-        <h2> Orders </h2>
+        <h2> My trip </h2>
 
         <Tabs defaultActiveKey="1" onChange={callback} className="tabs1">
           <TabPane tab="Wating" key="1" className="tabs">
@@ -81,7 +81,7 @@ const OrdersDriver = () => {
                       total price :{item.total}+{item.priceService}+
                       {item.pricePackaging}
                     </h3>
-                    <h3>
+                    <h3 className="textclient"> 
                       {" "}
                       Client : {item.userId.firstName} {item.userId.lastName}{" "}
                     </h3>
@@ -188,7 +188,7 @@ const OrdersDriver = () => {
                       total price :{item.total}+{item.priceService}+
                       {item.pricePackaging}
                     </h3>
-                    <h3>
+                    <h3 className="textclient"> 
                       {" "}
                       Client : {item.userId.firstName} {item.userId.lastName}{" "}
                     </h3>
@@ -264,7 +264,7 @@ const OrdersDriver = () => {
                     </Timeline>
                   </Button>
                   <div style={{ display: "flex" }}>
-                    <h3> Clinet : {item.userId.firstName} {item.userId.lastName} </h3>
+                  <h3 className="textclient">  Clinet : {item.userId.firstName} {item.userId.lastName} </h3>
                   </div>
                 </div>
               ))}

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Timeline, Space, Card } from "antd";
-import { LeftSquareOutlined } from "@ant-design/icons";
 import axios from "axios";
 import "./HomeDriver.scss";
 
@@ -29,10 +28,9 @@ const HomeDriver = () => {
 
   return (
     <div className="contentImage">
-      <img src="/imageAuth/imageAuth.jpg" className="imageAuth" />
+      <img src="/note/note3.jpg" className="imageAuth" />
 
       <div className="auth-Menu">
-        <LeftSquareOutlined onClick={() => history.push("/")} className="ClickRetourMenu" />
         <h2 className="TextHome"> Home</h2>
 
         <div>

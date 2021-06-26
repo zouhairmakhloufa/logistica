@@ -32,7 +32,7 @@ const Info = () => {
   console.log("typeOfCars", typeOfCars);
   return (
     <div className="contentImage">
-      <img src="/imageAuth/imageAuth.jpg" className="imageAuthInfoUser" />
+      <img src="/note/note.jpg" className="imageAuthInfoUser" />
       <div className="InfoBooking">
         <LeftSquareOutlined
           onClick={() => history.push("/NoteToDriver")}

@@ -18,8 +18,8 @@ const Navbar = () => {
           )}
           {
             localStorage.getItem("role") &&
-            <a href={localStorage.getItem("role") === "driver" ? '/MenuDriver' : '/MenuUser'}  >
-              menu</a>
+            <a href={localStorage.getItem("role") === "driver" ? '/OrdersDriver' : '/OrdersUser'}  >
+              My trip</a>
           }
 
           {!localStorage.getItem("token") && (
