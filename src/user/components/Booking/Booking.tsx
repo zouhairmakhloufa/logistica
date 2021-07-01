@@ -19,10 +19,10 @@ const Booking = (props: any) => {
 
   return (
     <div className="contentImage">
-      <img src="/imageAuth/imageAuth.jpg" className="imageAuthInfo" />
+      <img src="/note/note.jpg" className="imageAuthInfo" />
       <div className="InfoBooking">
         <>
-          <p>Reservation Client</p>
+          <h1>Reservation Client</h1>
           <p>
             - Name: {booking?.userId.firstName} {booking?.userId.lastName}{" "}
           </p>

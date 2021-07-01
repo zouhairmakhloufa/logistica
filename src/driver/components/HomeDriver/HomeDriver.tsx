@@ -40,9 +40,9 @@ const HomeDriver = () => {
                 <button onClick={() => history.push(`/booking/${item._id}`)}>
                   <Card
                     title={`Car price : ${item.total} dt`}
-                    style={{ width: 380 }}
+                    style={{ width: 350 }}
                   >
-                    <Timeline>
+                    <Timeline className="timelinebuttton">
                       <Timeline.Item color="green">
                         {item.addressId.governorateAddressSource} <br></br>
                         {item.addressId.addresSource}{" "}

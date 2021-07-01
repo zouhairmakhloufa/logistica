@@ -81,7 +81,7 @@ const OrdersDriver = () => {
                       total price :{item.total}+{item.priceService}+
                       {item.pricePackaging}
                     </h3>
-                    <h3 className="textclient"> 
+                    <h3 className="textclientCurrent"> 
                       {" "}
                       Client : {item.userId.firstName} {item.userId.lastName}{" "}
                     </h3>
@@ -188,7 +188,7 @@ const OrdersDriver = () => {
                       total price :{item.total}+{item.priceService}+
                       {item.pricePackaging}
                     </h3>
-                    <h3 className="textclient"> 
+                    <h3 className="textclientCurrent"> 
                       {" "}
                       Client : {item.userId.firstName} {item.userId.lastName}{" "}
                     </h3>
