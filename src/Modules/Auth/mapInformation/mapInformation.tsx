@@ -102,7 +102,7 @@ function MapInformation() {
 
     { source: "Sousse", destination: "Monastir", distance: 21 },
     { source: "Sousse", destination: "Nabeul", distance: 108 },
-    { source: "Sousse", destination: "Ariana", distance: 158 }, 
+    { source: "Sousse", destination: "Ariana", distance: 158 },
     { source: "Sousse", destination: "Zaghouan", distance: 102 },
     { source: "Sousse", destination: "Kef", distance: 253 },
     { source: "Sousse", destination: "Sidi Bouzid", distance: 175 },
@@ -119,7 +119,7 @@ function MapInformation() {
     { source: "Sousse", destination: "Kef", distance: 198 },
     { source: "Sousse", destination: "Manouba", distance: 170 },
     { source: "Sousse", destination: "Médenine", distance: 356 },
-    
+
     { source: "Kasserine", destination: "Ariana", distance: 259 },
     { source: "Kasserine", destination: "Bizerte", distance: 367 },
     { source: "Kasserine", destination: "Gabès", distance: 273 },
@@ -168,17 +168,166 @@ function MapInformation() {
     { source: "Nabeul", destination: "Siliana", distance: 181 },
     { source: "Nabeul", destination: "Tataouine", distance: 503 },
     { source: "Nabeul", destination: "Tozeur", distance: 415 },
-    { source: "Ariana", destination: "Béja", distance: 174 },
+
+    { source: "Ariana", destination: "Béja", distance: 116 },
+    { source: "Ariana", destination: "Zaghouan", distance: 68 },
+    { source: "Ariana", destination: "Kef", distance: 172 },
+    { source: "Ariana", destination: "Ben Arous", distance: 22 },
+    { source: "Ariana", destination: "Gabès", distance: 426 },
+    { source: "Ariana", destination: "Gafsa", distance: 356 },
+    { source: "Ariana", destination: "Jendouba", distance: 160 },
+    { source: "Ariana", destination: "Kairouan", distance: 172 },
+    { source: "Ariana", destination: "Kébili", distance: 525 },
+    { source: "Ariana", destination: "Bizerte", distance: 64 },
+    { source: "Ariana", destination: "Manouba", distance: 13 },
+    { source: "Ariana", destination: "Médenine", distance: 500 },
+    { source: "Ariana", destination: "Sidi Bouzid", distance: 284 },
+    { source: "Ariana", destination: "Siliana", distance: 136 },
+    { source: "Ariana", destination: "Tataouine", distance: 553 },
+    { source: "Ariana", destination: "Tozeur", distance: 465 },
+
+    { source: "Kairouan", destination: "Béja", distance: 186 },
+    { source: "Kairouan", destination: "Zaghouan", distance: 105 },
+    { source: "Kairouan", destination: "Kef", distance: 170 },
+    { source: "Kairouan", destination: "Ben Arous", distance: 153 },
+    { source: "Kairouan", destination: "Gabès", distance: 223 },
+    { source: "Kairouan", destination: "Gafsa", distance: 202 },
+    { source: "Kairouan", destination: "Jendouba", distance: 201 },
+    { source: "Kairouan", destination: "Kébili", distance: 321 },
+    { source: "Kairouan", destination: "Bizerte", distance: 230 },
+    { source: "Kairouan", destination: "Manouba", distance: 171 },
+    { source: "Kairouan", destination: "Médenine", distance: 296 },
+    { source: "Kairouan", destination: "Sidi Bouzid", distance: 296 },
+    { source: "Kairouan", destination: "Siliana", distance: 100 },
+    { source: "Kairouan", destination: "Tataouine", distance: 350 },
+    { source: "Kairouan", destination: "Tozeur", distance: 294 },
+
+    { source: "Béja", destination: "Zaghouan", distance: 116 },
+    { source: "Béja", destination: "Kef", distance: 105 },
+    { source: "Béja", destination: "Ben Arous", distance: 119 },
+    { source: "Béja", destination: "Gabès", distance: 408 },
+    { source: "Béja", destination: "Gafsa", distance: 375 },
+    { source: "Béja", destination: "Jendouba", distance: 50 },
+    { source: "Béja", destination: "Kébili", distance: 506 },
+    { source: "Béja", destination: "Bizerte", distance: 103 },
+    { source: "Béja", destination: "Manouba", distance: 105 },
+    { source: "Béja", destination: "Médenine", distance: 482 },
+    { source: "Béja", destination: "Sidi Bouzid", distance: 290 },
+    { source: "Béja", destination: "Siliana", distance: 102 },
+    { source: "Béja", destination: "Tataouine", distance: 535 },
+    { source: "Béja", destination: "Tozeur", distance: 467 },
+
+    { source: "Zaghouan", destination: "Kef", distance: 148 },
+    { source: "Zaghouan", destination: "Ben Arous", distance: 50 },
+    { source: "Zaghouan", destination: "Gabès", distance: 370 },
+    { source: "Zaghouan", destination: "Gafsa", distance: 299 },
+    { source: "Zaghouan", destination: "Jendouba", distance: 171 },
+    { source: "Zaghouan", destination: "Kébili", distance: 468 },
+    { source: "Zaghouan", destination: "Bizerte", distance: 126 },
+    { source: "Zaghouan", destination: "Manouba", distance: 63 },
+    { source: "Zaghouan", destination: "Médenine", distance: 444 },
+    { source: "Zaghouan", destination: "Sidi Bouzid", distance: 214 },
+    { source: "Zaghouan", destination: "Siliana", distance: 91 },
+    { source: "Zaghouan", destination: "Tataouine", distance: 497 },
+    { source: "Zaghouan", destination: "Tozeur", distance: 391 },
+
+    { source: "Kef", destination: "Ben Arous", distance: 173 },
+    { source: "Kef", destination: "Gabès", distance: 364 },
+    { source: "Kef", destination: "Gafsa", distance: 232 },
+    { source: "Kef", destination: "Jendouba", distance: 56 },
+    { source: "Kef", destination: "Kébili", distance: 344 },
+    { source: "Kef", destination: "Bizerte", distance: 205 },
+    { source: "Kef", destination: "Manouba", distance: 160 },
+    { source: "Kef", destination: "Médenine", distance: 438 },
+    { source: "Kef", destination: "Sidi Bouzid", distance: 165 },
+    { source: "Kef", destination: "Siliana", distance: 71 },
+    { source: "Kef", destination: "Tataouine", distance: 491 },
+    { source: "Kef", destination: "Tozeur", distance: 324 },
+
+    { source: "Ben Arous", destination: "Gabès", distance: 408 },
+    { source: "Ben Arous", destination: "Gafsa", distance: 338 },
+    { source: "Ben Arous", destination: "Jendouba", distance: 161 },
+    { source: "Ben Arous", destination: "Kébili", distance: 506 },
+    { source: "Ben Arous", destination: "Bizerte", distance: 80 },
+    { source: "Ben Arous", destination: "Manouba", distance: 21 },
+    { source: "Ben Arous", destination: "Médenine", distance: 481 },
+    { source: "Ben Arous", destination: "Sidi Bouzid", distance: 265 },
+    { source: "Ben Arous", destination: "Siliana", distance: 124 },
+    { source: "Ben Arous", destination: "Tataouine", distance: 535 },
+    { source: "Ben Arous", destination: "Tozeur", distance: 430 },
+
+    { source: "Gabès", destination: "Gafsa", distance: 155 },
+    { source: "Gabès", destination: "Jendouba", distance: 389 },
+    { source: "Gabès", destination: "Kébili", distance: 118 },
+    { source: "Gabès", destination: "Bizerte", distance: 483 },
+    { source: "Gabès", destination: "Manouba", distance: 423 },
+    { source: "Gabès", destination: "Médenine", distance: 75 },
+    { source: "Gabès", destination: "Sidi Bouzid", distance: 176 },
+    { source: "Gabès", destination: "Siliana", distance: 308 },
+    { source: "Gabès", destination: "Tataouine", distance: 129 },
+    { source: "Gabès", destination: "Tozeur", distance: 210 },
+
+    { source: "Gafsa", destination: "Jendouba", distance: 287 },
+    { source: "Gafsa", destination: "Kébili", distance: 111 },
+    { source: "Gafsa", destination: "Bizerte", distance: 423 },
+    { source: "Gafsa", destination: "Manouba", distance: 373 },
+    { source: "Gafsa", destination: "Médenine", distance: 230 },
+    { source: "Gafsa", destination: "Sidi Bouzid", distance: 102 },
+    { source: "Gafsa", destination: "Siliana", distance: 250 },
+    { source: "Gafsa", destination: "Tataouine", distance: 284 },
+    { source: "Gafsa", destination: "Tozeur", distance: 92 },
+
+    { source: "Jendouba", destination: "Kébili", distance: 400 },
+    { source: "Jendouba", destination: "Bizerte", distance: 152 },
+    { source: "Jendouba", destination: "Manouba", distance: 148 },
+    { source: "Jendouba", destination: "Médenine", distance: 486 },
+    { source: "Jendouba", destination: "Sidi Bouzid", distance: 213 },
+    { source: "Jendouba", destination: "Siliana", distance: 103 },
+    { source: "Jendouba", destination: "Tataouine", distance: 539 },
+    { source: "Jendouba", destination: "Tozeur", distance: 379 },
+
+    { source: "Kébili", destination: "Bizerte", distance: 582 },
+    { source: "Kébili", destination: "Manouba", distance: 522 },
+    { source: "Kébili", destination: "Médenine", distance: 192 },
+    { source: "Kébili", destination: "Sidi Bouzid", distance: 205 },
+    { source: "Kébili", destination: "Siliana", distance: 352 },
+    { source: "Kébili", destination: "Tataouine", distance: 232 },
+    { source: "Kébili", destination: "Tozeur", distance: 96 },
+
+    { source: "Bizerte", destination: "Manouba", distance: 77 },
+    { source: "Bizerte", destination: "Médenine", distance: 557 },
+    { source: "Bizerte", destination: "Sidi Bouzid", distance: 329 },
+    { source: "Bizerte", destination: "Siliana", distance: 200 },
+    { source: "Bizerte", destination: "Tataouine", distance: 611 },
+    { source: "Bizerte", destination: "Tozeur", distance: 523 },
+
+    { source: "Manouba", destination: "Médenine", distance: 500 },
+    { source: "Manouba", destination: "Sidi Bouzid", distance: 258 },
+    { source: "Manouba", destination: "Siliana", distance: 125 },
+    { source: "Manouba", destination: "Tataouine", distance: 553 },
+    { source: "Manouba", destination: "Tozeur", distance: 434 },
+
+    { source: "Médenine", destination: "Sidi Bouzid", distance: 250 },
+    { source: "Médenine", destination: "Siliana", distance: 382 },
+    { source: "Médenine", destination: "Tataouine", distance: 54 },
+    { source: "Médenine", destination: "Tozeur", distance: 285 },
+
+    { source: "Sidi Bouzid", destination: "Siliana", distance: 164 },
+    { source: "Sidi Bouzid", destination: "Tataouine", distance: 305 },
+    { source: "Sidi Bouzid", destination: "Tozeur", distance: 194 },
+
+
+    { source: "Siliana", destination: "Tataouine", distance: 341 },
+    { source: "Siliana", destination: "Tozeur", distance: 194 },
+
+    { source: "Tataouine", destination: "Tozeur", distance: 338 },
   ];
 
   const selectedDistance = distances.find(
     (item) =>
-      (item.source === governorateAddressSource &&
-
-
-        item.destination === governorateAddressDestination) ||
-      (item.source === governorateAddressDestination &&
-        item.destination === governorateAddressSource)
+      (item.source === governorateAddressSource && item.destination === governorateAddressDestination)
+      ||
+      (item.source === governorateAddressDestination && item.destination === governorateAddressSource)
   );
   console.log("distance", selectedDistance);
 
